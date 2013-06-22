@@ -8,13 +8,14 @@
 <section class="banner banner-article">
 	<div class="container">
 		<nav class="breadcrumbs">
-			<a href="#">首页</a> / <a href="#">文章列表</a> / <a class="active" href="#">阅读文章</a>
+			<a href="/">首页</a> / <a href="/article/list">文章列表</a> / <a class="active" href="#">阅读文章</a>
 		</nav>
 		<br />
 		<h1>这是文章标题</h1>
-		<p>
+		<br />
+		<time>
 			2013-01-01 12:00:00
-		</p>
+		</time>
 		<br />
 		<br />
 		<p>
@@ -129,25 +130,7 @@
 			</li>
 		</ul>
 		<br />
-		<form id="formFeed" action="">
-			<hr />
-			<br />
-			<div class="row-fluid">
-				<input type="text" class="span4" placeholder="称呼"/>
-				<input type="text" class="span4" placeholder="邮箱"/>
-				<input type="text" class="span4" placeholder="微博/QQ/个人网站（选填）"/>
-				<br />
-				<textarea style="margin-left: 0;" name="" id="" cols="30" class="span12" rows="10" placeholder="在这里留言"></textarea>
-				<br />
-				<button class="btn btn-primary btn-large btn-block">
-					发 送 留 言
-				</button>
-			</div>
-			<br />
-			<br />
-			<br />
-			<br />
-		</form>
+		{% include "tools/feed-form.html" %}
 	</div><!-- /container -->
 </section>
 {% include "tools/opt-panel.html" %}

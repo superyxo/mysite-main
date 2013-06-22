@@ -11,15 +11,17 @@
 		<br />
 		<div class="row">
 			<div class="span8">
-				{% for article in articles %}
-				{{ article.name }}
-				{% endfor %}
 				<ul class="nav-articles">
+					{% for article in articles %}
 					<li>
-						<h4>文章标题</h4>
-						<a class="tag" style="margin-left: 0">标签</a><a class="tag">标签</a><a class="tag">标签</a>
+						<h4><a href="../{{ article.id }}">{{ article.name }}</a></h4>
+						<span class="tag-wrap">
+						{% for tag in article.tags.all %}
+							<a class="tag">{{ tag.name }}</a>
+						{% endfor %}
+						</span>
 						<time>
-							2012-01-01 12:00:00
+							{{ article.createAt|date:"Y-m-d" }} {{ article.createAt|time:"H:i:s" }}
 						</time>
 						<p>
 							Hello，我是张杨，91年1月生，江苏徐州人，2012年6月大学毕业，学得是嵌入式专业，可是大学光玩了，也没学好。2011年底，面临毕
@@ -27,42 +29,7 @@
 						</p>
 						<a href="#">0人回复</a>
 					</li>
-					<li>
-						<h4>文章标题</h4>
-						<a class="tag" style="margin-left: 0">标签</a><a class="tag">标签</a><a class="tag">标签</a>
-						<time>
-							2012-01-01 12:00:00
-						</time>
-						<p>
-							Hello，我是张杨，91年1月生，江苏徐州人，2012年6月大学毕业，学得是嵌入式专业，可是大学光玩了，也没学好。2011年底，面临毕
-							业，为了掌握一个活计我去培训了软件开发。12年3月在天津，加入了一个创业互联网公司（canditu.com）.
-						</p>
-						<a href="#">0人回复</a>
-					</li>
-					<li>
-						<h4>文章标题</h4>
-						<a class="tag" style="margin-left: 0">标签</a><a class="tag">标签</a><a class="tag">标签</a>
-						<time>
-							2012-01-01 12:00:00
-						</time>
-						<p>
-							Hello，我是张杨，91年1月生，江苏徐州人，2012年6月大学毕业，学得是嵌入式专业，可是大学光玩了，也没学好。2011年底，面临毕
-							业，为了掌握一个活计我去培训了软件开发。12年3月在天津，加入了一个创业互联网公司（canditu.com）.
-						</p>
-						<a href="#">0人回复</a>
-					</li>
-					<li>
-						<h4>文章标题</h4>
-						<a class="tag" style="margin-left: 0">标签</a><a class="tag">标签</a><a class="tag">标签</a>
-						<time>
-							2012-01-01 12:00:00
-						</time>
-						<p>
-							Hello，我是张杨，91年1月生，江苏徐州人，2012年6月大学毕业，学得是嵌入式专业，可是大学光玩了，也没学好。2011年底，面临毕
-							业，为了掌握一个活计我去培训了软件开发。12年3月在天津，加入了一个创业互联网公司（canditu.com）.
-						</p>
-						<a href="#">0人回复</a>
-					</li>
+					{% endfor %}
 					<li>
 						<a href="#" class="btn btn-block">加 载 更 多</a>
 					</li>
@@ -72,21 +39,11 @@
 				<h3>所有标签</h3>
 				<nav>
 					<ul class="nav nav-tags">
+						{% for tag in tags %}
 						<li>
-							<a href="#">HTML5</a>
+							<a href="#">{{ tag.name }}</a>
 						</li>
-						<li>
-							<a href="#">CSS3</a>
-						</li>
-						<li>
-							<a href="#">TAG1</a>
-						</li>
-						<li>
-							<a href="#">TAG2</a>
-						</li>
-						<li>
-							<a href="#">标签</a>
-						</li>
+						{% endfor %}
 					</ul>
 				</nav>
 			</aside>

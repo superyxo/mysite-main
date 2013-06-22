@@ -30,32 +30,39 @@
 .nav-articles{
   list-style: none;
   margin: 0;
-  letter-spacing: 1px;
   li{
     position: relative;
     margin-bottom: 40px;
+    h4{
+      margin-bottom: 0;
+      & > a{
+        font: normal normal 1.6em/1.2em @msyaheiFontFamily;
+        color: @grayDark;
+        letter-spacing: 2px;
+        &:hover{
+          .transition(color .2s ease-in-out);
+        }
+      }
+    }
+    .tag{
+      margin: 5px;
+    }
+    .tag-wrap{
+      margin-left: -5px;
+    }
+    p{
+      margin-bottom: 0;
+      line-height: 1.6em;
+    }
+    time{
+      position: absolute;
+      right: 0;
+      top: 20px;
+      color: @gray;
+    }
   }
   & > a{
     display: block;
   }
-  h4{
-    font-size: 2em;
-    font-family: @msyaheiFontFamily;
-    font-weight: normal;
-    color: @grayDark;
-    letter-spacing: 4px;
-  }
-  .tag{
-    margin: 5px 8px;
-  }
-  p{
-    margin-bottom: 0;
-    line-height: 1.6em;
-  }
-  time{
-    position: absolute;
-    right: 0;
-    top: 10px;
-    color: @gray;
-  }
+  
 }

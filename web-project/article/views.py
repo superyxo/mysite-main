@@ -1,3 +1,9 @@
+'''
+Created on 2013-6-23
+
+@author: ray
+'''
+
 from article.models import Article, Comment, Tag
 from django.core.context_processors import csrf
 from django.http import HttpResponse
@@ -7,6 +13,7 @@ from django.contrib.auth.decorators import login_required
 from common.request import Pageable
 from django.views.decorators.http import require_POST, require_GET
 import util
+from django.template.response import SimpleTemplateResponse as resp
 
 ## === Article ===
 @require_GET
@@ -14,8 +21,10 @@ def showArticleList( request ):
     page = Pageable(request)
     articles = Article.objects.query(page, request)
     map(lambda a:a.setCommentNum(a.comment_set.count()), articles)
-    tags = Tag.objects.raw('SELECT at.tag_id AS id, t.name AS name, COUNT(at.tag_id) AS articleNum FROM articles_tags AS at, tags AS t WHERE at.tag_id = t.id GROUP BY at.tag_id')
-    return render( request, 'article-list.html' ,locals() )
+    tags = Tag.objects.raw('SELECT at.tag_id AS id, t.name AS name, COUNT(at.tag_id) AS articleNum FROM ms_articles_tags AS at, ms_tags AS t WHERE at.tag_id = t.id GROUP BY at.tag_id')
+#     return render( request, 'article-list.html' ,locals() )
+    return resp('article-list.html', locals())
+
 @require_GET
 def showArticle( request, aid ):
     article = Article.objects.get(id=aid)
@@ -45,7 +54,7 @@ def editArticle( request ):
     except:
         article = None
     locals().update(csrf(request))
-    return render( request, "editor.html" ,locals() )
+    return resp('editor.html', locals())
 
 
 ## === Comment ===

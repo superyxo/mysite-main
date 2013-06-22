@@ -36,14 +36,7 @@ function resetOptPanel( margin ){
 }
 
 function toTop(){
-	var i = 100, timing;
-	$(window).scrollTop(i);
-	
-	timing = setInterval(function(){
-		i == -1 && clearInterval(timing);
-		$(window).scrollTop(i);
-		i--;
-	},0.16);
+	$(window).scrollTop(0);
 }
 
 function beautifyBannerHome(){
