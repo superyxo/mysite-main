@@ -3,7 +3,6 @@ from django.core.context_processors import csrf
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.core import serializers
-import json
 from django.contrib.auth.decorators import login_required
 from common.request import Pageable
 from django.views.decorators.http import require_POST, require_GET
@@ -24,21 +23,9 @@ def showArticle( request, aid ):
     tags = article.tags.all()
     map(lambda t:t.setArticleNum(t.article_set.count()), tags)
     return render( request, "article.html" ,locals() )
-
-def analysisArticle():
-    pass
 @login_required
 @require_POST
 def saveArticle( request ):
-#     stags = request.POST['tags'].strip().lstrip().rstrip().split(',')
-#     tagsJSON = json.loads( request.POST['tagJSON'] )
-#     tags =  [Tag.objects.get_or_create(name = tag['name'])[0] for tag in stags]
-#     article = Article.objects.save(request, rmlist = ['tagJSON'])
-#     article.user = request.user
-#     article.save()
-#     print request
-    print request.FILES
-    print request.FILES.getlist('imgs')
     article = Article.createArticle( request.POST['title']
                               , request.POST['desc']
                               , request.POST['tags']

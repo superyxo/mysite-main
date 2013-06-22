@@ -11,6 +11,9 @@
 		<br />
 		<div class="row">
 			<div class="span8">
+				{% for article in articles %}
+				{{ article.name }}
+				{% endfor %}
 				<ul class="nav-articles">
 					<li>
 						<h4>文章标题</h4>

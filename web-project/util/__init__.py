@@ -3,6 +3,8 @@ import json
 import types
 import sae
 
+
+
 def get_or_create_usr(email, usrname):
     back = User.objects.get_or_create( email=email
                                           , username = usrname
@@ -10,8 +12,9 @@ def get_or_create_usr(email, usrname):
     return back[0]
 
 def sae_save_file( f , storage_name , file_name = None ):
-    s = sae.storage.Client()
-    obj = sae.storage.Object(f.read())
+    from sae.storage import Bucket
+    bucket = Bucket(storage_name)
+    print bucket
     if file_name is None: 
-        file_name = f._get_name() 
-    return s.put(storage_name , file_name , obj)
+        file_name = f._get_name()
+    return bucket.put_object(file_name, f)

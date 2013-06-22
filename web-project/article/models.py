@@ -1,7 +1,6 @@
 from django.contrib.admin.models import User
 from common.models import BaseModel
 from django.db import models
-from django import utils
 import util
 from mysite.settings import STO_MEDIA
        
@@ -11,7 +10,8 @@ class Tag( BaseModel ):
 
     bgcolor = models.CharField( max_length = 6, null = True )
     
-    articleNum = 0;
+    articleNum = 0
+    
     def setArticleNum(self, num):
         self.articleNum = num
         
@@ -29,33 +29,28 @@ class Article( BaseModel ):
     
     commentNum = 0
     
-    def __init__(self, title, desc, content):
-        self.title = title
-        self.desc = desc
-        self.content = content
-        super(Article, self).__init__()
-    
     def setCommentNum(self, num):
         self.commentNum = num
         
     @classmethod
-    def createArticle(cls, title, desc, tags, content, imgs = None):
+    def createArticle(cls, title, summary, tags, content, imgs = None):
         stags = tags.strip().lstrip().rstrip().split(',')
         tags =  [Tag.objects.get_or_create(name = tag)[0] for tag in stags]
         
-        article = cls(title = title, desc = desc, content = content)
-#         article.tags = tags
+        article = cls(name = title, desc = summary, content = content)
         
         if imgs is not None:
             for img in imgs:
-                names = cls.saveFile(img)
-                article.content = cls.changeArticle(article.content, names)
+                names = cls.saveFile(img, None)
+                article.content = cls.changeContent(article.content.strip().lstrip().rstrip(), names)
         
+        article.save()
+        article.tags = tags
         article.save()
         return article
     
     @classmethod
-    def saveFile(cls, img):
+    def saveFile(cls, img, newname):
         file_name = None
         if file_name is None:
             file_name = img._get_name()
