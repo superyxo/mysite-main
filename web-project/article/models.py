@@ -51,18 +51,16 @@ class Article( BaseModel ):
     
     @classmethod
     def saveFile(cls, img, newname):
-        file_name = None
-        if file_name is None:
-            file_name = img._get_name()
-        util.sae_save_file(img, 'media', file_name)
-        return [img._get_name(), file_name]
+        if newname is None:
+            newname = img._get_name()
+        util.sae_save_file(img, 'media', newname)
+        return [img._get_name(), newname]
     
     @classmethod
     def changeContent(cls, content, names):
         find = '##' + names[0] + '##'
         will = '<img src="' + STO_MEDIA + '' + names[1] + '" />'
-        content.replace(find, will)
-        return content
+        return content.replace(find, will)
         
 class Comment( BaseModel ):
     class Meta:
