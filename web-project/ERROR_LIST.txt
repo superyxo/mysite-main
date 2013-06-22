@@ -1,0 +1,15 @@
+====== UnSolve ======
+1. @request_POST
+5. Reverse showArticle 
+6. Transaction in view level
+7. auth_user password
+8. I want to show sql in console
+9. Template URL's definition in a template file. 
+
+====== Solved ======
+2. 1366, "Incorrect string value: '\\xE5\\xAF\\xB9\\xE8\\xB1\\xA1' for column 'article_name' at row 1"
+	-- local MySql gb2312
+3. redirect
+	-- return redirect(...)
+4. {{ csrf_token }} isn't displayed in the template after the view that returns with the 'render_to_response('view_name.htm', locals())'
+	-- locals().update(csrf(request))  first, when u can call the locals() function
