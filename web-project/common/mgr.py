@@ -16,7 +16,8 @@ class BaseMgr(models.Manager):
     
     def save(self, request, adkwg = None , rmlist = None):
         kwgs = self.getDict(request, rmlist)
-        if adkwg is not None: kwgs.update(adkwg)
+        if adkwg is not None: 
+            kwgs.update(adkwg)
         if kwgs.has_key('id'):
             mid = kwgs.pop('id')
             self.filter(id=mid).update(**kwgs)

@@ -24,15 +24,26 @@ def showArticle( request, aid ):
     tags = article.tags.all()
     map(lambda t:t.setArticleNum(t.article_set.count()), tags)
     return render( request, "article.html" ,locals() )
+
+def analysisArticle():
+    pass
 @login_required
 @require_POST
 def saveArticle( request ):
-    tagsJSON = json.loads( request.POST['tagJSON'] )
-    tags =  [Tag.objects.get_or_create(name = tag['name'])[0] for tag in tagsJSON]
-    article = Article.objects.save(request, rmlist = ['tagJSON'])
-    article.tags = tags
-    article.user = request.user
-    article.save()
+#     stags = request.POST['tags'].strip().lstrip().rstrip().split(',')
+#     tagsJSON = json.loads( request.POST['tagJSON'] )
+#     tags =  [Tag.objects.get_or_create(name = tag['name'])[0] for tag in stags]
+#     article = Article.objects.save(request, rmlist = ['tagJSON'])
+#     article.user = request.user
+#     article.save()
+#     print request
+    print request.FILES
+    print request.FILES.getlist('imgs')
+    article = Article.createArticle( request.POST['title']
+                              , request.POST['desc']
+                              , request.POST['tags']
+                              , request.POST['content']
+                              , request.FILES.getlist('imgs') )
     return redirect('/article/' + str( article.id ))
 @login_required
 @require_GET
@@ -49,6 +60,7 @@ def editArticle( request ):
     locals().update(csrf(request))
     return render( request, "editor.html" ,locals() )
 
+
 ## === Comment ===
 @require_POST
 def saveComment( request ):
@@ -63,6 +75,7 @@ def deleteComment( request ):
     articleId = comment.article.id
     comment.delete()
     return redirect('/article/'+articleId)
+
 
 ##=== Tag ===
 @require_GET

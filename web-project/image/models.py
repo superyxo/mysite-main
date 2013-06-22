@@ -4,7 +4,7 @@ from common.models import BaseModel
 # Create your models here.
 class Image(BaseModel):
     class Meta:
-        db_table = 'images'
+        db_table = 'ms_images'
         ordering = ['-createAt']
     
     IMG_TYPE = (

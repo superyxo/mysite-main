@@ -1,10 +1,13 @@
 from django.contrib.admin.models import User
 from common.models import BaseModel
 from django.db import models
+from django import utils
+import util
+from mysite.settings import STO_MEDIA
        
 class Tag( BaseModel ):
     class Meta:
-        db_table = 'tags'
+        db_table = 'ms_tags'
 
     bgcolor = models.CharField( max_length = 6, null = True )
     
@@ -17,7 +20,7 @@ class Tag( BaseModel ):
    
 class Article( BaseModel ):
     class Meta:
-        db_table = 'articles'
+        db_table = 'ms_articles'
         ordering = ['-createAt']
     
     user = models.ForeignKey( User, null=True )    
@@ -25,12 +28,50 @@ class Article( BaseModel ):
     tags = models.ManyToManyField( Tag )
     
     commentNum = 0
+    
+    def __init__(self, title, desc, content):
+        self.title = title
+        self.desc = desc
+        self.content = content
+        super(Article, self).__init__()
+    
     def setCommentNum(self, num):
         self.commentNum = num
-
+        
+    @classmethod
+    def createArticle(cls, title, desc, tags, content, imgs = None):
+        stags = tags.strip().lstrip().rstrip().split(',')
+        tags =  [Tag.objects.get_or_create(name = tag)[0] for tag in stags]
+        
+        article = cls(title = title, desc = desc, content = content)
+#         article.tags = tags
+        
+        if imgs is not None:
+            for img in imgs:
+                names = cls.saveFile(img)
+                article.content = cls.changeArticle(article.content, names)
+        
+        article.save()
+        return article
+    
+    @classmethod
+    def saveFile(cls, img):
+        file_name = None
+        if file_name is None:
+            file_name = img._get_name()
+        util.sae_save_file(img, 'media', file_name)
+        return [img._get_name(), file_name]
+    
+    @classmethod
+    def changeContent(cls, content, names):
+        find = '##' + names[0] + '##'
+        will = '<img src="' + STO_MEDIA + '' + names[1] + '" />'
+        content.replace(find, will)
+        return content
+        
 class Comment( BaseModel ):
     class Meta:
-        db_table = 'comments'
+        db_table = 'ms_comments'
     
     content = models.TextField( null=False )
     user = models.ForeignKey( User, null=True )

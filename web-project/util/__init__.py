@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User
 import json
 import types
+import sae
 
 def get_or_create_usr(email, usrname):
     back = User.objects.get_or_create( email=email
@@ -8,5 +9,9 @@ def get_or_create_usr(email, usrname):
                                           , defaults = {'password':'123456'} )
     return back[0]
 
-MEDIA_SAE_ROOT = 'http://rayzy1991-media.stor.sinaapp.com'
-DEMO_SAE_ROOT = 'http://rayzy1991-demo.stor.sinaapp.com'
+def sae_save_file( f , storage_name , file_name = None ):
+    s = sae.storage.Client()
+    obj = sae.storage.Object(f.read())
+    if file_name is None: 
+        file_name = f._get_name() 
+    return s.put(storage_name , file_name , obj)

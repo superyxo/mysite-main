@@ -153,9 +153,9 @@ $(function() {
 				});
 			},
 			newFileInput = function(inputFile){
-				var input = document.createElement('input');
-				$(input).attr({'type':'file','name':'figure','data-edit':'insertImage','data-role':'magic-overlay'});
-				$(inputFile).after(input).hide();
+				// var input = document.createElement('input');
+				// $(input).attr({'type':'file','name':'imgs','data-edit':'insertImage','data-role':'magic-overlay'});
+				$(inputFile).after($(inputFile).clone());
 			},
 			markSelection = function (input, color) {
 				restoreSelection();

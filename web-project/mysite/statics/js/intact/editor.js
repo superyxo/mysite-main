@@ -19,7 +19,7 @@ $(document).ready(function() {
 	$(document).delegate('#submit', 'click', function(){
 		if( window.confirm('确定上传文章吗？') ){
 			beforeSubmit('#editor', '#formArticle');
-			//$('#formArticle').submit();
+			$('#formArticle').submit();
 		}
 	});
 	
@@ -50,6 +50,7 @@ $(document).ready(function() {
 		});
 		
 		article = $(editor).html().replace(/div/g, 'p');
-		$(editor).html(article);
+		// $(editor).html(article);
+		$('#content').val(article);
 	}
 })

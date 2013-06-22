@@ -2,6 +2,8 @@
 import os
 
 ROOT_PATH = os.path.abspath(os.path.dirname(__file__))
+STO_MEDIA = 'http://rayzy1991-media.stor.sinaapp.com/'
+STO_DEMO = 'http://rayzy1991-demo.stor.sinaapp.com/'
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -139,10 +141,9 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
-    'django.contrib.admindocs',
-    'common',
+    # 'django.contrib.admindocs',
     'article',
-    'image',
+    'trend',
 )
 
 PASSWORD_HASHERS = (

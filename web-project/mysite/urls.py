@@ -14,14 +14,14 @@ urlpatterns = patterns('',
     
     url(r'^about/$', direct, {'template':'about.html'}),
     url(r'^contact/$', direct, {'template':'contact.html'}),
-    url(r'^accounts/login/$', 'django.contrib.auth.views.login', {'template_name': 'login.html'}),
+    ## url(r'^accounts/login/$', 'django.contrib.auth.views.login', {'template_name': 'login.html'}),
     url(r'^design/$', direct, {'template':'imgs.html'}),
     
     url(r'^article/', include('article.urls')),
-    url(r'^img/', include('image.urls')),
+    ##url(r'^img/', include('image.urls')),
     
     url(r'^editor/', 'article.views.editArticle'),
-    url(r'^upload/', direct, {'template':'upload.html'}),
+    ##url(r'^upload/', direct, {'template':'upload.html'}),
     
     url(r'^tag/query', 'article.views.queryTags'),
     
