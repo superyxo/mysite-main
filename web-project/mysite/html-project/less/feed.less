@@ -1,0 +1,57 @@
+.nav-feeds{
+  margin: 4em 0 0;
+  & > li{
+    background: url(../../img/main/ico-chart.png) no-repeat 0 3px transparent;
+    list-style: none;
+    padding-left: 18px;
+    margin-bottom: 2em;
+    h4{
+      margin-bottom: 0;
+      padding-bottom: 5px;
+      border-bottom: 1px solid @grayLighter;
+      color: @linkColor;
+      font-size: @baseFontSize;
+      time{
+        margin-left: 10px;
+        color: @gray;
+        font-weight: normal;
+        font-size: 13px;
+      }
+    }
+    p{
+      margin-top: 5px;
+    }
+  }
+  
+  a{
+    display: inline-block;
+    margin-left: 5px;
+  }
+  
+  .nav-children{
+    margin: 0 0 0 2px;
+    padding-left: 10px;
+    border-left: 3px solid @grayLight;
+    list-style: none;
+    color: @grayDark;
+    li{
+      margin-bottom: 10px;
+    }
+    h5, p{
+      display: inline;
+    }
+    h5{
+      color: @linkColor;
+      strong{
+        color: @orange;
+      }
+      
+    }
+    time{
+      margin-left: 5px;
+      font-weight: normal;
+      font-size: 13px;
+      color: @gray;
+    }
+  }
+}
