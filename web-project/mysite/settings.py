@@ -116,7 +116,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-#     'common.middleware.CommonMiddleware',
+    'common.middleware.RequestContextMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 #     'django.middleware.cache.UpdateCacheMiddleware',
@@ -172,6 +172,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.tz",
     "django.contrib.messages.context_processors.messages",
     "django.core.context_processors.csrf",
+    "django.core.context_processors.request",
 #    "ctx_processor.saeMediaPath"
 )
 

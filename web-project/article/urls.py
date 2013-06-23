@@ -6,5 +6,6 @@ urlpatterns = patterns('',
     url(r'^([1-9]\d*)/$', 'article.views.showArticle'),
     url(r'^delete/$', 'article.views.removeArticle'),
     
-    url(r'^comment/save/$','article.views.saveComment')
+    url(r'^feed/save/$','article.views.saveComment'),
+    url(r'^feeds','article.views.showFeeds')
 )

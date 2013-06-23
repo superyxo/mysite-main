@@ -6,8 +6,8 @@ Created on 2013-6-23
 
 from article.models import Article, Comment, Tag
 from django.core.context_processors import csrf
-from django.http import HttpResponse
-from django.shortcuts import redirect, render
+from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import redirect
 from django.core import serializers
 from django.contrib.auth.decorators import login_required
 from common.request import Pageable
@@ -24,13 +24,13 @@ def showArticleList( request ):
     tags = Tag.objects.raw('SELECT at.tag_id AS id, t.name AS name, COUNT(at.tag_id) AS articleNum FROM ms_articles_tags AS at, ms_tags AS t WHERE at.tag_id = t.id GROUP BY at.tag_id')
     return resp('article-list.html', locals())
 
+
 @require_GET
 def showArticle( request, aid ):
     article = Article.objects.get(id=aid)
-    comments = article.comment_set.all()
     tags = article.tags.all()
     map(lambda t:t.setArticleNum(t.article_set.count()), tags)
-    return render( request, "article.html" ,locals() )
+    return resp('article.html', locals())
 
 @login_required
 @require_POST
@@ -64,13 +64,25 @@ def editArticle( request ):
 
 
 ## === Comment ===
+@require_GET
+def showFeeds( request ):
+    article = Article.objects.get(id = request.GET['aId'])
+    return resp('article-feed.html', locals())
+
 @require_POST
 def saveComment( request ):
-    u = util.get_or_create_usr(request.POST['email'], request.POST['usrname'])
-    a = Article.objects.get(id = request.POST['articleId'])
+    email = request.POST['email']
+    usrname = request.POST['usrname']
+#     memo = request.POST['memo']
+    u = util.get_or_create_usr(email, usrname)
+    a = Article.objects.get(id = request.POST['aId'])
     comment = Comment(content = request.POST['content'], user = u, article = a)
     comment.save()
-    return redirect('/article/'+str(a.id)+'/#comment-'+str(comment.id))
+    resp = HttpResponseRedirect('/article/feeds?aId='+str(a.id)+'#comment-'+str(comment.id))
+    if not request.COOKIES.has_key('email') and not request.COOKIES.has_key('usrname'):
+        resp.set_cookie('email', value = email, max_age = 31536000, httponly = True)
+        resp.set_cookie('usrname', value = usrname, max_age = 31536000, httponly = True)
+    return resp
 
 @require_GET
 def deleteComment( request ):

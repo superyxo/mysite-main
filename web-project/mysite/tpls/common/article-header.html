@@ -1,0 +1,33 @@
+<section class="banner banner-article">
+	<div class="container">
+		<nav class="breadcrumbs">
+			<a href="/">首页</a> / <a href="/article/list">文章列表</a> / <a class="active" href="#">阅读文章</a>
+		</nav>
+		<br />
+		<h1>{{ article.name }}</h1>
+		<br />
+		<time>
+			{{ article.createAt|date:"Y-m-d" }} {{ article.createAt|time:"H:i:s" }}
+		</time>
+		<br />
+		<br />
+		<p>
+			{% for tag in article.tags.all %}
+			<a class="tag">{{ tag.name }}</a>
+			{% endfor %}
+		</p>
+		<nav>
+			<ul class="nav nav-tabs">
+				<li class="{% block tab_article %}{% endblock %}">
+					<a href="/article/{{ article.id }}">文 章</a>
+				</li>
+				<li class="{% block tab_feeds %}{% endblock %}">
+					<a href="/article/feeds?aId={{ article.id }}">留 言
+					<div class="bubble">
+						{{ article.comment_set.all|length }}
+					</div></a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</section>

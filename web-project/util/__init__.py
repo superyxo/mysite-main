@@ -3,8 +3,6 @@ import json
 import types
 import sae
 
-
-
 def get_or_create_usr(email, usrname):
     back = User.objects.get_or_create( email=email
                                           , username = usrname

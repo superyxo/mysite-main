@@ -1,138 +1,26 @@
-{% extends "base.html" %}
+{% extends "common/base.html" %}
 
 {% block title %}文章留言{% endblock title %}
 
 {% block active_article %}active{% endblock %}
 
 {% block base_ctn %}
-<section class="banner banner-article">
-	<div class="container">
-		<nav class="breadcrumbs">
-			<a href="/">首页</a> / <a href="/article/list">文章列表</a> / <a class="active" href="#">阅读文章</a>
-		</nav>
-		<br />
-		<h1>这是文章标题</h1>
-		<br />
-		<time>
-			2013-01-01 12:00:00
-		</time>
-		<br />
-		<br />
-		<p>
-			<a class="tag">标签</a>
-			<a class="tag">标签</a>
-			<a class="tag">标签</a>
-		</p>
-		<nav>
-			<ul class="nav nav-tabs">
-				<li>
-					<a href="article.html">文 章</a>
-				</li>
-				<li class="active">
-					<a href="#">留 言
-					<div class="bubble">
-						333
-					</div></a>
-				</li>
-			</ul>
-		</nav>
-	</div>
-</section>
+
+{% include "common/article-header.html" %}
 
 <section class="main">
 	<div class="container">
 		<ul class="nav-feeds">
+			{% for feed in article.comment_set.all %}
 			<li>
-				<h4>Ray(站长)
-				<time>
-					2013-01-01 10:00
-				</time></h4>
-				<p>
-					我爱音乐，擅长唱歌，大学拿过不少奖，如果可以的话，希望能广交天下爱音乐的朋友，因为我也是一个外向合群的人，适合“群居”生
-					活 ^_^ 。我爱音乐，擅长唱歌，大学拿过不少奖，如果可以的话，希望能广交天下爱音乐的朋友，因为我也是一个外向合群的人，适合“群居”生
-					活 ^_^ 。<a href="#">[回复]</a>
-				</p>
+				<h4>{{ feed.user.username }} <time>{{ feed.createAt|date:"Y-m-d" }} {{ feed.createAt|time:"H:i:s" }}</time></h4>
+				<p>{{ feed.content }}</p>
 			</li>
-			<li>
-				<h4>金色小妖
-				<time>
-					2013-01-01 10:00
-				</time></h4>
-				<p>
-					我爱音乐，擅长唱歌，大学拿过不少奖，如果可以的话，希望能广交天下爱音乐的朋友，因为我也是一个外向合群的人，适合“群居”生
-					活 ^_^ 。希望能广交天下爱音乐的朋<a href="#">[回复]</a>
-				</p>
-			</li>
-			<li>
-				<h4>东方不败
-				<time>
-					2013-01-01 10:00
-				</time></h4>
-				<p>
-					我爱音乐，擅长唱歌，大学拿过不少奖，如果可以的话，希望能广交天下爱音乐的朋友，因为我也是一个外向合群的人，适合“群居”生
-					活 ^_^ 。长唱歌<a href="#">[回复]</a>
-				</p>
-				<ul class="nav-children">
-					<li>
-						<h5>RayZhang <strong>回复给</strong> 东方不败
-						<time>
-							2013-01-01 01:01
-						</time></h5>
-						<p>
-							：爱音乐，擅长唱歌，大学拿过不少奖，如果可以的话，希望能广交天下爱音乐的朋友，因为我也
-							爱音乐，擅长唱歌，大学拿过不少奖，如果可以的话，希望能广交天下爱音乐的朋友，因为我也<a href="#">[回复]</a>
-							<time>
-								2013-01-01 01:01
-							</time>
-						</p>
-					</li>
-					<li>
-						<h5>RayZhang <strong>回复给</strong> 东方不败</h5>
-						<p>
-							：爱音乐，擅长唱歌，大学拿过不少奖，如果可以的话，希望能广交天下爱音乐的朋友，因为我也<a href="#">[回复]</a>
-							<time>
-								2013-01-01 01:01
-							</time>
-						</p>
-					</li>
-					<li>
-						<h5>RayZhang <strong>回复给</strong> 东方不败</h5>
-						<p>
-							：爱音乐，擅长唱歌，大学拿过不少奖，如果可以的话，希望能广交天下爱音乐的朋友，因为我也
-							爱音乐，擅长唱歌，大学拿过不少奖，如果可以的话，希望能广交天下爱音乐的朋友，因为我也
-							爱音乐，擅长唱歌，大学拿过不少奖，如果可以的话，希望能广交天下爱音乐的朋友，因为我也<a href="#">[回复]</a>
-							<time>
-								2013-01-01 01:01
-							</time>
-						</p>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<h4>金色小妖
-				<time>
-					2013-01-01 10:00
-				</time></h4>
-				<p>
-					我爱音乐，擅长唱歌，大学拿过不少奖，如果可以的话，希望能广交天下爱音乐的朋友，因为我也是一个外向合群的人，适合“群居”生
-					活 ^_^ 。希望能广交天下爱音乐的朋<a href="#">[回复]</a>
-				</p>
-			</li>
-			<li>
-				<h4>金色小妖
-				<time>
-					2013-01-01 10:00
-				</time></h4>
-				<p>
-					我爱音乐，擅长唱歌，大学拿过不少奖，如果可以的话，希望能广交天下爱音乐的朋友，因为我也是一个外向合群的人，适合“群居”生
-					活 ^_^ 。希望能广交天下爱音乐的朋<a href="#">[回复]</a>
-				</p>
-			</li>
+			{% endfor %}
 		</ul>
-		<br />
-		{% include "tools/feed-form.html" %}
+		{% include "common/feed-form.html" %}
 	</div><!-- /container -->
 </section>
-{% include "tools/opt-panel.html" %}
+{% include "common/opt-panel.html" %}
 {% endblock %}
 

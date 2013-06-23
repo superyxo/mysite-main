@@ -42,7 +42,7 @@ function toTop(){
 function beautifyBannerHome(){
 	if( !Utils.isMobile() ) {
 		var screeW = screen.width;
-		$('.banner-home').css('background-size',screeW);
+		$('.banner').css('background-size',screeW);
 	}
 }
 
@@ -67,10 +67,27 @@ function fixTop(){
 	}
 }
 
+function bindJQValiEngin() {
+	var set = {
+		onFieldFailure : function(ui) {
+			ui && ui.removeClass('success').addClass('error');
+		},
+		onFieldSuccess : function(ui) {
+			ui && ui.removeClass('error').addClass('success');
+		},
+		showPrompts : false,
+	};
+	// 全局 ValidationEngine 设置覆盖
+	$.validationEngine.defaults = $.extend({}, $.validationEngine.defaults, set);
+	$('.j_vali_form').validationEngine();
+}
+
+
 $(document).ready(function(){
 	resetOptPanel(20);
 	beautifyBannerHome();
 	checkfixTop();
+	bindJQValiEngin();
 	window.prettyPrint && prettyPrint();
 	
 	$(window).resize(function(){

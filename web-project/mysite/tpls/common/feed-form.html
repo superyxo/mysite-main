@@ -1,0 +1,21 @@
+<br />
+<hr />
+<form id="formFeed" action="/article/feed/save/" method="post" class="j_vali_form">
+	<div class="row-fluid">
+		<input name="usrname" type="text" class="span4 validate[required]" placeholder="称呼" value="{{ request.COOKIES.usrname }}"/><input name="email" type="text" class="span4 validate[required,custom[email]]" placeholder="邮箱" value="{{ request.COOKIES.email }}"/><input name="memo" type="text" class="span4" placeholder="微博/QQ/个人网站（不会公开）"/>
+		<br />
+		<textarea style="margin: 10px 0 0 0;" name="content" id="" cols="30" class="span12 validate[required]" rows="10" placeholder="在这里留言"></textarea>
+		<br /><br />
+		<div class="pull-right">
+			<label for="mailMe" class="checkbox inline">
+				<input id="mailMe" type="checkbox" />
+				有回复邮件通知我&nbsp;&nbsp;</label>
+			<button class="btn btn-primary btn-large">发 送 留 言</button>
+		</div>
+		<input type="hidden" name="aId" value="{{article.id}}"/>
+		{% csrf_token %}
+	</div>
+</form>
+<br />
+<br />
+<br />

@@ -1,43 +1,12 @@
-{% extends "base.html" %}
+{% extends "common/base.html" %}
 
 {% block title %}读文{% endblock title %}
 
 {% block active_article %}active{% endblock %}
 
 {% block base_ctn %}
-<section class="banner banner-article">
-	<div class="container">
-		<nav class="breadcrumbs">
-			<a href="/">首页</a> / <a href="/article/list">文章列表</a> / <a class="active" href="#">阅读文章</a>
-		</nav>
-		<br />
-		<h1>{{ article.name }}</h1>
-		<br />
-		<time>
-			{{ article.createAt|date:"Y-m-d" }} {{ article.createAt|time:"H:i:s" }}
-		</time>
-		<br />
-		<br />
-		<p>
-			{% for tag in article.tags.all %}
-			<a class="tag">{{ tag.name }}</a>
-			{% endfor %}
-		</p>
-		<nav>
-			<ul class="nav nav-tabs">
-				<li class="active">
-					<a href="#">文 章</a>
-				</li>
-				<li>
-					<a href="article-feed.html">留 言
-					<div class="bubble">
-						333
-					</div></a>
-				</li>
-			</ul>
-		</nav>
-	</div>
-</section>
+
+{% include "common/article-header.html" %}
 
 <section class="main article-detail">
 	<div class="container">
@@ -45,9 +14,7 @@
 			<strong>摘要：</strong> {{ article.desc }}
 		</p>
 		{{ article.content|safe }}
-		<br />
-		{% include "tools/feed-form.html" %}
-
+		{% include "common/feed-form.html" %}
 	</div><!-- /container -->
 </section>
 
@@ -55,5 +22,5 @@
 	<a href="#" onclick="toTop();"><i class="ico ico-top"></i> </a>
 	<a href="#formFeed"><i class="ico ico-msg"></i> </a>
 </aside>
-		{% include "tools/opt-panel.html" %}
+		{% include "common/opt-panel.html" %}
 {% endblock %}

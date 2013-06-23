@@ -6448,7 +6448,7 @@ body > footer dd {
 .banner .nav-tabs li > a > .bubble {
   position: absolute;
   top: -15px;
-  right: -20px;
+  right: -10px;
   padding: 0 4px;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
@@ -6599,6 +6599,53 @@ body > footer dd {
   -moz-border-radius: 0 0 2px 2px;
   border-radius: 0 0 2px 2px;
   border: none;
+}
+/* line 108, C:\Users\ray\Desktop\projects\mysite-main\web-project\mysite\html-project\less\components.less */
+form textarea.error,
+form input[type="text"].error,
+form input[type="password"].error,
+form input[type="datetime"].error,
+form input[type="datetime-local"].error,
+form input[type="date"].error,
+form input[type="month"].error,
+form input[type="time"].error,
+form input[type="week"].error,
+form input[type="number"].error,
+form input[type="email"].error,
+form input[type="url"].error,
+form input[type="search"].error,
+form input[type="tel"].error,
+form input[type="color"].error,
+form .uneditable-input.error {
+  background-color: rgba(255, 0, 0, 0.1);
+  border: 1px solid #9d261d;
+  -webkit-transition: border linear .2s, box-shadow linear .2s;
+  -moz-transition: border linear .2s, box-shadow linear .2s;
+  -o-transition: border linear .2s, box-shadow linear .2s;
+  transition: border linear .2s, box-shadow linear .2s;
+}
+/* line 128, C:\Users\ray\Desktop\projects\mysite-main\web-project\mysite\html-project\less\components.less */
+form textarea.error:focus,
+form input[type="text"].error:focus,
+form input[type="password"].error:focus,
+form input[type="datetime"].error:focus,
+form input[type="datetime-local"].error:focus,
+form input[type="date"].error:focus,
+form input[type="month"].error:focus,
+form input[type="time"].error:focus,
+form input[type="week"].error:focus,
+form input[type="number"].error:focus,
+form input[type="email"].error:focus,
+form input[type="url"].error:focus,
+form input[type="search"].error:focus,
+form input[type="tel"].error:focus,
+form input[type="color"].error:focus,
+form .uneditable-input.error:focus {
+  background-color: #fafafa;
+  border: 1px solid #bababa;
+  outline: thin dotted \9;
+  /* IE6-9 */
+
 }
 /* line 1, C:\Users\ray\Desktop\projects\mysite-main\web-project\mysite\html-project\less\article.less */
 .article-detail {
