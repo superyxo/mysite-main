@@ -690,12 +690,12 @@ cite {
 }
 /* line 31, type.less */
 .muted {
-  color: #d4d4d4;
+  color: #afafaf;
 }
 /* line 32, type.less */
 a.muted:hover,
 a.muted:focus {
-  color: #bbbbbb;
+  color: #969696;
 }
 /* line 35, type.less */
 .text-warning {
@@ -768,7 +768,7 @@ h5 small,
 h6 small {
   font-weight: normal;
   line-height: 1;
-  color: #d4d4d4;
+  color: #afafaf;
 }
 /* line 73, type.less */
 h1,
@@ -820,7 +820,7 @@ h4 small {
 .page-header {
   padding-bottom: 9px;
   margin: 20px 0 30px;
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: 1px solid #d4d4d4;
 }
 /* line 105, type.less */
 ul,
@@ -912,14 +912,14 @@ dd {
 hr {
   margin: 20px 0;
   border: 0;
-  border-top: 1px solid #eeeeee;
+  border-top: 1px solid #d4d4d4;
   border-bottom: 1px solid #ffffff;
 }
 /* line 180, type.less */
 abbr[title],
 abbr[data-original-title] {
   cursor: help;
-  border-bottom: 1px dotted #d4d4d4;
+  border-bottom: 1px dotted #afafaf;
 }
 /* line 186, type.less */
 abbr.initialism {
@@ -930,7 +930,7 @@ abbr.initialism {
 blockquote {
   padding: 0 0 0 15px;
   margin: 0 0 20px;
-  border-left: 5px solid #eeeeee;
+  border-left: 5px solid #d4d4d4;
 }
 /* line 196, type.less */
 blockquote p {
@@ -943,7 +943,7 @@ blockquote p {
 blockquote small {
   display: block;
   line-height: 20px;
-  color: #d4d4d4;
+  color: #afafaf;
 }
 /* line 206, type.less */
 blockquote small:before {
@@ -954,7 +954,7 @@ blockquote.pull-right {
   float: right;
   padding-right: 15px;
   padding-left: 0;
-  border-right: 5px solid #eeeeee;
+  border-right: 5px solid #d4d4d4;
   border-left: 0;
 }
 /* line 218, type.less */
@@ -1064,7 +1064,7 @@ legend {
 /* line 33, forms.less */
 legend small {
   font-size: 15px;
-  color: #d4d4d4;
+  color: #afafaf;
 }
 /* line 40, forms.less */
 label,
@@ -1107,10 +1107,9 @@ input[type="tel"],
 input[type="color"],
 .uneditable-input {
   display: inline-block;
-  height: 50px;
+  height: 40px;
   padding: 4px 6px;
   margin-bottom: 10px;
-  font-size: 1.2em;
   line-height: 30px;
   font-family: "microsoft yahei", Helvetica, Arial;
   -webkit-border-radius: 3px;
@@ -1118,17 +1117,17 @@ input[type="color"],
   border-radius: 3px;
   vertical-align: middle;
 }
-/* line 94, forms.less */
+/* line 93, forms.less */
 input,
 textarea,
 .uneditable-input {
   width: 206px;
 }
-/* line 100, forms.less */
+/* line 99, forms.less */
 textarea {
   height: auto;
 }
-/* line 104, forms.less */
+/* line 103, forms.less */
 textarea,
 input[type="text"],
 input[type="password"],
@@ -1155,7 +1154,7 @@ input[type="color"],
   -o-transition: border linear .2s, box-shadow linear .2s;
   transition: border linear .2s, box-shadow linear .2s;
 }
-/* line 126, forms.less */
+/* line 125, forms.less */
 textarea:focus,
 input[type="text"]:focus,
 input[type="password"]:focus,
@@ -1178,7 +1177,7 @@ input[type="color"]:focus,
   /* IE6-9 */
 
 }
-/* line 134, forms.less */
+/* line 133, forms.less */
 input[type="radio"],
 input[type="checkbox"] {
   margin: 4px 0 0;
@@ -1190,7 +1189,7 @@ input[type="checkbox"] {
 
   line-height: normal;
 }
-/* line 143, forms.less */
+/* line 142, forms.less */
 input[type="file"],
 input[type="image"],
 input[type="submit"],
@@ -1200,7 +1199,7 @@ input[type="radio"],
 input[type="checkbox"] {
   width: auto;
 }
-/* line 154, forms.less */
+/* line 153, forms.less */
 select,
 input[type="file"] {
   height: 30px;
@@ -1211,18 +1210,18 @@ input[type="file"] {
 
   line-height: 30px;
 }
-/* line 162, forms.less */
+/* line 161, forms.less */
 select {
   width: 220px;
   border: 1px solid #bababa;
   background-color: #fafafa;
 }
-/* line 169, forms.less */
+/* line 168, forms.less */
 select[multiple],
 select[size] {
   height: auto;
 }
-/* line 175, forms.less */
+/* line 174, forms.less */
 select:focus,
 input[type="file"]:focus,
 input[type="radio"]:focus,
@@ -1231,10 +1230,10 @@ input[type="checkbox"]:focus {
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
-/* line 187, forms.less */
+/* line 186, forms.less */
 .uneditable-input,
 .uneditable-textarea {
-  color: #d4d4d4;
+  color: #afafaf;
   background-color: #f7f7f7;
   border-color: #bababa;
   -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.025);
@@ -1242,12 +1241,12 @@ input[type="checkbox"]:focus {
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.025);
   cursor: not-allowed;
 }
-/* line 197, forms.less */
+/* line 196, forms.less */
 .uneditable-input {
   overflow: hidden;
   white-space: nowrap;
 }
-/* line 203, forms.less */
+/* line 202, forms.less */
 .uneditable-textarea {
   width: auto;
   height: auto;
@@ -1255,36 +1254,36 @@ input[type="checkbox"]:focus {
 /* line 83, mixins.less */
 input:-moz-placeholder,
 textarea:-moz-placeholder {
-  color: #d4d4d4;
+  color: #afafaf;
 }
 /* line 86, mixins.less */
 input:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
-  color: #d4d4d4;
+  color: #afafaf;
 }
 /* line 89, mixins.less */
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
-  color: #d4d4d4;
+  color: #afafaf;
 }
-/* line 223, forms.less */
+/* line 222, forms.less */
 .radio,
 .checkbox {
   min-height: 20px;
   padding-left: 20px;
 }
-/* line 228, forms.less */
+/* line 227, forms.less */
 .radio input[type="radio"],
 .checkbox input[type="checkbox"] {
   float: left;
   margin-left: -20px;
 }
-/* line 235, forms.less */
+/* line 234, forms.less */
 .controls > .radio:first-child,
 .controls > .checkbox:first-child {
   padding-top: 5px;
 }
-/* line 242, forms.less */
+/* line 241, forms.less */
 .radio.inline,
 .checkbox.inline {
   display: inline-block;
@@ -1292,36 +1291,36 @@ textarea::-webkit-input-placeholder {
   margin-bottom: 0;
   vertical-align: middle;
 }
-/* line 249, forms.less */
+/* line 248, forms.less */
 .radio.inline + .radio.inline,
 .checkbox.inline + .checkbox.inline {
   margin-left: 10px;
 }
-/* line 260, forms.less */
+/* line 259, forms.less */
 .input-mini {
   width: 60px;
 }
-/* line 261, forms.less */
+/* line 260, forms.less */
 .input-small {
   width: 90px;
 }
-/* line 262, forms.less */
+/* line 261, forms.less */
 .input-medium {
   width: 150px;
 }
-/* line 263, forms.less */
+/* line 262, forms.less */
 .input-large {
   width: 210px;
 }
-/* line 264, forms.less */
+/* line 263, forms.less */
 .input-xlarge {
   width: 270px;
 }
-/* line 265, forms.less */
+/* line 264, forms.less */
 .input-xxlarge {
   width: 530px;
 }
-/* line 268, forms.less */
+/* line 267, forms.less */
 input[class*="span"],
 select[class*="span"],
 textarea[class*="span"],
@@ -1332,7 +1331,7 @@ textarea[class*="span"],
 .row-fluid .uneditable-input[class*="span"] {
   float: none;
 }
-/* line 281, forms.less */
+/* line 280, forms.less */
 .input-append input[class*="span"],
 .input-append .uneditable-input[class*="span"],
 .input-prepend input[class*="span"],
@@ -1427,7 +1426,7 @@ textarea.span1,
 .uneditable-input.span1 {
   width: 53px;
 }
-/* line 303, forms.less */
+/* line 302, forms.less */
 .controls-row {
   *zoom: 1;
 }
@@ -1442,17 +1441,17 @@ textarea.span1,
 .controls-row:after {
   clear: both;
 }
-/* line 308, forms.less */
+/* line 307, forms.less */
 .controls-row [class*="span"],
 .row-fluid .controls-row [class*="span"] {
   float: left;
 }
-/* line 314, forms.less */
+/* line 313, forms.less */
 .controls-row .checkbox[class*="span"],
 .controls-row .radio[class*="span"] {
   padding-top: 5px;
 }
-/* line 326, forms.less */
+/* line 325, forms.less */
 input[disabled],
 select[disabled],
 textarea[disabled],
@@ -1460,9 +1459,9 @@ input[readonly],
 select[readonly],
 textarea[readonly] {
   cursor: not-allowed;
-  background-color: #eeeeee;
+  background-color: #d4d4d4;
 }
-/* line 336, forms.less */
+/* line 335, forms.less */
 input[type="radio"][disabled],
 input[type="checkbox"][disabled],
 input[type="radio"][readonly],
@@ -1625,14 +1624,14 @@ input[type="checkbox"][readonly] {
   background-color: #d9edf7;
   border-color: #3a87ad;
 }
-/* line 368, forms.less */
+/* line 367, forms.less */
 input:focus:invalid,
 textarea:focus:invalid,
 select:focus:invalid {
   color: #b94a48;
   border-color: #ee5f5b;
 }
-/* line 373, forms.less */
+/* line 372, forms.less */
 input:focus:invalid:focus,
 textarea:focus:invalid:focus,
 select:focus:invalid:focus {
@@ -1641,7 +1640,7 @@ select:focus:invalid:focus {
   -moz-box-shadow: 0 0 6px #f8b9b7;
   box-shadow: 0 0 6px #f8b9b7;
 }
-/* line 385, forms.less */
+/* line 384, forms.less */
 .form-actions {
   padding: 19px 20px 20px;
   margin-top: 20px;
@@ -1661,17 +1660,17 @@ select:focus:invalid:focus {
 .form-actions:after {
   clear: both;
 }
-/* line 399, forms.less */
+/* line 398, forms.less */
 .help-block,
 .help-inline {
   color: #4b4b4b;
 }
-/* line 404, forms.less */
+/* line 403, forms.less */
 .help-block {
   display: block;
   margin-bottom: 10px;
 }
-/* line 409, forms.less */
+/* line 408, forms.less */
 .help-inline {
   display: inline-block;
   *display: inline;
@@ -1681,7 +1680,7 @@ select:focus:invalid:focus {
   vertical-align: middle;
   padding-left: 5px;
 }
-/* line 422, forms.less */
+/* line 421, forms.less */
 .input-append,
 .input-prepend {
   display: inline-block;
@@ -1690,7 +1689,7 @@ select:focus:invalid:focus {
   font-size: 0;
   white-space: nowrap;
 }
-/* line 431, forms.less */
+/* line 430, forms.less */
 .input-append input,
 .input-prepend input,
 .input-append select,
@@ -1703,7 +1702,7 @@ select:focus:invalid:focus {
 .input-prepend .popover {
   font-size: 14px;
 }
-/* line 439, forms.less */
+/* line 438, forms.less */
 .input-append input,
 .input-prepend input,
 .input-append select,
@@ -1718,7 +1717,7 @@ select:focus:invalid:focus {
   -moz-border-radius: 0 3px 3px 0;
   border-radius: 0 3px 3px 0;
 }
-/* line 448, forms.less */
+/* line 447, forms.less */
 .input-append input:focus,
 .input-prepend input:focus,
 .input-append select:focus,
@@ -1727,7 +1726,7 @@ select:focus:invalid:focus {
 .input-prepend .uneditable-input:focus {
   z-index: 2;
 }
-/* line 452, forms.less */
+/* line 451, forms.less */
 .input-append .add-on,
 .input-prepend .add-on {
   display: inline-block;
@@ -1740,10 +1739,10 @@ select:focus:invalid:focus {
   line-height: 20px;
   text-align: center;
   text-shadow: 0 1px 0 #ffffff;
-  background-color: #eeeeee;
+  background-color: #d4d4d4;
   border: 1px solid #ccc;
 }
-/* line 466, forms.less */
+/* line 465, forms.less */
 .input-append .add-on,
 .input-prepend .add-on,
 .input-append .btn,
@@ -1755,25 +1754,25 @@ select:focus:invalid:focus {
   -moz-border-radius: 0;
   border-radius: 0;
 }
-/* line 472, forms.less */
+/* line 471, forms.less */
 .input-append .active,
 .input-prepend .active {
   background-color: #a9dba9;
   border-color: #46a546;
 }
-/* line 479, forms.less */
+/* line 478, forms.less */
 .input-prepend .add-on,
 .input-prepend .btn {
   margin-right: -1px;
 }
-/* line 483, forms.less */
+/* line 482, forms.less */
 .input-prepend .add-on:first-child,
 .input-prepend .btn:first-child {
   -webkit-border-radius: 3px 0 0 3px;
   -moz-border-radius: 3px 0 0 3px;
   border-radius: 3px 0 0 3px;
 }
-/* line 491, forms.less */
+/* line 490, forms.less */
 .input-append input,
 .input-append select,
 .input-append .uneditable-input {
@@ -1781,7 +1780,7 @@ select:focus:invalid:focus {
   -moz-border-radius: 3px 0 0 3px;
   border-radius: 3px 0 0 3px;
 }
-/* line 495, forms.less */
+/* line 494, forms.less */
 .input-append input + .btn-group .btn:last-child,
 .input-append select + .btn-group .btn:last-child,
 .input-append .uneditable-input + .btn-group .btn:last-child {
@@ -1789,13 +1788,13 @@ select:focus:invalid:focus {
   -moz-border-radius: 0 3px 3px 0;
   border-radius: 0 3px 3px 0;
 }
-/* line 499, forms.less */
+/* line 498, forms.less */
 .input-append .add-on,
 .input-append .btn,
 .input-append .btn-group {
   margin-left: -1px;
 }
-/* line 504, forms.less */
+/* line 503, forms.less */
 .input-append .add-on:last-child,
 .input-append .btn:last-child,
 .input-append .btn-group:last-child > .dropdown-toggle {
@@ -1803,7 +1802,7 @@ select:focus:invalid:focus {
   -moz-border-radius: 0 3px 3px 0;
   border-radius: 0 3px 3px 0;
 }
-/* line 513, forms.less */
+/* line 512, forms.less */
 .input-prepend.input-append input,
 .input-prepend.input-append select,
 .input-prepend.input-append .uneditable-input {
@@ -1811,7 +1810,7 @@ select:focus:invalid:focus {
   -moz-border-radius: 0;
   border-radius: 0;
 }
-/* line 517, forms.less */
+/* line 516, forms.less */
 .input-prepend.input-append input + .btn-group .btn,
 .input-prepend.input-append select + .btn-group .btn,
 .input-prepend.input-append .uneditable-input + .btn-group .btn {
@@ -1819,7 +1818,7 @@ select:focus:invalid:focus {
   -moz-border-radius: 0 3px 3px 0;
   border-radius: 0 3px 3px 0;
 }
-/* line 521, forms.less */
+/* line 520, forms.less */
 .input-prepend.input-append .add-on:first-child,
 .input-prepend.input-append .btn:first-child {
   margin-right: -1px;
@@ -1827,7 +1826,7 @@ select:focus:invalid:focus {
   -moz-border-radius: 3px 0 0 3px;
   border-radius: 3px 0 0 3px;
 }
-/* line 526, forms.less */
+/* line 525, forms.less */
 .input-prepend.input-append .add-on:last-child,
 .input-prepend.input-append .btn:last-child {
   margin-left: -1px;
@@ -1835,11 +1834,11 @@ select:focus:invalid:focus {
   -moz-border-radius: 0 3px 3px 0;
   border-radius: 0 3px 3px 0;
 }
-/* line 531, forms.less */
+/* line 530, forms.less */
 .input-prepend.input-append .btn-group:first-child {
   margin-left: 0;
 }
-/* line 542, forms.less */
+/* line 541, forms.less */
 input.search-query {
   padding-right: 14px;
   padding-right: 4px \9;
@@ -1853,38 +1852,38 @@ input.search-query {
   border-radius: 15px;
 }
 /* Allow for input prepend/append in search forms */
-/* line 552, forms.less */
+/* line 551, forms.less */
 .form-search .input-append .search-query,
 .form-search .input-prepend .search-query {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
 }
-/* line 556, forms.less */
+/* line 555, forms.less */
 .form-search .input-append .search-query {
   -webkit-border-radius: 14px 0 0 14px;
   -moz-border-radius: 14px 0 0 14px;
   border-radius: 14px 0 0 14px;
 }
-/* line 559, forms.less */
+/* line 558, forms.less */
 .form-search .input-append .btn {
   -webkit-border-radius: 0 14px 14px 0;
   -moz-border-radius: 0 14px 14px 0;
   border-radius: 0 14px 14px 0;
 }
-/* line 562, forms.less */
+/* line 561, forms.less */
 .form-search .input-prepend .search-query {
   -webkit-border-radius: 0 14px 14px 0;
   -moz-border-radius: 0 14px 14px 0;
   border-radius: 0 14px 14px 0;
 }
-/* line 565, forms.less */
+/* line 564, forms.less */
 .form-search .input-prepend .btn {
   -webkit-border-radius: 14px 0 0 14px;
   -moz-border-radius: 14px 0 0 14px;
   border-radius: 14px 0 0 14px;
 }
-/* line 581, forms.less */
+/* line 580, forms.less */
 .form-search input,
 .form-inline input,
 .form-horizontal input,
@@ -1914,27 +1913,27 @@ input.search-query {
   margin-bottom: 0;
   vertical-align: middle;
 }
-/* line 594, forms.less */
+/* line 593, forms.less */
 .form-search .hide,
 .form-inline .hide,
 .form-horizontal .hide {
   display: none;
 }
-/* line 598, forms.less */
+/* line 597, forms.less */
 .form-search label,
 .form-inline label,
 .form-search .btn-group,
 .form-inline .btn-group {
   display: inline-block;
 }
-/* line 605, forms.less */
+/* line 604, forms.less */
 .form-search .input-append,
 .form-inline .input-append,
 .form-search .input-prepend,
 .form-inline .input-prepend {
   margin-bottom: 0;
 }
-/* line 612, forms.less */
+/* line 611, forms.less */
 .form-search .radio,
 .form-search .checkbox,
 .form-inline .radio,
@@ -1943,7 +1942,7 @@ input.search-query {
   margin-bottom: 0;
   vertical-align: middle;
 }
-/* line 621, forms.less */
+/* line 620, forms.less */
 .form-search .radio input[type="radio"],
 .form-search .checkbox input[type="checkbox"],
 .form-inline .radio input[type="radio"],
@@ -1952,16 +1951,16 @@ input.search-query {
   margin-right: 3px;
   margin-left: 0;
 }
-/* line 632, forms.less */
+/* line 631, forms.less */
 .control-group {
   margin-bottom: 10px;
 }
-/* line 637, forms.less */
+/* line 636, forms.less */
 legend + .control-group {
   margin-top: 20px;
   -webkit-margin-top-collapse: separate;
 }
-/* line 647, forms.less */
+/* line 646, forms.less */
 .form-horizontal .control-group {
   margin-bottom: 20px;
   *zoom: 1;
@@ -1977,29 +1976,29 @@ legend + .control-group {
 .form-horizontal .control-group:after {
   clear: both;
 }
-/* line 652, forms.less */
+/* line 651, forms.less */
 .form-horizontal .control-label {
   float: left;
   width: 160px;
   padding-top: 5px;
   text-align: right;
 }
-/* line 659, forms.less */
+/* line 658, forms.less */
 .form-horizontal .controls {
   *display: inline-block;
   *padding-left: 20px;
   margin-left: 180px;
   *margin-left: 0;
 }
-/* line 666, forms.less */
+/* line 665, forms.less */
 .form-horizontal .controls:first-child {
   *padding-left: 180px;
 }
-/* line 671, forms.less */
+/* line 670, forms.less */
 .form-horizontal .help-block {
   margin-bottom: 0;
 }
-/* line 681, forms.less */
+/* line 680, forms.less */
 .form-horizontal input + .help-block,
 .form-horizontal select + .help-block,
 .form-horizontal textarea + .help-block,
@@ -2008,7 +2007,7 @@ legend + .control-group {
 .form-horizontal .input-append + .help-block {
   margin-top: 10px;
 }
-/* line 686, forms.less */
+/* line 685, forms.less */
 .form-horizontal .form-actions {
   padding-left: 180px;
 }
@@ -3007,7 +3006,7 @@ table th[class*="span"],
 .dropdown-menu > .disabled > a,
 .dropdown-menu > .disabled > a:hover,
 .dropdown-menu > .disabled > a:focus {
-  color: #d4d4d4;
+  color: #afafaf;
 }
 /* line 117, dropdowns.less */
 .dropdown-menu > .disabled > a:hover,
@@ -3305,8 +3304,8 @@ button.close {
 }
 /* line 72, buttons.less */
 .btn-large {
-  padding: 1.3em 3em;
-  font-size: 22.400000000000002px;
+  padding: 0.8em 1.3em;
+  font-size: 19.599999999999998px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
@@ -3710,7 +3709,7 @@ input[type="submit"].btn.btn-mini {
 }
 /* line 55, button-groups.less */
 .btn-group > .btn-large {
-  font-size: 22.400000000000002px;
+  font-size: 19.599999999999998px;
 }
 /* line 60, button-groups.less */
 .btn-group > .btn:first-child {
@@ -3995,7 +3994,7 @@ input[type="submit"].btn.btn-mini {
 .nav > li > a:hover,
 .nav > li > a:focus {
   text-decoration: none;
-  background-color: #eeeeee;
+  background-color: #d4d4d4;
 }
 /* line 27, navs.less */
 .nav > li > a > img {
@@ -4012,7 +4011,7 @@ input[type="submit"].btn.btn-mini {
   font-size: 11px;
   font-weight: bold;
   line-height: 20px;
-  color: #d4d4d4;
+  color: #afafaf;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
   text-transform: uppercase;
 }
@@ -4113,13 +4112,13 @@ input[type="submit"].btn.btn-mini {
 /* line 127, navs.less */
 .nav-tabs > li > a:hover,
 .nav-tabs > li > a:focus {
-  border-color: #eeeeee #eeeeee #dddddd;
+  border-color: #d4d4d4 #d4d4d4 #dddddd;
 }
 /* line 133, navs.less */
 .nav-tabs > .active > a,
 .nav-tabs > .active > a:hover,
 .nav-tabs > .active > a:focus {
-  color: #afafaf;
+  color: #696969;
   background-color: #ffffff;
   border: 1px solid #ddd;
   border-bottom-color: transparent;
@@ -4229,8 +4228,8 @@ input[type="submit"].btn.btn-mini {
 }
 /* line 241, navs.less */
 .nav-tabs .active .dropdown-toggle .caret {
-  border-top-color: #afafaf;
-  border-bottom-color: #afafaf;
+  border-top-color: #696969;
+  border-bottom-color: #696969;
 }
 /* line 248, navs.less */
 .nav > .dropdown.active > a:hover,
@@ -4243,8 +4242,8 @@ input[type="submit"].btn.btn-mini {
 .nav > li.dropdown.open.active > a:hover,
 .nav > li.dropdown.open.active > a:focus {
   color: #ffffff;
-  background-color: #d4d4d4;
-  border-color: #d4d4d4;
+  background-color: #afafaf;
+  border-color: #afafaf;
 }
 /* line 263, navs.less */
 .nav li.dropdown.open .caret,
@@ -4259,7 +4258,7 @@ input[type="submit"].btn.btn-mini {
 /* line 273, navs.less */
 .tabs-stacked .open > a:hover,
 .tabs-stacked .open > a:focus {
-  border-color: #d4d4d4;
+  border-color: #afafaf;
 }
 /* line 288, navs.less */
 .tabbable {
@@ -4351,7 +4350,7 @@ input[type="submit"].btn.btn-mini {
 /* line 362, navs.less */
 .tabs-left > .nav-tabs > li > a:hover,
 .tabs-left > .nav-tabs > li > a:focus {
-  border-color: #eeeeee #dddddd #eeeeee #eeeeee;
+  border-color: #d4d4d4 #dddddd #d4d4d4 #d4d4d4;
 }
 /* line 366, navs.less */
 .tabs-left > .nav-tabs .active > a,
@@ -4376,7 +4375,7 @@ input[type="submit"].btn.btn-mini {
 /* line 383, navs.less */
 .tabs-right > .nav-tabs > li > a:hover,
 .tabs-right > .nav-tabs > li > a:focus {
-  border-color: #eeeeee #eeeeee #eeeeee #dddddd;
+  border-color: #d4d4d4 #d4d4d4 #d4d4d4 #dddddd;
 }
 /* line 387, navs.less */
 .tabs-right > .nav-tabs .active > a,
@@ -4387,7 +4386,7 @@ input[type="submit"].btn.btn-mini {
 }
 /* line 400, navs.less */
 .nav > .disabled > a {
-  color: #d4d4d4;
+  color: #afafaf;
 }
 /* line 404, navs.less */
 .nav > .disabled > a:hover,
@@ -4851,7 +4850,7 @@ input[type="submit"].btn.btn-mini {
 /* line 406, navbar.less */
 .navbar-inverse .brand,
 .navbar-inverse .nav > li > a {
-  color: #d4d4d4;
+  color: #afafaf;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
 /* line 410, navbar.less */
@@ -4863,11 +4862,11 @@ input[type="submit"].btn.btn-mini {
 }
 /* line 416, navbar.less */
 .navbar-inverse .brand {
-  color: #d4d4d4;
+  color: #afafaf;
 }
 /* line 420, navbar.less */
 .navbar-inverse .navbar-text {
-  color: #d4d4d4;
+  color: #afafaf;
 }
 /* line 424, navbar.less */
 .navbar-inverse .nav > li > a:focus,
@@ -4884,7 +4883,7 @@ input[type="submit"].btn.btn-mini {
 }
 /* line 438, navbar.less */
 .navbar-inverse .navbar-link {
-  color: #d4d4d4;
+  color: #afafaf;
 }
 /* line 440, navbar.less */
 .navbar-inverse .navbar-link:hover,
@@ -4911,8 +4910,8 @@ input[type="submit"].btn.btn-mini {
 }
 /* line 464, navbar.less */
 .navbar-inverse .nav li.dropdown > .dropdown-toggle .caret {
-  border-top-color: #d4d4d4;
-  border-bottom-color: #d4d4d4;
+  border-top-color: #afafaf;
+  border-bottom-color: #afafaf;
 }
 /* line 468, navbar.less */
 .navbar-inverse .nav li.dropdown.open > .dropdown-toggle .caret,
@@ -5020,7 +5019,7 @@ input[type="submit"].btn.btn-mini {
 }
 /* line 21, breadcrumbs.less */
 .breadcrumb > .active {
-  color: #d4d4d4;
+  color: #afafaf;
 }
 /* line 6, pagination.less */
 .pagination {
@@ -5067,7 +5066,7 @@ input[type="submit"].btn.btn-mini {
 /* line 40, pagination.less */
 .pagination ul > .active > a,
 .pagination ul > .active > span {
-  color: #d4d4d4;
+  color: #afafaf;
   cursor: default;
 }
 /* line 45, pagination.less */
@@ -5075,7 +5074,7 @@ input[type="submit"].btn.btn-mini {
 .pagination ul > .disabled > a,
 .pagination ul > .disabled > a:hover,
 .pagination ul > .disabled > a:focus {
-  color: #d4d4d4;
+  color: #afafaf;
   background-color: transparent;
   cursor: default;
 }
@@ -5111,8 +5110,8 @@ input[type="submit"].btn.btn-mini {
 /* line 80, pagination.less */
 .pagination-large ul > li > a,
 .pagination-large ul > li > span {
-  padding: 1.3em 3em;
-  font-size: 22.400000000000002px;
+  padding: 0.8em 1.3em;
+  font-size: 19.599999999999998px;
 }
 /* line 85, pagination.less */
 .pagination-large ul > li:first-child > a,
@@ -5224,7 +5223,7 @@ input[type="submit"].btn.btn-mini {
 .pager .disabled > a:hover,
 .pager .disabled > a:focus,
 .pager .disabled > span {
-  color: #d4d4d4;
+  color: #afafaf;
   background-color: #fff;
   cursor: default;
 }
@@ -5643,7 +5642,7 @@ a.thumbnail:focus {
 /* line 50, thumbnails.less */
 .thumbnail .caption {
   padding: 9px;
-  color: #afafaf;
+  color: #696969;
 }
 /* line 10, media.less */
 .media,
@@ -5694,7 +5693,7 @@ a.thumbnail:focus {
   vertical-align: baseline;
   white-space: nowrap;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #d4d4d4;
+  background-color: #afafaf;
 }
 /* line 21, labels-badges.less */
 .label {
@@ -5858,9 +5857,9 @@ a.badge:focus {
   background-color: #0090ff;
   border: 1px solid #10456d;
   color: #ffffff;
-  font-size: 1.1em;
+  font-size: 1em;
   font-style: italic;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
@@ -6174,7 +6173,7 @@ a.badge:focus {
   font-weight: 200;
   line-height: 30px;
   color: inherit;
-  background-color: #eeeeee;
+  background-color: #d4d4d4;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
@@ -6492,7 +6491,7 @@ body > footer dd {
   -o-transition: opacity 0.2s ease;
   transition: opacity 0.2s ease;
 }
-/* line 15, C:\Users\ray\Desktop\projects\mysite-main\web-project\mysite\html-project\less\components.less */
+/* line 14, C:\Users\ray\Desktop\projects\mysite-main\web-project\mysite\html-project\less\components.less */
 .main .nav-imgs li p {
   position: absolute;
   opacity: 0;
@@ -6512,47 +6511,39 @@ body > footer dd {
   font-weight: normal;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.9);
 }
-/* line 34, C:\Users\ray\Desktop\projects\mysite-main\web-project\mysite\html-project\less\components.less */
+/* line 32, C:\Users\ray\Desktop\projects\mysite-main\web-project\mysite\html-project\less\components.less */
 .main .nav-imgs img {
   width: 224px;
   height: 124px;
 }
-/* line 42, C:\Users\ray\Desktop\projects\mysite-main\web-project\mysite\html-project\less\components.less */
-.main h2,
+/* line 37, C:\Users\ray\Desktop\projects\mysite-main\web-project\mysite\html-project\less\components.less */
 .main h3 {
-  padding: 10px 0;
-  line-height: 2em;
+  padding-bottom: .3em;
+  border-bottom: 1px solid #999;
   color: #3e3e3e;
-  font-family: "microsoft yahei", Helvetica, Arial;
-  font-weight: normal;
+  font: normal normal 1.5em "microsoft yahei", Helvetica, Arial;
   text-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
 }
-/* line 50, C:\Users\ray\Desktop\projects\mysite-main\web-project\mysite\html-project\less\components.less */
-.main h3 {
-  padding-top: 0;
-  line-height: 1em;
-  border-bottom: 1px solid #999;
+/* line 44, C:\Users\ray\Desktop\projects\mysite-main\web-project\mysite\html-project\less\components.less */
+.main h3.noborder {
+  border-color: transparent;
 }
-/* line 57, C:\Users\ray\Desktop\projects\mysite-main\web-project\mysite\html-project\less\components.less */
+/* line 48, C:\Users\ray\Desktop\projects\mysite-main\web-project\mysite\html-project\less\components.less */
 .main .nav-tags a {
   margin-top: 1em;
   margin-left: 2px;
   padding-left: 5px;
   line-height: .9em;
+  border-left: 3px solid #afafaf;
+  color: #696969;
+}
+/* line 56, C:\Users\ray\Desktop\projects\mysite-main\web-project\mysite\html-project\less\components.less */
+.main .nav-tags a:hover {
+  background: none transparent;
   border-left: 3px solid #0090ff;
-  color: #4b4b4b;
+  color: #0090ff;
 }
 /* line 65, C:\Users\ray\Desktop\projects\mysite-main\web-project\mysite\html-project\less\components.less */
-.main .nav-tags a:hover {
-  background: transparent;
-  border-color: #ff8522;
-  color: #000;
-  -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
-  transition: all 0.2s ease;
-}
-/* line 74, C:\Users\ray\Desktop\projects\mysite-main\web-project\mysite\html-project\less\components.less */
 .tag {
   display: inline-block;
   padding: 2px 3px;
@@ -6564,18 +6555,18 @@ body > footer dd {
   font-size: 13px;
   color: #ffffff;
 }
-/* line 84, C:\Users\ray\Desktop\projects\mysite-main\web-project\mysite\html-project\less\components.less */
+/* line 75, C:\Users\ray\Desktop\projects\mysite-main\web-project\mysite\html-project\less\components.less */
 .tag:hover {
   text-decoration: none;
   background-color: #ff8522;
-  border-color: #bb5400;
+  border-color: #ee6b00;
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
   color: #ffffff;
 }
-/* line 93, C:\Users\ray\Desktop\projects\mysite-main\web-project\mysite\html-project\less\components.less */
+/* line 84, C:\Users\ray\Desktop\projects\mysite-main\web-project\mysite\html-project\less\components.less */
 .opt-panel {
   position: fixed;
   bottom: 20px;
@@ -6585,24 +6576,24 @@ body > footer dd {
   -o-transition: right 0.5s ease-in-out;
   transition: right 0.5s ease-in-out;
 }
-/* line 98, C:\Users\ray\Desktop\projects\mysite-main\web-project\mysite\html-project\less\components.less */
+/* line 89, C:\Users\ray\Desktop\projects\mysite-main\web-project\mysite\html-project\less\components.less */
 .opt-panel a {
   display: block;
   padding: 7px 3px 0 3px;
   background-color: #878787;
   border-bottom: 1px solid #999;
 }
-/* line 103, C:\Users\ray\Desktop\projects\mysite-main\web-project\mysite\html-project\less\components.less */
+/* line 94, C:\Users\ray\Desktop\projects\mysite-main\web-project\mysite\html-project\less\components.less */
 .opt-panel a:hover {
   background-color: #707070;
 }
-/* line 107, C:\Users\ray\Desktop\projects\mysite-main\web-project\mysite\html-project\less\components.less */
+/* line 98, C:\Users\ray\Desktop\projects\mysite-main\web-project\mysite\html-project\less\components.less */
 .opt-panel a:first-child {
   -webkit-border-radius: 2px 2px 0 0;
   -moz-border-radius: 2px 2px 0 0;
   border-radius: 2px 2px 0 0;
 }
-/* line 110, C:\Users\ray\Desktop\projects\mysite-main\web-project\mysite\html-project\less\components.less */
+/* line 101, C:\Users\ray\Desktop\projects\mysite-main\web-project\mysite\html-project\less\components.less */
 .opt-panel a:last-child {
   -webkit-border-radius: 0 0 2px 2px;
   -moz-border-radius: 0 0 2px 2px;
@@ -6665,32 +6656,30 @@ body > footer dd {
 }
 /* line 42, C:\Users\ray\Desktop\projects\mysite-main\web-project\mysite\html-project\less\article.less */
 .nav-articles li h4 > a:hover {
-  -webkit-transition: color 0.2s ease-in-out;
-  -moz-transition: color 0.2s ease-in-out;
-  -o-transition: color 0.2s ease-in-out;
-  transition: color 0.2s ease-in-out;
+  color: #0090ff;
+  text-decoration: none;
 }
-/* line 47, C:\Users\ray\Desktop\projects\mysite-main\web-project\mysite\html-project\less\article.less */
+/* line 48, C:\Users\ray\Desktop\projects\mysite-main\web-project\mysite\html-project\less\article.less */
 .nav-articles li .tag {
   margin: 5px;
 }
-/* line 50, C:\Users\ray\Desktop\projects\mysite-main\web-project\mysite\html-project\less\article.less */
+/* line 51, C:\Users\ray\Desktop\projects\mysite-main\web-project\mysite\html-project\less\article.less */
 .nav-articles li .tag-wrap {
   margin-left: -5px;
 }
-/* line 53, C:\Users\ray\Desktop\projects\mysite-main\web-project\mysite\html-project\less\article.less */
+/* line 54, C:\Users\ray\Desktop\projects\mysite-main\web-project\mysite\html-project\less\article.less */
 .nav-articles li p {
   margin-bottom: 0;
   line-height: 1.6em;
 }
-/* line 57, C:\Users\ray\Desktop\projects\mysite-main\web-project\mysite\html-project\less\article.less */
+/* line 58, C:\Users\ray\Desktop\projects\mysite-main\web-project\mysite\html-project\less\article.less */
 .nav-articles li time {
   position: absolute;
   right: 0;
   top: 20px;
   color: #afafaf;
 }
-/* line 64, C:\Users\ray\Desktop\projects\mysite-main\web-project\mysite\html-project\less\article.less */
+/* line 65, C:\Users\ray\Desktop\projects\mysite-main\web-project\mysite\html-project\less\article.less */
 .nav-articles > a {
   display: block;
 }
@@ -6709,7 +6698,7 @@ body > footer dd {
 .nav-feeds > li h4 {
   margin-bottom: 0;
   padding-bottom: 5px;
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: 1px solid #d4d4d4;
   color: #0060ff;
   font-size: 14px;
 }
@@ -6735,7 +6724,7 @@ body > footer dd {
   padding-left: 10px;
   border-left: 3px solid #d4d4d4;
   list-style: none;
-  color: #3e3e3e;
+  font-size: 13px;
 }
 /* line 37, C:\Users\ray\Desktop\projects\mysite-main\web-project\mysite\html-project\less\feed.less */
 .nav-feeds .nav-children li {
@@ -6745,20 +6734,23 @@ body > footer dd {
 .nav-feeds .nav-children h5,
 .nav-feeds .nav-children p {
   display: inline;
+  font-size: 1em;
+  font-weight: normal;
 }
-/* line 43, C:\Users\ray\Desktop\projects\mysite-main\web-project\mysite\html-project\less\feed.less */
+/* line 45, C:\Users\ray\Desktop\projects\mysite-main\web-project\mysite\html-project\less\feed.less */
 .nav-feeds .nav-children h5 {
   color: #0060ff;
 }
-/* line 45, C:\Users\ray\Desktop\projects\mysite-main\web-project\mysite\html-project\less\feed.less */
+/* line 47, C:\Users\ray\Desktop\projects\mysite-main\web-project\mysite\html-project\less\feed.less */
 .nav-feeds .nav-children h5 strong {
+  font-weight: normal;
   color: #ff8522;
 }
-/* line 50, C:\Users\ray\Desktop\projects\mysite-main\web-project\mysite\html-project\less\feed.less */
+/* line 53, C:\Users\ray\Desktop\projects\mysite-main\web-project\mysite\html-project\less\feed.less */
 .nav-feeds .nav-children time {
   margin-left: 5px;
+  display: inline-block;
   font-weight: normal;
-  font-size: 13px;
   color: #afafaf;
 }
 /* line 7, utilities.less */

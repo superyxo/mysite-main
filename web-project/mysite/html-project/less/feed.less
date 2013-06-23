@@ -13,7 +13,7 @@
       font-size: @baseFontSize;
       time{
         margin-left: 10px;
-        color: @gray;
+        color: @grayLight;
         font-weight: normal;
         font-size: 13px;
       }
@@ -31,27 +31,30 @@
   .nav-children{
     margin: 0 0 0 2px;
     padding-left: 10px;
-    border-left: 3px solid @grayLight;
+    border-left: 3px solid @grayLighter;
     list-style: none;
-    color: @grayDark;
+    font-size: 13px;
     li{
       margin-bottom: 10px;
     }
     h5, p{
       display: inline;
+      font-size: 1em;
+      font-weight: normal;
     }
     h5{
       color: @linkColor;
       strong{
+        font-weight: normal;
         color: @orange;
       }
       
     }
     time{
       margin-left: 5px;
+      display: inline-block;
       font-weight: normal;
-      font-size: 13px;
-      color: @gray;
+      color: @grayLight;
     }
   }
 }
