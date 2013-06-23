@@ -2,6 +2,7 @@ from django.contrib.admin.models import User
 from common.models import BaseModel
 from django.db import models
 import util
+import re
 from mysite.settings import STO_MEDIA
        
 class Tag( BaseModel ):
@@ -31,6 +32,13 @@ class Article( BaseModel ):
     
     def setCommentNum(self, num):
         self.commentNum = num
+    
+    def simpleContent(self):
+        c = self.content
+        if len(c) > 200:
+            c = self.content[0:200]
+        pattern = re.compile('<\/{0,}(div|br|pre|p|img)\s*((\S*=)".*"){0,}\/{0,}>')
+        return pattern.sub('', c)
         
     @classmethod
     def saveArticle(cls, articleId, title, summary, tags, content, imgs = None):
