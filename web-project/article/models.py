@@ -33,20 +33,33 @@ class Article( BaseModel ):
         self.commentNum = num
         
     @classmethod
-    def createArticle(cls, title, summary, tags, content, imgs = None):
+    def saveArticle(cls, articleId, title, summary, tags, content, imgs = None):
         stags = tags.strip().lstrip().rstrip().split(',')
         tags =  [Tag.objects.get_or_create(name = tag)[0] for tag in stags]
         
-        article = cls(name = title, desc = summary, content = content)
+        kwarg = {'name':title, 'desc':summary, 'content': content}
+        if articleId:
+            article = cls.objects.get(id = articleId)
+            article.name = title
+            article.tags = tags
+            article.desc = summary
+            article.content = content
+        else:
+            article = cls(**kwarg)
         
         if imgs is not None:
             for img in imgs:
                 names = cls.saveFile(img, None)
                 article.content = cls.changeContent(article.content.strip().lstrip().rstrip(), names)
         
+        if articleId:
+            pass
+        else:
+            article.save()
+            article.tags = tags
+        
         article.save()
-        article.tags = tags
-        article.save()
+        
         return article
     
     @classmethod

@@ -22,7 +22,6 @@ def showArticleList( request ):
     articles = Article.objects.query(page, request)
     map(lambda a:a.setCommentNum(a.comment_set.count()), articles)
     tags = Tag.objects.raw('SELECT at.tag_id AS id, t.name AS name, COUNT(at.tag_id) AS articleNum FROM ms_articles_tags AS at, ms_tags AS t WHERE at.tag_id = t.id GROUP BY at.tag_id')
-#     return render( request, 'article-list.html' ,locals() )
     return resp('article-list.html', locals())
 
 @require_GET
@@ -32,20 +31,27 @@ def showArticle( request, aid ):
     tags = article.tags.all()
     map(lambda t:t.setArticleNum(t.article_set.count()), tags)
     return render( request, "article.html" ,locals() )
+
 @login_required
 @require_POST
 def saveArticle( request ):
-    article = Article.createArticle( request.POST['title']
+    imgs = None
+    if request.FILES.has_key('imgs'):
+        imgs = request.FILES.getlist('imgs')
+    article = Article.saveArticle(request.POST.get('id', None)
+                              , request.POST['title']
                               , request.POST['desc']
                               , request.POST['tags']
                               , request.POST['content']
-                              , request.FILES.getlist('imgs') )
+                              , imgs )
     return redirect('/article/' + str( article.id ))
+
 @login_required
 @require_GET
 def removeArticle( request ):
     Article.objects.filter(**request.GET.dict()).delete()
     return redirect('/article/list')
+
 @login_required
 @require_GET
 def editArticle( request ):
@@ -65,6 +71,7 @@ def saveComment( request ):
     comment = Comment(content = request.POST['content'], user = u, article = a)
     comment.save()
     return redirect('/article/'+str(a.id)+'/#comment-'+str(comment.id))
+
 @require_GET
 def deleteComment( request ):
     comment = Comment.objects.get(id=request.GET['id'])
