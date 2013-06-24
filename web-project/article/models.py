@@ -8,8 +8,6 @@ from mysite.settings import STO_MEDIA
 class Tag( BaseModel ):
     class Meta:
         db_table = 'ms_tags'
-
-    bgcolor = models.CharField( max_length = 6, null = True )
     
     articleNum = 0
     
@@ -22,16 +20,16 @@ class Tag( BaseModel ):
 class Article( BaseModel ):
     class Meta:
         db_table = 'ms_articles'
-        ordering = ['-createAt']
+        ordering = ['-create_at']
     
     user = models.ForeignKey( User, null=True )    
     content = models.TextField( null=False )
     tags = models.ManyToManyField( Tag )
     
-    commentNum = 0
+    comment_num = 0
     
     def setCommentNum(self, num):
-        self.commentNum = num
+        self.comment_num = num
     
     def simpleContent(self):
         c = self.content
@@ -90,4 +88,8 @@ class Comment( BaseModel ):
     content = models.TextField( null=False )
     user = models.ForeignKey( User, null=True )
     article = models.ForeignKey( Article, null=True )
-    komment = models.OneToOneField( 'self', null=True )
+    komment = models.ForeignKey( 'self', null=True, related_name = 'comment_id' )
+    root_komment = models.ForeignKey( 'self', null=True, related_name = 'root_comment_id' )
+    
+    def getComments(self):
+        return Comment.objects.filter(root_komment_id = self.id)

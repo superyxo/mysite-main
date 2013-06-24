@@ -5,7 +5,7 @@ import sae
 
 def get_or_create_usr(email, usrname):
     back = User.objects.get_or_create( email=email
-                                          , username = usrname
+                                          , first_name = usrname
                                           , defaults = {'password':'123456'} )
     return back[0]
 

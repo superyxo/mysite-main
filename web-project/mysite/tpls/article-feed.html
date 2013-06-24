@@ -12,9 +12,18 @@
 	<div class="container">
 		<ul class="nav-feeds">
 			{% for feed in article.comment_set.all %}
-			<li>
-				<h4>{{ feed.user.username }} <time>{{ feed.createAt|date:"Y-m-d" }} {{ feed.createAt|time:"H:i:s" }}</time></h4>
-				<p>{{ feed.content }}</p>
+			<li id="comment-{{ feed.id }}">
+				<h4>{{ feed.user.first_name }} <time>{{ feed.create_at|date:"Y-m-d" }} {{ feed.create_at|time:"H:i:s" }}</time></h4>
+				<p>{{ feed.content }} <a href="#formFeed" class="j_feed_reply" data-usrname="{{ feed.user.first_name }}" data-comment-id="{{feed.id}}" data-root-id="{{feed.id}}">[回复]</a></p>
+				{% if feed.getComments %}
+				<ul>
+					{% for child in feed.getComments %}
+					<li>
+						{{ child.content }}
+					</li>
+					{% endfor %}
+				</ul>
+				{% endif %}
 			</li>
 			{% endfor %}
 		</ul>
@@ -24,3 +33,4 @@
 {% include "common/opt-panel.html" %}
 {% endblock %}
 
+{% block base_js %}<script src="/static/js/intact/feed.js"></script>{% endblock %}

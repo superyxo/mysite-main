@@ -24,13 +24,6 @@ $(document).ready(function() {
 	});
 	
 	var beforeSubmit = function(editor, form){
-		/* title
-		 tags
-		 summary
-		 article --
-			img -> ##filename## -> remove them
-			imgs : files -> loop: if file !exsit remove file
-		*/
 		var imgName, article, imgs = [];
 		$(editor).find('img').each(function(i, img){
 			imgName = $(img).attr('name');

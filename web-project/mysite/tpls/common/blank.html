@@ -30,11 +30,10 @@
         <script src="/static/js/plugins/jquery.validationEngine-zh_CN.js"></script>
         <script src="/static/js/plugins/jquery.validationEngine.js"></script>
         <script src="/static/js/plugins/prettify.js"></script>
-        
-        {% block js %} {% endblock js %}
-        
         <script src="/static/js/intact/plugins.js"></script>
         <script src="/static/js/intact/main.js"></script>
+        {% block js %} {% endblock js %}
+        
         <script>
         	Utils.hasFeature('lt-ie9') && document.write('<script src="/static/js/hack/html5.js"><\/script>');
         </script>

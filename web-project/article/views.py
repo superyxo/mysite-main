@@ -14,6 +14,7 @@ from common.request import Pageable
 from django.views.decorators.http import require_POST, require_GET
 import util
 from django.template.response import SimpleTemplateResponse as resp
+import re
 
 ## === Article ===
 @require_GET
@@ -23,7 +24,6 @@ def showArticleList( request ):
     map(lambda a:a.setCommentNum(a.comment_set.count()), articles)
     tags = Tag.objects.raw('SELECT at.tag_id AS id, t.name AS name, COUNT(at.tag_id) AS articleNum FROM ms_articles_tags AS at, ms_tags AS t WHERE at.tag_id = t.id GROUP BY at.tag_id')
     return resp('article-list.html', locals())
-
 
 @require_GET
 def showArticle( request, aid ):
@@ -50,7 +50,7 @@ def saveArticle( request ):
 @require_GET
 def removeArticle( request ):
     Article.objects.filter(**request.GET.dict()).delete()
-    return redirect('/article/list')
+    return redirect('/article/query')
 
 @login_required
 @require_GET
@@ -73,15 +73,38 @@ def showFeeds( request ):
 def saveComment( request ):
     email = request.POST['email']
     usrname = request.POST['usrname']
-#     memo = request.POST['memo']
-    u = util.get_or_create_usr(email, usrname)
-    a = Article.objects.get(id = request.POST['aId'])
-    comment = Comment(content = request.POST['content'], user = u, article = a)
+    content = request.POST['content']
+    article = Article.objects.get(id = request.POST['aId'])
+    
+    
+    kwarg = {'user' : util.get_or_create_usr(email, usrname),'content' : content}
+    
+    desc = request.POST.get('memo', None)
+    if desc : kwarg['desc'] = desc
+    
+    rootId = request.POST.get('rootId', None)
+    if rootId : kwarg['root_komment'] = Comment.objects.get(id = rootId)
+    
+    kommentId = request.POST.get('cId', None)
+    if content.strip().count('#-') is 1 and kommentId:
+        pattern = re.compile('(#-).*(-#\s*)')
+        content = pattern.sub('', content)
+        komment = Comment.objects.get(id = kommentId)
+        
+        kwarg['content'] = content
+        kwarg['komment'] = komment
+                     
+    else:
+        kwarg['article'] = article
+        
+    comment = Comment(**kwarg)
     comment.save()
-    resp = HttpResponseRedirect('/article/feeds?aId='+str(a.id)+'#comment-'+str(comment.id))
+    
+    resp = HttpResponseRedirect('/article/feeds?aId='+str(article.id)+'#comment-'+str(comment.id))
     if not request.COOKIES.has_key('email') and not request.COOKIES.has_key('usrname'):
         resp.set_cookie('email', value = email, max_age = 31536000, httponly = True)
         resp.set_cookie('usrname', value = usrname, max_age = 31536000, httponly = True)
+    
     return resp
 
 @require_GET
