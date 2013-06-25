@@ -11,7 +11,7 @@
 			<div class="face">&nbsp;</div>
 			<br />
 			<hgroup>
-				<h1>专注企业级WEB技术及用户体验</h1>
+				<h1>专注企业级WEB技术与用户体验</h1>
 				<hr />
 				<h4>Linux, Spring, django, eclipse, github, jQuery, Bootstrap</h4>
 			</hgroup>
@@ -23,22 +23,47 @@
 	<div class="container">
 		<br />
 		<div class="row">
-			<div class="span8">
-				<h3 class="noborder">我的动态</h3>
-				<ul class="nav nav-imgs">
-					{% for img in imgs %}
-					{% if img.id %}
+			<div class="span7">
+				<h3 class="noborder">我的动态 <small>以下是假数据</small></h3>
+				<ul class="nav-trends">
 					<li>
-						<a href="#"> <img class="img-polaroid" src="{{img.path}}" alt="" />
-						<p>
-							{{ img.desc }}
-						</p> </a>
+						<div class="img-wrap" style="background-image:url(/static/img/test/jquery_applications.jpg)"></div>
+						<time>
+							6月9日22点20分
+						</time>
+						，我创建了一篇文章 <strong><a href="#">HibernateEvent转SprinApplicationEvent</a></strong>。 <div class="cb"></div>
+						<br />
+						<br />
+						<div class="memo">
+							它属于 <a href="#">html5</a>，<a href="#">css3</a>，<a href="#">前端开发</a> 之类的
+						</div>
 					</li>
-					{% endif %}
-					{% endfor %}
+					<li>
+						<time>6月9日22点20分</time>，<strong>东方不败</strong> 回复了我的文章 <strong><a href="#">Hibernate Event 转 Spring Application Event 实现系统监控</a></strong>。 
+						<div class="cb"></div>
+					</li>
+					<li>
+						<time>6月9日22点20分</time>，<strong>David</strong> 回复了我的文章 <strong><a href="#">HibernateEvent转SprinApplicationEvent实现审计日志</a></strong>。 <div class="cb"></div>
+						<br />
+						<br />
+						<div class="memo">
+							备注信息，可有可无
+						</div>
+					</li>
+					<li>
+						<div class="img-wrap" style="background-image:url(/static/img/test/HTML5_sticker.png)"></div>
+						<time>
+							6月9日22点20分
+						</time>
+						，<strong>spino</strong> 回复了我的文章 <strong><a href="#">HibernateEvent转SprinApplicationEvent实现审计日志</a></strong>。 <div class="cb"></div>
+					</li>
 				</ul>
+				<br />
+				<br />
+				<br />
+
 			</div>
-			<div class="span4">
+			<div class="span4 offset1">
 				<h3 class="noborder">技术领域</h3>
 				<ul class="nav">
 					<li>

@@ -34,6 +34,37 @@
       height: 124px;
     }
   }
+  
+  .nav-trends{
+    color: @grayDark;
+    time{
+      display: inline-block;
+    }
+    li{
+      padding-bottom: .8em;
+      margin-bottom: .8em;
+      border-bottom: 1px solid #eeebe7;
+      position: relative;
+      .img-wrap{
+        float: right;
+        display: block;
+        height: 90px;
+        width: 160px;
+        background: @gray none center center no-repeat;
+        .background-size(160px);
+        margin-left: 20px;
+        clear: both;
+      }
+      .memo{
+        position: absolute;
+        left: 2px;
+        bottom: 6px;
+        color: @gray;
+        font-size: @baseFontSize - 1;
+      }
+    }
+  }
+  
   h3{
     padding-bottom: .3em;
     border-bottom: 1px solid #999;
@@ -67,7 +98,7 @@
   padding: 2px 3px;
   margin: 0 5px;
   cursor: pointer;
-  background-color: @navbarBackground;
+  background-color: @navbarBackgroundHighlight;
   border: 1px solid #137dd6;
   line-height: 1em;
   font-size: 13px;
@@ -131,4 +162,9 @@ form{
       outline: thin dotted \9; /* IE6-9 */
     }
   }
+}
+
+.cb{
+  clear: both;
+  height: 0;
 }
