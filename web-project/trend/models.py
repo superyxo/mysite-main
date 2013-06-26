@@ -1,3 +1,9 @@
+'''
+Created on 2013-6-26
+
+@author: zhangyang
+'''
+
 import common
 from django.db import models
 

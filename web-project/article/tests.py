@@ -1,4 +1,9 @@
 #coding=utf-8
+'''
+Created on 2013-6-26
+
+@author: zhangyang
+'''
 
 from django.test import TestCase
 import article

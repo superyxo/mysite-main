@@ -1,3 +1,9 @@
+'''
+Created on 2013-6-26
+
+@author: zhangyang
+'''
+
 from django.conf.urls import patterns, url
 
 urlpatterns = patterns('',

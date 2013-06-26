@@ -1,3 +1,9 @@
+'''
+Created on 2013-6-26
+
+@author: zhangyang
+'''
+
 from django.contrib.admin.models import User
 from common.models import BaseModel
 from django.db import models

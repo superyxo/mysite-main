@@ -1,3 +1,9 @@
+'''
+Created on 2013-6-26
+
+@author: zhangyang
+'''
+
 # Create your views here.
 from image.models import Image
 from common.request import Pageable
