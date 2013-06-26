@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50045
 File Encoding         : 65001
 
-Date: 2013-06-26 13:51:55
+Date: 2013-06-26 16:36:15
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -24,7 +24,7 @@ CREATE TABLE `auth_group` (
   `name` varchar(80) NOT NULL,
   PRIMARY KEY  (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=gbk;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of auth_group
@@ -44,7 +44,7 @@ CREATE TABLE `auth_group_permissions` (
   KEY `auth_group_permissions_1e014c8f` (`permission_id`),
   CONSTRAINT `group_id_refs_id_3cea63fe` FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`),
   CONSTRAINT `permission_id_refs_id_5886d21f` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=gbk;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of auth_group_permissions
@@ -63,7 +63,7 @@ CREATE TABLE `auth_permission` (
   UNIQUE KEY `content_type_id` (`content_type_id`,`codename`),
   KEY `auth_permission_1bb8f392` (`content_type_id`),
   CONSTRAINT `content_type_id_refs_id_728de91f` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=gbk;
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of auth_permission
@@ -119,12 +119,12 @@ CREATE TABLE `auth_user` (
   `last_login` datetime NOT NULL,
   `date_joined` datetime NOT NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=gbk;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of auth_user
 -- ----------------------------
-INSERT INTO `auth_user` VALUES ('1', 'ray', '', '', 'rayzy1991@163.com', 'pbkdf2_sha256$10000$nr2JDmoRhQgh$TBm9g6YJV80kQEztNXivkaKyvzrWSf7oy1ItQQ3g7dY=', '1', '1', '1', '2013-06-26 05:51:28', '2013-06-26 05:51:28');
+INSERT INTO `auth_user` VALUES ('1', 'ray', '', '', 'rayzy1991@gmail.com', 'pbkdf2_sha256$10000$s3GuzeIQUGCT$8ZXNeTwsSR6patXHOv8wpOp9suT31Z1ZnYb613f70pA=', '1', '1', '1', '2013-06-26 08:34:27', '2013-06-26 08:34:27');
 
 -- ----------------------------
 -- Table structure for `auth_user_groups`
@@ -140,7 +140,7 @@ CREATE TABLE `auth_user_groups` (
   KEY `auth_user_groups_425ae3c4` (`group_id`),
   CONSTRAINT `group_id_refs_id_f116770` FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`),
   CONSTRAINT `user_id_refs_id_7ceef80f` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=gbk;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of auth_user_groups
@@ -160,7 +160,7 @@ CREATE TABLE `auth_user_user_permissions` (
   KEY `auth_user_user_permissions_1e014c8f` (`permission_id`),
   CONSTRAINT `permission_id_refs_id_67e79cb` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`),
   CONSTRAINT `user_id_refs_id_dfbab7d` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=gbk;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of auth_user_user_permissions
@@ -184,7 +184,7 @@ CREATE TABLE `django_admin_log` (
   KEY `django_admin_log_1bb8f392` (`content_type_id`),
   CONSTRAINT `content_type_id_refs_id_288599e6` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`),
   CONSTRAINT `user_id_refs_id_c8665aa` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=gbk;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of django_admin_log
@@ -201,7 +201,7 @@ CREATE TABLE `django_content_type` (
   `model` varchar(100) NOT NULL,
   PRIMARY KEY  (`id`),
   UNIQUE KEY `app_label` (`app_label`,`model`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=gbk;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of django_content_type
@@ -228,7 +228,7 @@ CREATE TABLE `django_session` (
   `expire_date` datetime NOT NULL,
   PRIMARY KEY  (`session_key`),
   KEY `django_session_3da3d3d8` (`expire_date`)
-) ENGINE=InnoDB DEFAULT CHARSET=gbk;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of django_session
@@ -250,11 +250,12 @@ CREATE TABLE `ms_articles` (
   PRIMARY KEY  (`id`),
   KEY `ms_articles_403f60f` (`user_id`),
   CONSTRAINT `user_id_refs_id_2986dbd1` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=gbk;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ms_articles
 -- ----------------------------
+INSERT INTO `ms_articles` VALUES ('1', '中文测试abc', '测试test', '2013-06-26 08:35:27', '2013-06-26 08:35:27', '1', null, '测试<p><pre class=\"prettyprint linenums lang-js\">$(document).ready(function(){\r\n	//1. feed submit default is -&gt; article\r\n	//2. feed someone\r\n	//		feed someone must has some special operation hide 一个 kommentId 标签\r\n	//		click [回复] -&gt; textarea -&gt; #回复给xxxx# 如果  #存在# 并且kommentId存在，那么该条评论就是回复给某人的\r\n	//		否则就是默认提交给该条文章\r\n	\r\n	//		我需要做的就是，点击 [回复] 获取 commentId 放入到hide标签，然后添加 #回复给xxxx#就ok了 \r\n	$(document).on(\'click\', \'.j_feed_reply\', function(){\r\n		var cId = $(this).attr(\'data-comment-id\')\r\n			, uName = $(this).attr(\'data-usrname\')\r\n			, sWill = \'#-回复给\'+ uName + \'-# \'\r\n			, rootId = $(this).attr(\'data-root-id\');\r\n			\r\n		\r\n		$(\'input[name=cId]\').val(cId);\r\n		$(\'input[name=rootId]\').val(rootId);\r\n		$(\'textarea[name=content]\').focus().val(sWill);\r\n		return true;\r\n	});\r\n})</pre></p>');
 
 -- ----------------------------
 -- Table structure for `ms_articles_imgs`
@@ -270,7 +271,7 @@ CREATE TABLE `ms_articles_imgs` (
   KEY `ms_articles_imgs_6682136` (`image_id`),
   CONSTRAINT `article_id_refs_id_6e69f723` FOREIGN KEY (`article_id`) REFERENCES `ms_articles` (`id`),
   CONSTRAINT `image_id_refs_id_5440f64a` FOREIGN KEY (`image_id`) REFERENCES `ms_images` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=gbk;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ms_articles_imgs
@@ -290,11 +291,13 @@ CREATE TABLE `ms_articles_tags` (
   KEY `ms_articles_tags_3747b463` (`tag_id`),
   CONSTRAINT `article_id_refs_id_43331332` FOREIGN KEY (`article_id`) REFERENCES `ms_articles` (`id`),
   CONSTRAINT `tag_id_refs_id_198faa48` FOREIGN KEY (`tag_id`) REFERENCES `ms_tags` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=gbk;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ms_articles_tags
 -- ----------------------------
+INSERT INTO `ms_articles_tags` VALUES ('1', '1', '1');
+INSERT INTO `ms_articles_tags` VALUES ('2', '1', '2');
 
 -- ----------------------------
 -- Table structure for `ms_comments`
@@ -321,7 +324,7 @@ CREATE TABLE `ms_comments` (
   CONSTRAINT `komment_id_refs_id_6d42e7c9` FOREIGN KEY (`komment_id`) REFERENCES `ms_comments` (`id`),
   CONSTRAINT `root_komment_id_refs_id_6d42e7c9` FOREIGN KEY (`root_komment_id`) REFERENCES `ms_comments` (`id`),
   CONSTRAINT `user_id_refs_id_1de7bc2a` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=gbk;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ms_comments
@@ -340,7 +343,7 @@ CREATE TABLE `ms_images` (
   `enabled` tinyint(1) NOT NULL,
   `path` varchar(200) NOT NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=gbk;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ms_images
@@ -358,11 +361,13 @@ CREATE TABLE `ms_tags` (
   `last_at` datetime NOT NULL,
   `enabled` tinyint(1) NOT NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=gbk;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ms_tags
 -- ----------------------------
+INSERT INTO `ms_tags` VALUES ('1', '测试', null, '2013-06-26 08:35:27', '2013-06-26 08:35:27', '1');
+INSERT INTO `ms_tags` VALUES ('2', 'test', null, '2013-06-26 08:35:27', '2013-06-26 08:35:27', '1');
 
 -- ----------------------------
 -- Table structure for `ms_trends`
@@ -378,8 +383,9 @@ CREATE TABLE `ms_trends` (
   `path` varchar(200) default NULL,
   `content` longtext,
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=gbk;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ms_trends
 -- ----------------------------
+INSERT INTO `ms_trends` VALUES ('1', 'article created', '它属于  <a href=\"/article/query?tags__name=测试\">测试</a>， <a href=\"/article/query?tags__name=test\">test</a> 之类的。', '2013-06-26 08:35:27', '2013-06-26 08:35:27', '1', null, '<strong>我</strong> 创建了一篇文章 <a href=\"/article/1\">中文测试abc</a>。');
