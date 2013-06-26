@@ -4,14 +4,15 @@ Created on 2013-6-26
 @author: zhangyang
 '''
 
-import common
+from common.models import BaseModel
 from django.db import models
 
 
-class Trend(common.models.BaseModel):
+class Trend(BaseModel):
     class Meta:
         db_table = 'ms_trends'
         ordering = ['-create_at']
     
-    path = models.URLField( null = True )
-    target = models.URLField( null = True )
+    path = models.URLField( null = True )  # img url
+    target = models.URLField( null = True ) # link to certain page
+    content = models.TextField( null = True, default = None ) # content

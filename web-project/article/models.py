@@ -1,3 +1,4 @@
+#coding=utf-8
 '''
 Created on 2013-6-26
 
@@ -10,7 +11,9 @@ from django.db import models
 import util
 import re
 from mysite.settings import STO_MEDIA
-       
+from django.dispatch.dispatcher import receiver
+from django.db.models.signals import post_save
+
 class Tag( BaseModel ):
     class Meta:
         db_table = 'ms_tags'
@@ -99,3 +102,19 @@ class Comment( BaseModel ):
     
     def getComments(self):
         return Comment.objects.filter(root_komment_id = self.id)
+
+#========== Signal Definition ==========
+from trend.models import Trend
+
+@receiver(post_save, sender = Article)
+def post_save_article(sender, **kwargs):
+    if kwargs['created']:
+        article = kwargs['instance']
+        Trend.objects.create(name = 'article created'
+                             , content = '我创建了一篇文章 ' + article.name + '。')
+
+@receiver(post_save, sender = Comment)
+def post_save_comment(sender, **kwargs):
+    if kwargs['created']:
+        print 'comment created.'
+    print 'comment created.'
