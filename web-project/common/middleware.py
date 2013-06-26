@@ -9,7 +9,6 @@ from django.template import loader
 from django.http import HttpResponse
 class RequestContextMiddleware(object):
     def process_template_response(self, request, response):
-        print response.context_data
         ctx = RequestContext(request, response.context_data)
         return TemplateResponse(request, response.template_name, ctx)
 
