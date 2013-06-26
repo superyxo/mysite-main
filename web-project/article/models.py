@@ -48,7 +48,6 @@ class Article( BaseModel ):
     
     def simpleContent(self):
         pattern = re.compile('<\/{0,}(div|br|pre|p|img)\s*((\S*=)".*"){0,}\s*\/{0,}>')
-        print pattern.sub('', self.content)
         return pattern.sub('', self.content)[0:200]
     
     @classmethod
