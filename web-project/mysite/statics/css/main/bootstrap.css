@@ -4676,11 +4676,14 @@ input[type="submit"].btn.btn-mini {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(255, 255, 255, 0.1);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(255, 255, 255, 0.1);
   cursor: default;
   color: #ffffff;
   text-decoration: none;
 }
-/* line 281, navbar.less */
+/* line 282, navbar.less */
 .navbar .btn-navbar {
   display: none;
   float: right;
@@ -4723,7 +4726,7 @@ input[type="submit"].btn.btn-mini {
 .navbar .btn-navbar.active {
   background-color: #034e88 \9;
 }
-/* line 290, navbar.less */
+/* line 291, navbar.less */
 .navbar .btn-navbar .icon-bar {
   display: block;
   width: 18px;
@@ -4736,11 +4739,11 @@ input[type="submit"].btn.btn-mini {
   -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
 }
-/* line 298, navbar.less */
+/* line 299, navbar.less */
 .btn-navbar .icon-bar + .icon-bar {
   margin-top: 3px;
 }
-/* line 309, navbar.less */
+/* line 310, navbar.less */
 .navbar .nav > li > .dropdown-menu:before {
   content: '';
   display: inline-block;
@@ -4752,7 +4755,7 @@ input[type="submit"].btn.btn-mini {
   top: -7px;
   left: 9px;
 }
-/* line 320, navbar.less */
+/* line 321, navbar.less */
 .navbar .nav > li > .dropdown-menu:after {
   content: '';
   display: inline-block;
@@ -4763,7 +4766,7 @@ input[type="submit"].btn.btn-mini {
   top: -6px;
   left: 10px;
 }
-/* line 333, navbar.less */
+/* line 334, navbar.less */
 .navbar-fixed-bottom .nav > li > .dropdown-menu:before {
   border-top: 7px solid #ccc;
   border-top-color: rgba(0, 0, 0, 0.2);
@@ -4771,57 +4774,57 @@ input[type="submit"].btn.btn-mini {
   bottom: -7px;
   top: auto;
 }
-/* line 340, navbar.less */
+/* line 341, navbar.less */
 .navbar-fixed-bottom .nav > li > .dropdown-menu:after {
   border-top: 6px solid #ffffff;
   border-bottom: 0;
   bottom: -6px;
   top: auto;
 }
-/* line 349, navbar.less */
+/* line 350, navbar.less */
 .navbar .nav li.dropdown > a:hover .caret,
 .navbar .nav li.dropdown > a:focus .caret {
   border-top-color: #ffffff;
   border-bottom-color: #ffffff;
 }
-/* line 356, navbar.less */
+/* line 357, navbar.less */
 .navbar .nav li.dropdown.open > .dropdown-toggle,
 .navbar .nav li.dropdown.active > .dropdown-toggle,
 .navbar .nav li.dropdown.open.active > .dropdown-toggle {
   background-color: #4693e7;
   color: #ffffff;
 }
-/* line 362, navbar.less */
+/* line 363, navbar.less */
 .navbar .nav li.dropdown > .dropdown-toggle .caret {
   border-top-color: #ffffff;
   border-bottom-color: #ffffff;
 }
-/* line 366, navbar.less */
+/* line 367, navbar.less */
 .navbar .nav li.dropdown.open > .dropdown-toggle .caret,
 .navbar .nav li.dropdown.active > .dropdown-toggle .caret,
 .navbar .nav li.dropdown.open.active > .dropdown-toggle .caret {
   border-top-color: #ffffff;
   border-bottom-color: #ffffff;
 }
-/* line 374, navbar.less */
+/* line 375, navbar.less */
 .navbar .pull-right > li > .dropdown-menu,
 .navbar .nav > li > .dropdown-menu.pull-right {
   left: auto;
   right: 0;
 }
-/* line 378, navbar.less */
+/* line 379, navbar.less */
 .navbar .pull-right > li > .dropdown-menu:before,
 .navbar .nav > li > .dropdown-menu.pull-right:before {
   left: auto;
   right: 12px;
 }
-/* line 382, navbar.less */
+/* line 383, navbar.less */
 .navbar .pull-right > li > .dropdown-menu:after,
 .navbar .nav > li > .dropdown-menu.pull-right:after {
   left: auto;
   right: 13px;
 }
-/* line 386, navbar.less */
+/* line 387, navbar.less */
 .navbar .pull-right > li > .dropdown-menu .dropdown-menu,
 .navbar .nav > li > .dropdown-menu.pull-right .dropdown-menu {
   left: auto;
@@ -4832,7 +4835,7 @@ input[type="submit"].btn.btn-mini {
   -moz-border-radius: 6px 0 6px 6px;
   border-radius: 6px 0 6px 6px;
 }
-/* line 401, navbar.less */
+/* line 402, navbar.less */
 .navbar-inverse .navbar-inner {
   background-color: #1b1b1b;
   background-image: -moz-linear-gradient(top, #222222, #111111);
@@ -4844,80 +4847,80 @@ input[type="submit"].btn.btn-mini {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', endColorstr='#ff111111', GradientType=0);
   border-color: #252525;
 }
-/* line 406, navbar.less */
+/* line 407, navbar.less */
 .navbar-inverse .brand,
 .navbar-inverse .nav > li > a {
   color: #afafaf;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
-/* line 410, navbar.less */
+/* line 411, navbar.less */
 .navbar-inverse .brand:hover,
 .navbar-inverse .nav > li > a:hover,
 .navbar-inverse .brand:focus,
 .navbar-inverse .nav > li > a:focus {
   color: #ffffff;
 }
-/* line 416, navbar.less */
+/* line 417, navbar.less */
 .navbar-inverse .brand {
   color: #afafaf;
 }
-/* line 420, navbar.less */
+/* line 421, navbar.less */
 .navbar-inverse .navbar-text {
   color: #afafaf;
 }
-/* line 424, navbar.less */
+/* line 425, navbar.less */
 .navbar-inverse .nav > li > a:focus,
 .navbar-inverse .nav > li > a:hover {
   background-color: transparent;
   color: #ffffff;
 }
-/* line 430, navbar.less */
+/* line 431, navbar.less */
 .navbar-inverse .nav .active > a,
 .navbar-inverse .nav .active > a:hover,
 .navbar-inverse .nav .active > a:focus {
   color: #ffffff;
   background-color: #111111;
 }
-/* line 438, navbar.less */
+/* line 439, navbar.less */
 .navbar-inverse .navbar-link {
   color: #afafaf;
 }
-/* line 440, navbar.less */
+/* line 441, navbar.less */
 .navbar-inverse .navbar-link:hover,
 .navbar-inverse .navbar-link:focus {
   color: #ffffff;
 }
-/* line 447, navbar.less */
+/* line 448, navbar.less */
 .navbar-inverse .divider-vertical {
   border-left-color: #111111;
   border-right-color: #222222;
 }
-/* line 453, navbar.less */
+/* line 454, navbar.less */
 .navbar-inverse .nav li.dropdown.open > .dropdown-toggle,
 .navbar-inverse .nav li.dropdown.active > .dropdown-toggle,
 .navbar-inverse .nav li.dropdown.open.active > .dropdown-toggle {
   background-color: #111111;
   color: #ffffff;
 }
-/* line 459, navbar.less */
+/* line 460, navbar.less */
 .navbar-inverse .nav li.dropdown > a:hover .caret,
 .navbar-inverse .nav li.dropdown > a:focus .caret {
   border-top-color: #ffffff;
   border-bottom-color: #ffffff;
 }
-/* line 464, navbar.less */
+/* line 465, navbar.less */
 .navbar-inverse .nav li.dropdown > .dropdown-toggle .caret {
   border-top-color: #afafaf;
   border-bottom-color: #afafaf;
 }
-/* line 468, navbar.less */
+/* line 469, navbar.less */
 .navbar-inverse .nav li.dropdown.open > .dropdown-toggle .caret,
 .navbar-inverse .nav li.dropdown.active > .dropdown-toggle .caret,
 .navbar-inverse .nav li.dropdown.open.active > .dropdown-toggle .caret {
   border-top-color: #ffffff;
   border-bottom-color: #ffffff;
 }
-/* line 477, navbar.less */
+/* line 478, navbar.less */
 .navbar-inverse .navbar-search .search-query {
   color: #ffffff;
   background-color: #515151;
@@ -4942,7 +4945,7 @@ input[type="submit"].btn.btn-mini {
 .navbar-inverse .navbar-search .search-query::-webkit-input-placeholder {
   color: #cccccc;
 }
-/* line 486, navbar.less */
+/* line 487, navbar.less */
 .navbar-inverse .navbar-search .search-query:focus,
 .navbar-inverse .navbar-search .search-query.focused {
   padding: 5px 15px;
@@ -4955,7 +4958,7 @@ input[type="submit"].btn.btn-mini {
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
   outline: 0;
 }
-/* line 500, navbar.less */
+/* line 501, navbar.less */
 .navbar-inverse .btn-navbar {
   color: #ffffff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
@@ -6351,11 +6354,15 @@ body > footer dd {
 }
 /* line 18, D:\projects\mysite-main\web-project\mysite\html-project\less\banner.less */
 .banner .tag {
+  padding: 2px 3px;
+  margin: 0 5px;
+  background-color: #0090ff;
+  border: 1px solid #137dd6;
   -webkit-box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
   box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
 }
-/* line 21, D:\projects\mysite-main\web-project\mysite\html-project\less\banner.less */
+/* line 25, D:\projects\mysite-main\web-project\mysite\html-project\less\banner.less */
 .banner h1,
 .banner h2,
 .banner h3,
@@ -6363,11 +6370,11 @@ body > footer dd {
 .banner p {
   font-weight: normal;
 }
-/* line 24, D:\projects\mysite-main\web-project\mysite\html-project\less\banner.less */
+/* line 28, D:\projects\mysite-main\web-project\mysite\html-project\less\banner.less */
 .banner #profile {
   position: relative;
 }
-/* line 26, D:\projects\mysite-main\web-project\mysite\html-project\less\banner.less */
+/* line 30, D:\projects\mysite-main\web-project\mysite\html-project\less\banner.less */
 .banner #profile .face {
   -webkit-animation: suofang 2s ease-out;
   -moz-animation: suofang 2s ease-out;
@@ -6375,7 +6382,7 @@ body > footer dd {
   -o-animation: suofang 2s ease-out;
   animation: suofang 2s ease-out;
 }
-/* line 29, D:\projects\mysite-main\web-project\mysite\html-project\less\banner.less */
+/* line 33, D:\projects\mysite-main\web-project\mysite\html-project\less\banner.less */
 .banner #profile hgroup {
   -webkit-animation: suofang 2.2s ease-in-out;
   -moz-animation: suofang 2.2s ease-in-out;
@@ -6383,7 +6390,7 @@ body > footer dd {
   -o-animation: suofang 2.2s ease-in-out;
   animation: suofang 2.2s ease-in-out;
 }
-/* line 32, D:\projects\mysite-main\web-project\mysite\html-project\less\banner.less */
+/* line 36, D:\projects\mysite-main\web-project\mysite\html-project\less\banner.less */
 .banner #profile hr {
   border-top: none;
   width: 380px;
@@ -6392,32 +6399,32 @@ body > footer dd {
   box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.8);
   margin: 0 auto;
 }
-/* line 41, D:\projects\mysite-main\web-project\mysite\html-project\less\banner.less */
+/* line 45, D:\projects\mysite-main\web-project\mysite\html-project\less\banner.less */
 .banner.banner-home {
   padding: 50px 0 80px;
   background: url(../../img/main/banner-home2.jpg) center center no-repeat;
 }
-/* line 47, D:\projects\mysite-main\web-project\mysite\html-project\less\banner.less */
+/* line 51, D:\projects\mysite-main\web-project\mysite\html-project\less\banner.less */
 .banner .breadcrumbs {
   text-align: left;
   letter-spacing: 4px;
 }
-/* line 50, D:\projects\mysite-main\web-project\mysite\html-project\less\banner.less */
+/* line 54, D:\projects\mysite-main\web-project\mysite\html-project\less\banner.less */
 .banner .breadcrumbs a {
   color: #ffffff;
 }
-/* line 53, D:\projects\mysite-main\web-project\mysite\html-project\less\banner.less */
+/* line 57, D:\projects\mysite-main\web-project\mysite\html-project\less\banner.less */
 .banner .breadcrumbs a.active,
 .banner .breadcrumbs a:hover {
   text-decoration: none;
   color: #18f5e3;
 }
-/* line 59, D:\projects\mysite-main\web-project\mysite\html-project\less\banner.less */
+/* line 63, D:\projects\mysite-main\web-project\mysite\html-project\less\banner.less */
 .banner .nav-tabs {
   border: none;
   margin-bottom: 1px;
 }
-/* line 62, D:\projects\mysite-main\web-project\mysite\html-project\less\banner.less */
+/* line 66, D:\projects\mysite-main\web-project\mysite\html-project\less\banner.less */
 .banner .nav-tabs li > a {
   padding: 8px 20px;
   margin-right: 10px;
@@ -6428,22 +6435,22 @@ body > footer dd {
   color: #252525;
   text-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
 }
-/* line 71, D:\projects\mysite-main\web-project\mysite\html-project\less\banner.less */
+/* line 75, D:\projects\mysite-main\web-project\mysite\html-project\less\banner.less */
 .banner .nav-tabs li > a:hover {
   background-color: #efefef;
 }
-/* line 75, D:\projects\mysite-main\web-project\mysite\html-project\less\banner.less */
+/* line 79, D:\projects\mysite-main\web-project\mysite\html-project\less\banner.less */
 .banner .nav-tabs .active > a {
   background-color: #ffffff;
   border-color: #bababa;
   border-bottom-color: transparent;
 }
-/* line 79, D:\projects\mysite-main\web-project\mysite\html-project\less\banner.less */
+/* line 83, D:\projects\mysite-main\web-project\mysite\html-project\less\banner.less */
 .banner .nav-tabs .active > a:hover {
   background-color: #ffffff;
   color: #252525;
 }
-/* line 84, D:\projects\mysite-main\web-project\mysite\html-project\less\banner.less */
+/* line 88, D:\projects\mysite-main\web-project\mysite\html-project\less\banner.less */
 .banner .nav-tabs li > a > .bubble {
   position: absolute;
   top: -15px;
@@ -6456,22 +6463,22 @@ body > footer dd {
   border: 1px solid #f40b4b;
   color: #ffffff;
 }
-/* line 97, D:\projects\mysite-main\web-project\mysite\html-project\less\banner.less */
+/* line 101, D:\projects\mysite-main\web-project\mysite\html-project\less\banner.less */
 .banner-article,
 .banner-about {
   padding-top: 20px;
 }
-/* line 100, D:\projects\mysite-main\web-project\mysite\html-project\less\banner.less */
+/* line 104, D:\projects\mysite-main\web-project\mysite\html-project\less\banner.less */
 .banner-article h1,
 .banner-about h1 {
   font-size: 2.6em;
   line-height: 1em;
 }
-/* line 106, D:\projects\mysite-main\web-project\mysite\html-project\less\banner.less */
+/* line 110, D:\projects\mysite-main\web-project\mysite\html-project\less\banner.less */
 .banner-article {
   background: url(../../img/main/banner-article.png) center center no-repeat;
 }
-/* line 109, D:\projects\mysite-main\web-project\mysite\html-project\less\banner.less */
+/* line 113, D:\projects\mysite-main\web-project\mysite\html-project\less\banner.less */
 .banner-about {
   background: url(../../img/main/banner-about.jpg) center center no-repeat;
 }
@@ -6581,16 +6588,19 @@ body > footer dd {
 /* line 95, D:\projects\mysite-main\web-project\mysite\html-project\less\components.less */
 .tag {
   display: inline-block;
-  padding: 2px 3px;
-  margin: 0 5px;
+  padding: 1px 3px;
+  margin: 0;
   cursor: pointer;
-  background-color: #0090ff;
-  border: 1px solid #137dd6;
+  background-color: #afafaf;
+  border: 1px solid #969696;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
   line-height: 1em;
-  font-size: 13px;
+  font-size: 12px;
   color: #ffffff;
 }
-/* line 105, D:\projects\mysite-main\web-project\mysite\html-project\less\components.less */
+/* line 106, D:\projects\mysite-main\web-project\mysite\html-project\less\components.less */
 .tag:hover {
   text-decoration: none;
   background-color: #ff8522;
@@ -6601,7 +6611,7 @@ body > footer dd {
   transition: all 0.2s ease;
   color: #ffffff;
 }
-/* line 114, D:\projects\mysite-main\web-project\mysite\html-project\less\components.less */
+/* line 115, D:\projects\mysite-main\web-project\mysite\html-project\less\components.less */
 .opt-panel {
   position: fixed;
   bottom: 20px;
@@ -6611,31 +6621,31 @@ body > footer dd {
   -o-transition: right 0.5s ease-in-out;
   transition: right 0.5s ease-in-out;
 }
-/* line 119, D:\projects\mysite-main\web-project\mysite\html-project\less\components.less */
+/* line 120, D:\projects\mysite-main\web-project\mysite\html-project\less\components.less */
 .opt-panel a {
   display: block;
   padding: 7px 3px 0 3px;
   background-color: #878787;
   border-bottom: 1px solid #999;
 }
-/* line 124, D:\projects\mysite-main\web-project\mysite\html-project\less\components.less */
+/* line 125, D:\projects\mysite-main\web-project\mysite\html-project\less\components.less */
 .opt-panel a:hover {
   background-color: #707070;
 }
-/* line 128, D:\projects\mysite-main\web-project\mysite\html-project\less\components.less */
+/* line 129, D:\projects\mysite-main\web-project\mysite\html-project\less\components.less */
 .opt-panel a:first-child {
   -webkit-border-radius: 2px 2px 0 0;
   -moz-border-radius: 2px 2px 0 0;
   border-radius: 2px 2px 0 0;
 }
-/* line 131, D:\projects\mysite-main\web-project\mysite\html-project\less\components.less */
+/* line 132, D:\projects\mysite-main\web-project\mysite\html-project\less\components.less */
 .opt-panel a:last-child {
   -webkit-border-radius: 0 0 2px 2px;
   -moz-border-radius: 0 0 2px 2px;
   border-radius: 0 0 2px 2px;
   border: none;
 }
-/* line 138, D:\projects\mysite-main\web-project\mysite\html-project\less\components.less */
+/* line 139, D:\projects\mysite-main\web-project\mysite\html-project\less\components.less */
 form textarea.error,
 form input[type="text"].error,
 form input[type="password"].error,
@@ -6659,7 +6669,7 @@ form .uneditable-input.error {
   -o-transition: border linear .2s, box-shadow linear .2s;
   transition: border linear .2s, box-shadow linear .2s;
 }
-/* line 158, D:\projects\mysite-main\web-project\mysite\html-project\less\components.less */
+/* line 159, D:\projects\mysite-main\web-project\mysite\html-project\less\components.less */
 form textarea.error:focus,
 form input[type="text"].error:focus,
 form input[type="password"].error:focus,
@@ -6682,7 +6692,7 @@ form .uneditable-input.error:focus {
   /* IE6-9 */
 
 }
-/* line 166, D:\projects\mysite-main\web-project\mysite\html-project\less\components.less */
+/* line 167, D:\projects\mysite-main\web-project\mysite\html-project\less\components.less */
 .cb {
   clear: both;
   height: 0;
@@ -6737,18 +6747,18 @@ form .uneditable-input.error:focus {
 }
 /* line 38, D:\projects\mysite-main\web-project\mysite\html-project\less\article.less */
 .nav-articles li h4 > a {
-  font: normal normal 1.6em/1.2em "microsoft yahei", Helvetica, Arial;
-  color: #3e3e3e;
-  letter-spacing: 2px;
+  font: normal normal 1.4em/1.2em "microsoft yahei", Helvetica, Arial;
+  color: #2860C2;
 }
-/* line 42, D:\projects\mysite-main\web-project\mysite\html-project\less\article.less */
+/* line 41, D:\projects\mysite-main\web-project\mysite\html-project\less\article.less */
 .nav-articles li h4 > a:hover {
   color: #0090ff;
   text-decoration: none;
 }
-/* line 48, D:\projects\mysite-main\web-project\mysite\html-project\less\article.less */
+/* line 47, D:\projects\mysite-main\web-project\mysite\html-project\less\article.less */
 .nav-articles li .tag {
-  margin: 5px;
+  margin: 8px 5px;
+  font-size: 12px;
 }
 /* line 51, D:\projects\mysite-main\web-project\mysite\html-project\less\article.less */
 .nav-articles li .tag-wrap {
@@ -6763,7 +6773,7 @@ form .uneditable-input.error:focus {
 .nav-articles li time {
   position: absolute;
   right: 0;
-  top: 20px;
+  top: 1em;
   color: #afafaf;
 }
 /* line 65, D:\projects\mysite-main\web-project\mysite\html-project\less\article.less */

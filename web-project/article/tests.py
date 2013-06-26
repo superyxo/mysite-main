@@ -24,8 +24,8 @@ class SimpleTest(TestCase):
     def test_re(self):
 #         back = '<div>hello</div><p>world</p><pre class="prettyjs linenum dsads">all</pre>'
 #         pattern = re.compile('<\/{0,}(div|pre|p|img)\s*((\S*=)".*"){0,}\/{0,}>')
-        content = '#-回复给xxx-#  dsadsadsa'
-        pattern = re.compile('(#-).*(-#\s*)')
+        content = 'das <img src="http://rayzy1991-media.stor.sinaapp.com/modernizr.png" />'
+        pattern = re.compile('<\/{0,}(div|br|pre|p|img)\s*((\S*=)".*"){0,}\s*\/{0,}>')
         print pattern.sub('', content)
 #         match = pattern.match(back)
 #         print match.group()

@@ -94,13 +94,14 @@
 
 .tag{
   display: inline-block;
-  padding: 2px 3px;
-  margin: 0 5px;
+  padding: 1px 3px;
+  margin: 0;
   cursor: pointer;
-  background-color: @navbarBackgroundHighlight;
-  border: 1px solid #137dd6;
+  background-color: @grayLight;
+  border:1px solid darken(@grayLight, 10%);
+  .border-radius(2px);
   line-height: 1em;
-  font-size: 13px;
+  font-size: 12px;
   color: @white;
   &:hover{
     text-decoration: none;

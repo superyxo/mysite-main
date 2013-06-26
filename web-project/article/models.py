@@ -47,11 +47,8 @@ class Article( BaseModel ):
         self.comment_num = num
     
     def simpleContent(self):
-        c = self.content
-        if len(c) > 200:
-            c = self.content[0:200]
-        pattern = re.compile('<\/{0,}(div|br|pre|p|img)\s*((\S*=)".*"){0,}\/{0,}>')
-        return pattern.sub('', c)
+        pattern = re.compile('<\/{0,}(div|br|pre|p|img)\s*((\S*=)".*"){0,}\s*\/{0,}>')
+        return pattern.sub('', self.content)
         
     @classmethod
     def saveArticle(cls, articleId, title, summary, tags, content, imgs = None):
