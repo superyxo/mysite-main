@@ -48,8 +48,9 @@ class Article( BaseModel ):
     
     def simpleContent(self):
         pattern = re.compile('<\/{0,}(div|br|pre|p|img)\s*((\S*=)".*"){0,}\s*\/{0,}>')
-        return pattern.sub('', self.content)
-        
+        print pattern.sub('', self.content)
+        return pattern.sub('', self.content)[0:200]
+    
     @classmethod
     def saveArticle(cls, articleId, title, summary, tags, content, imgs = None):
         stags = tags.strip().lstrip().rstrip().split(',')

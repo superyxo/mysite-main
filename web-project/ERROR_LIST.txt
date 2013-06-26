@@ -1,12 +1,16 @@
 ====== UnSolve ======
-1. @request_POST
-5. Reverse showArticle 
-6. Transaction in view level
 7. auth_user password
 8. I want to show sql in console
 9. Template URL's definition in a template file. 
 
+1. UnicodeEncodeError at /article/feed/save/  用户留言无法发中文，报错还直接无事物存储了！！！
+   'ascii' codec can't encode characters in position 0-5: ordinal not in range(128)
+2. 文章列表页做一下footer控制
+
 ====== Solved ======
+1. @request_POST
+5. Reverse showArticle 
+6. Transaction in view level
 2. 1366, "Incorrect string value: '\\xE5\\xAF\\xB9\\xE8\\xB1\\xA1' for column 'article_name' at row 1"
 	-- local MySql gb2312
 3. redirect

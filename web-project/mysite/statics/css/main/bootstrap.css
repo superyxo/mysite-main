@@ -6282,49 +6282,88 @@ body > footer dd {
   height: 14px;
   background-position: -133px -103px;
 }
-@-webkit-keyframes movesl {
-  /* line 2, D:\projects\mysite-main\web-project\mysite\html-project\less\keyframe.less */
-  0% {
-    -webkit-transform: translate(200px);
-    opacity: 0;
-  }
-  /* line 3, D:\projects\mysite-main\web-project\mysite\html-project\less\keyframe.less */
-  40% {
-    -webkit-transform: translate(-50px);
-    opacity: .8;
-  }
-  /* line 4, D:\projects\mysite-main\web-project\mysite\html-project\less\keyframe.less */
-  100% {
-    -webkit-transform: translate(0);
-    opacity: 1;
-  }
-}
-@-webkit-keyframes movesr {
-  /* line 8, D:\projects\mysite-main\web-project\mysite\html-project\less\keyframe.less */
-  0% {
-    -webkit-transform: translate(-200px);
-    opacity: 0;
-  }
-  /* line 9, D:\projects\mysite-main\web-project\mysite\html-project\less\keyframe.less */
-  100% {
-    -webkit-transform: translate(0);
-    opacity: 1;
-  }
-}
 @-webkit-keyframes suofang {
-  /* line 13, D:\projects\mysite-main\web-project\mysite\html-project\less\keyframe.less */
+  /* line 2, D:\projects\mysite-main\web-project\mysite\html-project\less\keyframe.less */
   0% {
     -webkit-transform: scale(4);
     opacity: 0;
   }
-  /* line 14, D:\projects\mysite-main\web-project\mysite\html-project\less\keyframe.less */
+  /* line 3, D:\projects\mysite-main\web-project\mysite\html-project\less\keyframe.less */
   80% {
     -webkit-transform: scale(0.95);
     opacity: 1;
   }
-  /* line 15, D:\projects\mysite-main\web-project\mysite\html-project\less\keyframe.less */
+  /* line 4, D:\projects\mysite-main\web-project\mysite\html-project\less\keyframe.less */
   100% {
     -webkit-transform: scale(1);
+    opacity: 1;
+  }
+}
+@-moz-keyframes suofang {
+  /* line 8, D:\projects\mysite-main\web-project\mysite\html-project\less\keyframe.less */
+  0% {
+    -moz-transform: scale(4);
+    opacity: 0;
+  }
+  /* line 9, D:\projects\mysite-main\web-project\mysite\html-project\less\keyframe.less */
+  80% {
+    -moz-transform: scale(0.95);
+    opacity: 1;
+  }
+  /* line 10, D:\projects\mysite-main\web-project\mysite\html-project\less\keyframe.less */
+  100% {
+    -moz-transform: scale(1);
+    opacity: 1;
+  }
+}
+@-ms-keyframes suofang {
+  /* line 14, D:\projects\mysite-main\web-project\mysite\html-project\less\keyframe.less */
+  0% {
+    -ms-transform: scale(4);
+    opacity: 0;
+  }
+  /* line 15, D:\projects\mysite-main\web-project\mysite\html-project\less\keyframe.less */
+  80% {
+    -ms-transform: scale(0.95);
+    opacity: 1;
+  }
+  /* line 16, D:\projects\mysite-main\web-project\mysite\html-project\less\keyframe.less */
+  100% {
+    -ms-transform: scale(1);
+    opacity: 1;
+  }
+}
+@-o-keyframes suofang {
+  /* line 20, D:\projects\mysite-main\web-project\mysite\html-project\less\keyframe.less */
+  0% {
+    -o-transform: scale(4);
+    opacity: 0;
+  }
+  /* line 21, D:\projects\mysite-main\web-project\mysite\html-project\less\keyframe.less */
+  80% {
+    -o-transform: scale(0.95);
+    opacity: 1;
+  }
+  /* line 22, D:\projects\mysite-main\web-project\mysite\html-project\less\keyframe.less */
+  100% {
+    -o-transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes suofang {
+  /* line 26, D:\projects\mysite-main\web-project\mysite\html-project\less\keyframe.less */
+  0% {
+    transform: scale(4);
+    opacity: 0;
+  }
+  /* line 27, D:\projects\mysite-main\web-project\mysite\html-project\less\keyframe.less */
+  80% {
+    transform: scale(0.95);
+    opacity: 1;
+  }
+  /* line 28, D:\projects\mysite-main\web-project\mysite\html-project\less\keyframe.less */
+  100% {
+    transform: scale(1);
     opacity: 1;
   }
 }
@@ -6766,17 +6805,20 @@ form .uneditable-input.error:focus {
 }
 /* line 54, D:\projects\mysite-main\web-project\mysite\html-project\less\article.less */
 .nav-articles li p {
-  margin-bottom: 0;
+  margin-bottom: 2px;
+  padding-bottom: 5px;
   line-height: 1.6em;
+  min-height: 88px;
+  border-bottom: 1px solid #eeebe7;
 }
-/* line 58, D:\projects\mysite-main\web-project\mysite\html-project\less\article.less */
+/* line 61, D:\projects\mysite-main\web-project\mysite\html-project\less\article.less */
 .nav-articles li time {
   position: absolute;
   right: 0;
   top: 1em;
   color: #afafaf;
 }
-/* line 65, D:\projects\mysite-main\web-project\mysite\html-project\less\article.less */
+/* line 68, D:\projects\mysite-main\web-project\mysite\html-project\less\article.less */
 .nav-articles > a {
   display: block;
 }
