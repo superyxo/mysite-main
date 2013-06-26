@@ -13,6 +13,8 @@ import re
 from mysite.settings import STO_MEDIA
 from django.dispatch.dispatcher import receiver
 from django.db.models.signals import post_save
+from django.template.base import Template
+from django.template.context import Context
 
 class Tag( BaseModel ):
     class Meta:
@@ -36,6 +38,7 @@ class Article( BaseModel ):
     tags = models.ManyToManyField( Tag )
     
     comment_num = 0
+    temp_tags = None # for signal
     
     def setCommentNum(self, num):
         self.comment_num = num
@@ -70,6 +73,7 @@ class Article( BaseModel ):
         if articleId:
             pass
         else:
+            article.temp_tags = tags
             article.save()
             article.tags = tags
         
@@ -109,12 +113,19 @@ from trend.models import Trend
 @receiver(post_save, sender = Article)
 def post_save_article(sender, **kwargs):
     if kwargs['created']:
+        aTplStringMap = util.get_config_map('trend_tpl.ini', 'article')
         article = kwargs['instance']
+        tags = article.temp_tags
+        print tags
+        desc = None
+        if len(tags): 
+            desc = Template(aTplStringMap['desc']).render(Context({'tags' : tags}))
+        
         Trend.objects.create(name = 'article created'
-                             , content = '我创建了一篇文章 ' + article.name + '。')
+                             , content = Template(aTplStringMap['content']).render(Context({'article':article}))
+                             , desc = desc)
 
 @receiver(post_save, sender = Comment)
 def post_save_comment(sender, **kwargs):
     if kwargs['created']:
-        print 'comment created.'
-    print 'comment created.'
+        pass

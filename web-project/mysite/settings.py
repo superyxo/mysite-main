@@ -1,9 +1,9 @@
-# Django settings for mysite project.
 import os
 
 ROOT_PATH = os.path.abspath(os.path.dirname(__file__))
 STO_MEDIA = 'http://rayzy1991-media.stor.sinaapp.com/'
 STO_DEMO = 'http://rayzy1991-demo.stor.sinaapp.com/'
+CONFIG_PATH = ROOT_PATH + '/config/'
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
