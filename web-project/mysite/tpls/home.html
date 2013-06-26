@@ -23,46 +23,31 @@
 	<div class="container">
 		<br />
 		<div class="row">
+			
 			<div class="span7">
-				<h3 class="noborder">我的动态 <small>以下是假数据</small></h3>
+				<h3 class="noborder">我的动态</h3>
 				<ul class="nav-trends">
+					{% for trend in trends %}
 					<li>
-						<div class="img-wrap" style="background-image:url(/static/img/test/jquery_applications.jpg)"></div>
-						<time>
-							6月9日22点20分
-						</time>
-						，我创建了一篇文章 <strong><a href="#">Hibernate Event 转 Sprin Application Event</a></strong>。 <div class="cb"></div>
-						<br />
-						<br />
-						<div class="memo">
-							它属于 <a href="#">html5</a>，<a href="#">css3</a>，<a href="#">前端开发</a> 之类的
-						</div>
-					</li>
-					<li>
-						<time>6月9日22点20分</time>，<strong>东方不败</strong> 回复了我的文章 <strong><a href="#">Hibernate Event 转 Spring Application Event 实现系统监控</a></strong>。 
+						{% if trend.path %}
+						<div class="img-wrap" style="background-image:url({{MEDIA_URL}}{{trend.path}})"></div>
+						{% endif %}
+						<time>{{ trend.create_at|date:"m-d" }} {{ trend.create_at|time:"H:i" }}</time>，{{trend.content|safe}}
 						<div class="cb"></div>
-					</li>
-					<li>
-						<time>6月9日22点20分</time>，<strong>David</strong> 回复了我的文章 <strong><a href="#">Hibernate Event 转 Sprin Application Event实现审计日志</a></strong>。 <div class="cb"></div>
-						<br />
+						{% if trend.desc %}
 						<br />
 						<div class="memo">
-							备注信息，可有可无
+							{{ trend.desc|safe }}
 						</div>
+						{% endif %}
 					</li>
-					<li>
-						<div class="img-wrap" style="background-image:url(/static/img/test/HTML5_sticker.png)"></div>
-						<time>
-							6月9日22点20分
-						</time>
-						，<strong>spino</strong> 回复了我的文章 <strong><a href="#">Hibernate Event 转 Sprin Application Event 实现审计日志</a></strong>。 <div class="cb"></div>
-					</li>
+					{% endfor %}
 				</ul>
 				<br />
 				<br />
 				<br />
-
 			</div>
+			
 			<div class="span4 offset1">
 				<h3 class="noborder">技术领域</h3>
 				<ul class="nav">

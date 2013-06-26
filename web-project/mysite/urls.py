@@ -16,7 +16,8 @@ urlpatterns = patterns('',
     url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT, 'show_indexes':True}),
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT, 'show_indexes':True}),
     
-    url(r'^$', direct, {'template':'home.html'}),
+#    url(r'^$', direct, {'template':'home.html'}),
+    url(r'^$', 'trend.views.home'),
     
     url(r'^about/$', direct, {'template':'about.html'}),
 #     url(r'^contact/$', direct, {'template':'contact.html'}),

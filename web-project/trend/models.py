@@ -13,6 +13,5 @@ class Trend(BaseModel):
         db_table = 'ms_trends'
         ordering = ['-create_at']
     
-    path = models.URLField( null = True )  # img url
-    target = models.URLField( null = True ) # link to certain page
+    path = models.URLField( null = True )  # thumbnail url
     content = models.TextField( null = True, default = None ) # content

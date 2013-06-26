@@ -15,6 +15,7 @@ from django.dispatch.dispatcher import receiver
 from django.db.models.signals import post_save
 from django.template.base import Template
 from django.template.context import Context
+from image.models import Image
 
 class Tag( BaseModel ):
     class Meta:
@@ -34,11 +35,13 @@ class Article( BaseModel ):
         ordering = ['-create_at']
     
     user = models.ForeignKey( User, null=True )    
-    content = models.TextField( null=False )
+    content = models.TextField( null = False )
     tags = models.ManyToManyField( Tag )
+    imgs = models.ManyToManyField( Image )
     
     comment_num = 0
-    temp_tags = None # for signal
+    temp_tags = [] # for signal
+    temp_imgs = [] # for signal
     
     def setCommentNum(self, num):
         self.comment_num = num
@@ -67,32 +70,34 @@ class Article( BaseModel ):
         
         if imgs is not None:
             for img in imgs:
-                names = cls.saveFile(img, None)
-                article.content = cls.changeContent(article.content.strip().lstrip().rstrip(), names)
+                names = article.saveFile(img, None)
+                article.content = article.changeContent(article.content.strip().lstrip().rstrip(), names)
         
-        if articleId:
+        if articleId: ## update article
             pass
-        else:
+        else: ## create article
             article.temp_tags = tags
             article.save()
-            article.tags = tags
+            article.tags = article.temp_tags
         
+        article.imgs.add(*article.temp_imgs)
         article.save()
         
         return article
     
-    @classmethod
-    def saveFile(cls, img, newname):
+    def saveFile(self, img, newname):
         if newname is None:
             newname = img._get_name()
         util.sae_save_file(img, 'media', newname)
+        self.temp_imgs.append( Image.objects.create(path = newname) )
         return [img._get_name(), newname]
     
-    @classmethod
-    def changeContent(cls, content, names):
+    def changeContent(self, content, names):
         find = '##' + names[0] + '##'
-        will = '<img src="' + STO_MEDIA + '' + names[1] + '" />'
+        path = STO_MEDIA + '' + names[1]
+        will = '<img src="' + path + '" />'
         return content.replace(find, will)
+        
         
 class Comment( BaseModel ):
     class Meta:
@@ -116,16 +121,26 @@ def post_save_article(sender, **kwargs):
         aTplStringMap = util.get_config_map('trend_tpl.ini', 'article')
         article = kwargs['instance']
         tags = article.temp_tags
-        print tags
+        imgs = article.temp_imgs
+        
         desc = None
         if len(tags): 
             desc = Template(aTplStringMap['desc']).render(Context({'tags' : tags}))
         
+        path = None
+        if len(imgs):
+            path = imgs[0].path
+        
         Trend.objects.create(name = 'article created'
                              , content = Template(aTplStringMap['content']).render(Context({'article':article}))
-                             , desc = desc)
+                             , desc = desc
+                             , path = path)
 
 @receiver(post_save, sender = Comment)
 def post_save_comment(sender, **kwargs):
-    if kwargs['created']:
-        pass
+    comment = kwargs['instance']
+    if kwargs['created'] and comment.article:
+        tplStringMap = util.get_config_map('trend_tpl.ini', 'comment')
+        content = Template(tplStringMap['content']).render(Context({'feed' : comment}))
+        desc = Template(tplStringMap['desc']).render(Context({'feed' : comment}))
+        Trend.objects.create(name = 'feed created', content = content, desc = desc)      
