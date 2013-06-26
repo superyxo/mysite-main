@@ -1,7 +1,12 @@
+{% extends  "common/base.html" %}
+
+{% block active_article %}active{% endblock %}
+
+{% block base_ctn %}
 <section class="banner banner-article">
 	<div class="container">
 		<nav class="breadcrumbs">
-			<a href="/">首页</a> / <a href="/article/list">文章列表</a> / <a class="active" href="#">阅读文章</a>
+			<a href="/">首页</a> / <a href="/article/query">文章列表</a> / <a class="active" href="#">阅读文章</a>
 		</nav>
 		<br />
 		<h1>{{ article.name }}</h1>
@@ -31,3 +36,8 @@
 		</nav>
 	</div>
 </section>
+{% block article_ctn %} {% endblock %}
+
+{% include "common/opt-panel.html" %}
+
+{% endblock %}

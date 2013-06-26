@@ -1,13 +1,10 @@
-{% extends "common/base.html" %}
+{% extends "common/article-base.html" %}
 
-{% block title %}文章留言{% endblock title %}
+{% block title %}评论文章 - {{ article.name }}{% endblock title %}
 
-{% block active_article %}active{% endblock %}
+{% block tab_feeds %}active{% endblock %}
 
-{% block base_ctn %}
-
-{% include "common/article-header.html" %}
-
+{% block article_ctn %}
 <section class="main">
 	<div class="container">
 		<ul class="nav-feeds">
@@ -38,7 +35,6 @@
 		{% include "common/feed-form.html" %}
 	</div><!-- /container -->
 </section>
-{% include "common/opt-panel.html" %}
 {% endblock %}
 
 {% block base_js %}<script src="/static/js/intact/feed.js"></script>{% endblock %}

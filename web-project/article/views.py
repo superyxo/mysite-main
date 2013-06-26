@@ -92,8 +92,7 @@ def saveComment( request ):
         komment = Comment.objects.get(id = kommentId)
         
         kwarg['content'] = content
-        kwarg['komment'] = komment
-                     
+        kwarg['komment'] = komment         
     else:
         kwarg['article'] = article
         
