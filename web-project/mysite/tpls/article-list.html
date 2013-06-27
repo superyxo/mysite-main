@@ -29,9 +29,13 @@
 						<a href="/article/feeds?aId={{article.id}}">{{ article.comment_set.all|length }}人回复</a>
 					</li>
 					{% endfor %}
-					<!-- <li>
-						<a href="#" class="btn btn-block">加 载 更 多</a>
-					</li> -->
+					<li>
+						<div id="J_PAGIN" class="pagin tc">
+							<a href="#" class="prev">«</a>
+							<span> </span>
+							<a href="#" class="next">»</a>
+						</div>
+					</li>
 				</ul>
 			</div>
 			<aside class="span3 offset1">
@@ -50,6 +54,26 @@
 	</div><!-- /container -->
 	<br />
 	<br />
+	{% if articles|length < 2 %}
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	{% endif %}
 </section>
 {% include "common/opt-panel.html" %}
+{% endblock %}
+
+{% block js %}
+<script>
+	pagin({{page.page}}, {{page.size}}, {{page.count}});
+</script>
 {% endblock %}

@@ -98,7 +98,14 @@
 									<a href="#">0人回复</a>
 								</li>
 								<li>
-									<a href="#" class="btn btn-block">加 载 更 多</a>
+<!-- 									<a href="#" class="btn btn-block">加 载 更 多</a> -->
+									<br />
+									<div id="J_PAGIN" class="pagin tc">
+										<a href="#"class="prev">«</a><span>
+											</span><a href="# next">»</a>
+									</div>
+									<br />
+									<br />
 								</li>
 							</ul>
 						</div>
@@ -154,5 +161,8 @@
 
         <script src="../../statics/js/intact/plugins.js"></script>
         <script src="../../statics/js/intact/main.js"></script>
+        <script>
+        	pagin(30, 5, 500);
+        </script>
     </body>
 </html>
