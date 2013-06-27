@@ -12,7 +12,6 @@ $(document).ready(function() {
 		$('#article').children('.container').html(str)
 		$('#article').fadeIn(function(){
 			$(this).closeremove();
-			window.prettyPrint && prettyPrint();
 		});
 	});
 	

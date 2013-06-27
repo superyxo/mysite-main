@@ -51,11 +51,14 @@ class Article( BaseModel ):
         return pattern.sub('', self.content)[0:200]
     
     @classmethod
-    def saveArticle(cls, articleId, title, summary, tags, content, imgs = None):
-        stags = tags.strip().lstrip().rstrip().split(',')
-        tags =  [Tag.objects.get_or_create(name = tag)[0] for tag in stags]
+    def saveArticle(cls, articleId, title, summary, postTags, content, imgs = None):
+        tags = []
+        if postTags:
+            stags = postTags.strip().lstrip().rstrip().split(',')
+            tags =  [Tag.objects.get_or_create(name = tag)[0] for tag in stags]
         
         kwarg = {'name':title, 'desc':summary, 'content': content}
+        
         if articleId:
             article = cls.objects.get(id = articleId)
             article.name = title
@@ -75,9 +78,12 @@ class Article( BaseModel ):
         else: ## create article
             article.temp_tags = tags
             article.save()
-            article.tags = article.temp_tags
-        
-        article.imgs.add(*article.temp_imgs)
+            if article.temp_tags:
+                article.tags = article.temp_tags
+                
+        if len(article.temp_imgs):
+            article.imgs.add(*article.temp_imgs)
+            
         article.save()
         
         return article
@@ -121,7 +127,7 @@ def post_save_article(sender, **kwargs):
         imgs = article.temp_imgs
         
         desc = None
-        if len(tags): 
+        if tags and len(tags): 
             desc = Template(aTplStringMap['desc']).render(Context({'tags' : tags}))
         
         path = None

@@ -32,6 +32,11 @@ def showArticle( request, aid ):
     map(lambda t:t.setArticleNum(t.article_set.count()), tags)
     return resp('article.html', locals())
 
+@require_GET
+def aboutMe( request ):
+    article = Article.objects.get(id=0)
+    return resp('about.html', locals())
+
 @login_required
 @require_POST
 def saveArticle( request ):
@@ -44,6 +49,8 @@ def saveArticle( request ):
                               , request.POST['tags']
                               , request.POST['content']
                               , imgs )
+    if article.id == 0:
+        return redirect('/about')
     return redirect('/article/' + str( article.id ))
 
 @login_required

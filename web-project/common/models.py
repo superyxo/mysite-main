@@ -10,12 +10,12 @@ class BaseMgr(models.Manager):
     def query(self, pagin=None, request=None):
         kwgs = self.getDict(request)
         if pagin is not None:
-            pagin.count = self.filter(enabled=True, **kwgs).count()
+            pagin.count = self.filter(id__gte=1, enabled=True, **kwgs).count()
             start = (pagin.page - 1) * pagin.size
             end = (pagin.page - 1) * pagin.size + pagin.size
-            return self.filter(enabled=True, **kwgs).all()[start : end]
+            return self.filter(id__gte=1, enabled=True, **kwgs).all()[start : end]
         else:
-            return self.filter(enabled=True, **kwgs).all()
+            return self.filter(id__gte=1, enabled=True, **kwgs).all()
         
 #    def remove(self, oid):
 #        self.get( id=oid ).delete()
