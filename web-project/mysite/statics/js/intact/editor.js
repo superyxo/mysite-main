@@ -9,10 +9,7 @@ $(document).ready(function() {
 	$(document).delegate('#review', 'click', function(){
 		var str = $('#editor').html();
 		str = $.trim( str.replace(/div/g, 'p') );
-		$('#article').children('.container').html(str)
-		$('#article').fadeIn(function(){
-			$(this).closeremove();
-		});
+		$('#article').children('.container').html(str);
 	});
 	
 	$(document).delegate('#submit', 'click', function(){
