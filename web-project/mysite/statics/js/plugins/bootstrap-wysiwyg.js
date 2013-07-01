@@ -155,7 +155,7 @@ $(function() {
 			newFileInput = function(inputFile){
 				// var input = document.createElement('input');
 				// $(input).attr({'type':'file','name':'imgs','data-edit':'insertImage','data-role':'magic-overlay'});
-				$(inputFile).after($(inputFile).clone());
+				$(inputFile).before($(inputFile).clone());
 			},
 			markSelection = function (input, color) {
 				restoreSelection();
