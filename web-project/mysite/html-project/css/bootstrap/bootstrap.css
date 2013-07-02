@@ -6822,10 +6822,9 @@ form .uneditable-input.error:focus {
 }
 /* line 16, D:\projects\mysite-main\web-project\mysite\html-project\less\article.less */
 .article-detail p {
-  letter-spacing: 2px;
   margin: 1.2em 0;
 }
-/* line 20, D:\projects\mysite-main\web-project\mysite\html-project\less\article.less */
+/* line 19, D:\projects\mysite-main\web-project\mysite\html-project\less\article.less */
 .article-detail img {
   display: block;
   padding: 3px;
@@ -6834,40 +6833,40 @@ form .uneditable-input.error:focus {
   max-width: 50%;
   margin: 0 auto;
 }
-/* line 30, D:\projects\mysite-main\web-project\mysite\html-project\less\article.less */
+/* line 29, D:\projects\mysite-main\web-project\mysite\html-project\less\article.less */
 .nav-articles {
   list-style: none;
   margin: 0;
 }
-/* line 33, D:\projects\mysite-main\web-project\mysite\html-project\less\article.less */
+/* line 32, D:\projects\mysite-main\web-project\mysite\html-project\less\article.less */
 .nav-articles li {
   position: relative;
   margin-bottom: 40px;
 }
-/* line 36, D:\projects\mysite-main\web-project\mysite\html-project\less\article.less */
+/* line 35, D:\projects\mysite-main\web-project\mysite\html-project\less\article.less */
 .nav-articles li h4 {
   margin-bottom: 0;
 }
-/* line 38, D:\projects\mysite-main\web-project\mysite\html-project\less\article.less */
+/* line 37, D:\projects\mysite-main\web-project\mysite\html-project\less\article.less */
 .nav-articles li h4 > a {
   font: normal normal 1.4em/1.2em "microsoft yahei", Helvetica, Arial;
   color: #2860C2;
 }
-/* line 41, D:\projects\mysite-main\web-project\mysite\html-project\less\article.less */
+/* line 40, D:\projects\mysite-main\web-project\mysite\html-project\less\article.less */
 .nav-articles li h4 > a:hover {
   color: #0090ff;
   text-decoration: none;
 }
-/* line 47, D:\projects\mysite-main\web-project\mysite\html-project\less\article.less */
+/* line 46, D:\projects\mysite-main\web-project\mysite\html-project\less\article.less */
 .nav-articles li .tag {
   margin: 8px 5px;
   font-size: 12px;
 }
-/* line 51, D:\projects\mysite-main\web-project\mysite\html-project\less\article.less */
+/* line 50, D:\projects\mysite-main\web-project\mysite\html-project\less\article.less */
 .nav-articles li .tag-wrap {
   margin-left: -5px;
 }
-/* line 54, D:\projects\mysite-main\web-project\mysite\html-project\less\article.less */
+/* line 53, D:\projects\mysite-main\web-project\mysite\html-project\less\article.less */
 .nav-articles li p {
   margin-bottom: 2px;
   padding-bottom: 5px;
@@ -6875,14 +6874,14 @@ form .uneditable-input.error:focus {
   min-height: 88px;
   border-bottom: 1px solid #eeebe7;
 }
-/* line 61, D:\projects\mysite-main\web-project\mysite\html-project\less\article.less */
+/* line 60, D:\projects\mysite-main\web-project\mysite\html-project\less\article.less */
 .nav-articles li time {
   position: absolute;
   right: 0;
   top: 1em;
   color: #afafaf;
 }
-/* line 68, D:\projects\mysite-main\web-project\mysite\html-project\less\article.less */
+/* line 67, D:\projects\mysite-main\web-project\mysite\html-project\less\article.less */
 .nav-articles > a {
   display: block;
 }
