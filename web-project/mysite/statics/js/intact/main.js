@@ -53,7 +53,7 @@ function bindJQValiEngin() {
 	$('.j_vali_form').validationEngine();
 }
 
-function beautifyBannerHome(){
+function beautifyBanner(){
 	if( !Utils.isMobile() ) {
 		var screeW = screen.width;
 		$('.banner').css('background-size',screeW);
@@ -61,13 +61,16 @@ function beautifyBannerHome(){
 	}
 }
 
+function prettyCode(ctn){
+	ctn && $(ctn).find('.codearea').addClass('prettyprint');
+	window.prettyPrint && prettyPrint();
+}
+
 $(document).ready(function(){
-	beautifyBannerHome();
+	beautifyBanner();
 	resetOptPanel(20);
 	checkfixTop();
 	bindJQValiEngin();
-	window.prettyPrint && prettyPrint();
-	
 	$(window).resize(function(){
 		resetOptPanel(20);
 	});

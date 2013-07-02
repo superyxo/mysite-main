@@ -19,6 +19,10 @@ Utils.isMobile = function(){
 	return /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
 }
 
+Utils.encodeXML = function(code){
+	return code.replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
 document.getElementsByClassName || (document.getElementsByClassName = function(searchClass,node,tag){
 		node = node || document;
         tag = tag || '*';

@@ -44,8 +44,6 @@ $(function() {
 	$('#editor').wysiwyg({
 		fileUploadError : showErrorAlert
 	});
-	window.prettyPrint && prettyPrint();
-	
 });
 /* http://github.com/mindmup/bootstrap-wysiwyg */
 /*global jQuery, $, FileReader*/
@@ -207,12 +205,18 @@ $(function() {
 				// code insert
 				$(document).delegate('#btnInsertCode', 'click', function(){
 					restoreSelection();
-					var lang = $('#lang').find('input[type=radio]:checked').val();
+					var lang = $('#lang').find('input[type=radio]:checked').val()
+						, code;
 					if( !lang ){ 
 						alert('please choose a language!');
 						return;
+					} else if( lang === 'xml' || lang === 'html' ){
+						code = Utils.encodeXML($('#codeText').val());
+					} else {
+						code = $('#codeText').val();
 					}
-					$(selectedRange.commonAncestorContainer).html('<pre class="prettyprint linenums lang-'+lang+'">'+$('#codeText').val()+'</pre>');
+					
+					$(selectedRange.commonAncestorContainer).html('<pre class="codearea linenums lang-'+lang+'">'+code+'</pre>');
 					saveSelection();
 				});
 			},

@@ -6651,6 +6651,12 @@ body > footer dd {
   color: #ffffff;
 }
 /* line 115, D:\projects\mysite-main\web-project\mysite\html-project\less\components.less */
+.prettyprint .tag {
+  background: none transparent;
+  border: none;
+  cursor: default;
+}
+/* line 121, D:\projects\mysite-main\web-project\mysite\html-project\less\components.less */
 .opt-panel {
   position: fixed;
   bottom: 20px;
@@ -6660,31 +6666,31 @@ body > footer dd {
   -o-transition: right 0.5s ease-in-out;
   transition: right 0.5s ease-in-out;
 }
-/* line 120, D:\projects\mysite-main\web-project\mysite\html-project\less\components.less */
+/* line 126, D:\projects\mysite-main\web-project\mysite\html-project\less\components.less */
 .opt-panel a {
   display: block;
   padding: 7px 3px 0 3px;
   background-color: #878787;
   border-bottom: 1px solid #999;
 }
-/* line 125, D:\projects\mysite-main\web-project\mysite\html-project\less\components.less */
+/* line 131, D:\projects\mysite-main\web-project\mysite\html-project\less\components.less */
 .opt-panel a:hover {
   background-color: #707070;
 }
-/* line 129, D:\projects\mysite-main\web-project\mysite\html-project\less\components.less */
+/* line 135, D:\projects\mysite-main\web-project\mysite\html-project\less\components.less */
 .opt-panel a:first-child {
   -webkit-border-radius: 2px 2px 0 0;
   -moz-border-radius: 2px 2px 0 0;
   border-radius: 2px 2px 0 0;
 }
-/* line 132, D:\projects\mysite-main\web-project\mysite\html-project\less\components.less */
+/* line 138, D:\projects\mysite-main\web-project\mysite\html-project\less\components.less */
 .opt-panel a:last-child {
   -webkit-border-radius: 0 0 2px 2px;
   -moz-border-radius: 0 0 2px 2px;
   border-radius: 0 0 2px 2px;
   border: none;
 }
-/* line 139, D:\projects\mysite-main\web-project\mysite\html-project\less\components.less */
+/* line 145, D:\projects\mysite-main\web-project\mysite\html-project\less\components.less */
 form textarea.error,
 form input[type="text"].error,
 form input[type="password"].error,
@@ -6708,7 +6714,7 @@ form .uneditable-input.error {
   -o-transition: border linear .2s, box-shadow linear .2s;
   transition: border linear .2s, box-shadow linear .2s;
 }
-/* line 159, D:\projects\mysite-main\web-project\mysite\html-project\less\components.less */
+/* line 165, D:\projects\mysite-main\web-project\mysite\html-project\less\components.less */
 form textarea.error:focus,
 form input[type="text"].error:focus,
 form input[type="password"].error:focus,
@@ -6731,7 +6737,7 @@ form .uneditable-input.error:focus {
   /* IE6-9 */
 
 }
-/* line 168, D:\projects\mysite-main\web-project\mysite\html-project\less\components.less */
+/* line 174, D:\projects\mysite-main\web-project\mysite\html-project\less\components.less */
 .pagin a {
   display: inline-block;
   padding: 4px 12px;
@@ -6747,11 +6753,11 @@ form .uneditable-input.error:focus {
   -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
-/* line 178, D:\projects\mysite-main\web-project\mysite\html-project\less\components.less */
+/* line 184, D:\projects\mysite-main\web-project\mysite\html-project\less\components.less */
 .pagin a:hover {
   background-color: #f5f5f5;
 }
-/* line 182, D:\projects\mysite-main\web-project\mysite\html-project\less\components.less */
+/* line 188, D:\projects\mysite-main\web-project\mysite\html-project\less\components.less */
 .pagin a.active,
 .pagin a.active:hover,
 .pagin a.active:focus,
@@ -6764,7 +6770,7 @@ form .uneditable-input.error:focus {
   -moz-box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.1), 0 -1px 0 rgba(255, 255, 255, 0.8);
   box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.1), 0 -1px 0 rgba(255, 255, 255, 0.8);
 }
-/* line 192, D:\projects\mysite-main\web-project\mysite\html-project\less\components.less */
+/* line 198, D:\projects\mysite-main\web-project\mysite\html-project\less\components.less */
 .pagin a.disabled,
 .pagin a.disabled:hover,
 .pagin a.disabled:focus,
@@ -6777,20 +6783,20 @@ form .uneditable-input.error:focus {
   -moz-box-shadow: none;
   box-shadow: none;
 }
-/* line 204, D:\projects\mysite-main\web-project\mysite\html-project\less\components.less */
+/* line 210, D:\projects\mysite-main\web-project\mysite\html-project\less\components.less */
 .cb {
   clear: both;
   height: 0;
 }
-/* line 209, D:\projects\mysite-main\web-project\mysite\html-project\less\components.less */
+/* line 215, D:\projects\mysite-main\web-project\mysite\html-project\less\components.less */
 .tc {
   text-align: center;
 }
-/* line 212, D:\projects\mysite-main\web-project\mysite\html-project\less\components.less */
+/* line 218, D:\projects\mysite-main\web-project\mysite\html-project\less\components.less */
 .tr {
   text-align: right;
 }
-/* line 215, D:\projects\mysite-main\web-project\mysite\html-project\less\components.less */
+/* line 221, D:\projects\mysite-main\web-project\mysite\html-project\less\components.less */
 .tl {
   text-align: left;
 }
