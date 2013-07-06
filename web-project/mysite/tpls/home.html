@@ -10,11 +10,11 @@
 		<div id="profile">
 			<div class="face">&nbsp;</div>
 			<br />
-			<hgroup>
-				<h1>专注企业级WEB技术与用户体验</h1>
+			<div class="desc">
+				<h1>专注企业级WEB应用及用户体验</h1>
 				<hr />
 				<h4>Linux, Spring, django, eclipse, github, jQuery, Bootstrap</h4>
-			</hgroup>
+			</div>
 		</div>
 	</div>
 </section>
@@ -32,7 +32,7 @@
 						{% if trend.path %}
 						<div class="img-wrap" style="background-image:url({{MEDIA_URL}}{{trend.path}})"></div>
 						{% endif %}
-						<time>{{ trend.create_at|date:"m-d" }} {{ trend.create_at|time:"H:i" }}</time>，{{trend.content|safe}}
+						<time>{{ trend.create_at|date:"m-d" }}</time> <time>{{ trend.create_at|time:"H:i" }}</time>，{{trend.content|safe}}
 						<div class="cb"></div>
 						{% if trend.desc %}
 						<br />
