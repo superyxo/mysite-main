@@ -6,9 +6,13 @@ import ConfigParser
 from mysite.settings import CONFIG_PATH
 
 def get_or_create_usr(email, usrname):
-    back = User.objects.get_or_create( email=email
+    back = []
+    if email and usrname:
+        back = User.objects.get_or_create( email=email
                                           , first_name = usrname
                                           , defaults = {'password':'123456'} )
+    else:
+        raise Exception('usrname and email can\'t be empty!')
     return back[0]
 
 def sae_save_file( f , storage_name , file_name = None ):

@@ -107,7 +107,7 @@ def saveComment( request ):
     comment.save()
     
     resp = HttpResponseRedirect('/article/feeds?aId='+str(article.id)+'#comment-'+str(comment.id))
-    if not request.COOKIES.has_key('email') and not request.COOKIES.has_key('usrname'):
+    if not request.COOKIES.has_key('email') or not request.COOKIES.has_key('usrname'):
         resp.set_cookie('email', value = email, max_age = 31536000, httponly = True)
         resp.set_cookie('usrname', value = usrname, max_age = 31536000, httponly = True)
     
