@@ -15,7 +15,6 @@ from django.dispatch.dispatcher import receiver
 from django.db.models.signals import post_save
 from django.template.base import Template
 from django.template.context import Context
-from image.models import Image
 
 class Tag( BaseModel ):
     class Meta:
@@ -37,7 +36,6 @@ class Article( BaseModel ):
     user = models.ForeignKey( User, null=True )    
     content = models.TextField( null = False )
     tags = models.ManyToManyField( Tag )
-    imgs = models.ManyToManyField( Image )
     
     comment_num = 0
     temp_tags = [] # for signal
@@ -80,9 +78,6 @@ class Article( BaseModel ):
             article.save()
             if article.temp_tags:
                 article.tags = article.temp_tags
-                
-        if len(article.temp_imgs):
-            article.imgs.add(*article.temp_imgs)
             
         article.save()
         
@@ -92,7 +87,7 @@ class Article( BaseModel ):
         if newname is None:
             newname = img._get_name()
         util.sae_save_file(img, 'media', newname)
-        self.temp_imgs.append( Image.objects.create(path = newname) )
+        self.temp_imgs.append( newname )
         return [img._get_name(), newname]
     
     def changeContent(self, content, names):
@@ -132,7 +127,7 @@ def post_save_article(sender, **kwargs):
         
         path = None
         if len(imgs):
-            path = imgs[0].path
+            path = imgs[0]
         
         Trend.objects.create(name = 'article created'
                              , content = Template(aTplStringMap['content']).render(Context({'article':article}))
