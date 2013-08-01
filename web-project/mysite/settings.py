@@ -5,7 +5,7 @@ STO_MEDIA = 'http://rayzy1991-media.stor.sinaapp.com/'
 STO_DEMO = 'http://rayzy1991-demo.stor.sinaapp.com/'
 CONFIG_PATH = ROOT_PATH + '/config/'
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (

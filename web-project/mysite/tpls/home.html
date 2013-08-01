@@ -34,15 +34,16 @@
 					{% for trend in trends %}
 					<li>
 						{% if trend.path %}
-						<div class="img-wrap" style="background-image:url({{MEDIA_URL}}{{trend.path}})"></div>
+						<a href="#" onclick="window.location=$($(this).parent().children('a')[1]).attr('href')"><div class="img-wrap" style="background-image:url({{MEDIA_URL}}{{trend.path}})"></div></a>
 						{% endif %}
-						<time>{{ trend.create_at|date:"m-d" }}</time> <time>{{ trend.create_at|time:"H:i" }}</time>，{{trend.content|safe}}
+						<time>{{ trend.create_at|date:"m-d" }}</time> <time>{{ trend.create_at|time:"H:i" }}</time>
+						{{trend.content|safe}}
 						<div class="cb"></div>
 						{% if trend.desc %}
-						<br />
-						<div class="memo">
-							{{ trend.desc|safe }}
-						</div>
+							<br />
+							<div class="memo">
+								{{ trend.desc|safe }}
+							</div>
 						{% endif %}
 					</li>
 					{% endfor %}
