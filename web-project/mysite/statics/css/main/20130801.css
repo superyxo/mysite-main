@@ -5808,7 +5808,6 @@ form .uneditable-input.error:focus {
   padding: 3px;
   background-color: #efefef;
   border: 1px solid #d9d9d9;
-  max-width: 50%;
   margin: 0 auto;
 }
 .nav-articles {
