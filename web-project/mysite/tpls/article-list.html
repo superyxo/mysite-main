@@ -14,17 +14,17 @@
 				<ul class="nav-articles">
 					{% for article in articles %}
 					<li>
-						<h4><a href="../{{ article.id }}">{{ article.name }}</a></h4>
+						<h4><a href="../{{ article.id }}" title="{{article.name}}">{% if article.name|length >= 19 %}{{ article.name|slice:"19" }}..{% else %}{{ article.name }}{% endif %}</a></h4>
 						<span class="tag-wrap">
 						{% for tag in article.tags.all %}
-							<a class="tag">{{ tag.name }}</a>
+							<a href="?tags__name={{tag.name}}" class="tag">{{ tag.name }}</a>
 						{% endfor %}
 						</span>
 						<time>
 							{{ article.create_at|date:"Y-m-d" }} {{ article.create_at|time:"H:i:s" }}
 						</time>
 						<p>
-							{{ article.simpleContent|safe }}
+							{% spaceless %}{{article.desc}}{{ article.content|striptags|slice:"100" }}{% endspaceless %}
 						</p>
 						<a href="/article/feeds?aId={{article.id}}">{{ article.comment_set.all|length }}人回复</a>
 					</li>
@@ -39,12 +39,12 @@
 				</ul>
 			</div>
 			<aside class="span3 offset1">
-				<h3>所有标签</h3>
+				<h3>所有标签 <small>All Tags</small></h3>
 				<nav>
 					<ul class="nav nav-tags">
 						{% for tag in tags %}
 						<li>
-							<a href="#">{{ tag.name }}</a>
+							<a href="?tags__name={{tag.name}}">{{ tag.name }}</a>
 						</li>
 						{% endfor %}
 					</ul>

@@ -44,10 +44,6 @@ class Article( BaseModel ):
     def setCommentNum(self, num):
         self.comment_num = num
     
-    def simpleContent(self):
-        pattern = re.compile('<\/{0,}(div|br|pre|p|img|b|span)\s*((\S*=)".*"){0,}\s*\/{0,}>')
-        return pattern.sub('', self.content)[0:200]
-    
     @classmethod
     def saveArticle(cls, articleId, title, summary, postTags, content, imgs = None):
         tags = []
