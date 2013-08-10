@@ -9,12 +9,12 @@ from django.contrib.admin.models import User
 from common.models import BaseModel
 from django.db import models
 import util
-import re
 from mysite.settings import STO_MEDIA
 from django.dispatch.dispatcher import receiver
 from django.db.models.signals import post_save
 from django.template.base import Template
 from django.template.context import Context
+import uuid
 
 class Tag( BaseModel ):
     class Meta:
@@ -64,7 +64,8 @@ class Article( BaseModel ):
         
         if imgs is not None:
             for img in imgs:
-                names = article.saveFile(img, None)
+                newname = str(uuid.uuid1()) + img._get_name()[img._get_name().rindex('.'):]
+                names = article.saveFile(img, newname)
                 article.content = article.changeContent(article.content.strip().lstrip().rstrip(), names)
         
         if articleId: ## update article
@@ -130,7 +131,7 @@ def post_save_article(sender, **kwargs):
                              , desc = desc
                              , path = path)
 
-@receiver(post_save, sender = Comment)
+## @receiver(post_save, sender = Comment)
 def post_save_comment(sender, **kwargs):
     comment = kwargs['instance']
     if kwargs['created'] and comment.article:
