@@ -1,34 +1,36 @@
 <!DOCTYPE html>
-<html class="no-js">
-    <head lang="zh-CN">
-    <meta charset="utf-8">
-    <title>Ray-张杨 {% block title %}{% endblock title %} 博客</title>
-    <meta name="keywords" content="张杨 ,南京国图,前端工程师,java工程师,用户体验,UI设计">
-    <meta name="description" content="张杨,JavaEE、前端工程师,专注企业级WEB应用及用户体验,就职于南京国图信息股份有限公司">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head lang="zh-CN">
+		<meta charset="utf-8">
+		<title>Ray-张杨 {% block title %}{% endblock title %} 博客</title>
+		<meta name="keywords" content="张杨 ,南京国图,前端工程师,java工程师,用户体验,UI设计">
+		<meta name="description" content="张杨,JavaEE、前端工程师,专注企业级WEB应用及用户体验,就职于南京国图信息股份有限公司">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script src="/static/js/main/pre.js"></script>
-		<link id="maincss" rel="stylesheet" href="/static/css/main/20130809.css" \/>
+		<script>
+			Utils.hasFeature('lt-ie9') && document.write('<script src="/static/js/hack/html5.js"><\/script>');
+		</script>
+		<link id="maincss" rel="stylesheet" href="/static/css/bootstrap/bootstrap.css" \/>
 		<link rel="stylesheet" href="/static/css/plugins/prettify.css" />
-        {% block css %} {% endblock css %}
-    </head>
-    <body>
-    	<!--[if lt IE 9]>
-            <p class="chromeframe alert alert-block" style="text-align: center;">你正在使用一个 <strong>相当过时</strong> 的浏览器. 想要获取更安全、更快速、更舒爽的浏览体验，请 <a href="http://browsehappy.com/">更新你的浏览器</a> 或者推荐 <a href="https://www.google.com/intl/zh-CN/chrome/browser/">下载chrome浏览器</a>。</p>
-        <![endif]-->
+		{% block css %} {% endblock css %}
+	</head>
+	<body>
+		<!--[if lt IE 9]>
+		<p class="chromeframe alert alert-block" style="text-align: center;">你正在使用一个 <strong>相当过时</strong> 的浏览器. 想要获取更安全、更快速、更舒爽的浏览体验，请 <a href="http://browsehappy.com/">更新你的浏览器</a> 或者推荐 <a href="https://www.google.com/intl/zh-CN/chrome/browser/">下载chrome浏览器</a>。</p>
+		<![endif]-->
 		{% block ctn %}
-		
+
 		{% endblock ctn %}
 		<script src="/static/js/lib/jquery-1.9.1.min.js"></script>
-        <script src="/static/js/plugins/bootstrap.min.js"></script>
-        <script src="/static/js/plugins/prettify.js"></script>
-        <script src="/static/js/plugins/jquery.validationEngine-zh_CN.js"></script>
-        <script src="/static/js/plugins/jquery.validationEngine.js"></script>
-        <script src="/static/js/main/plugins.js"></script>
-        <script src="/static/js/main/main.js"></script>
-        {% block js %} {% endblock js %}
-        
-        <script>
-        	Utils.hasFeature('lt-ie9') && document.write('<script src="/static/js/hack/html5.js"><\/script>');
-        </script>
-    </body>
+		<script src="/static/js/plugins/bootstrap.min.js"></script>
+		<script src="/static/js/plugins/prettify.js"></script>
+		<script src="/static/js/plugins/jquery.validationEngine-zh_CN.js"></script>
+		<script src="/static/js/plugins/jquery.validationEngine.js"></script>
+		<script src="/static/js/main/plugins.js"></script>
+		<script src="/static/js/main/main.js"></script>
+		{% block js %} {% endblock js %}
+	</body>
 </html>
