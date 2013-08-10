@@ -22,8 +22,8 @@ else:
     # Make `python manage.py syncdb` works happy!
     MYSQL_HOST = '127.0.0.1'
     MYSQL_PORT = '3306'
-    MYSQL_USER = 'root'
-    MYSQL_PASS = 'root'
+    MYSQL_USER = 'ray'
+    MYSQL_PASS = 'ray'
     MYSQL_DB   = 'app_rayzy1991'
 
 DATABASES = {
