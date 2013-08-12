@@ -1,3 +1,4 @@
+#coding=utf-8
 '''
 Created on 2013-6-23
 
@@ -107,9 +108,9 @@ def saveComment( request ):
     comment.save()
     
     resp = HttpResponseRedirect('/article/feeds?aId='+str(article.id)+'#comment-'+str(comment.id))
-    if not request.COOKIES.has_key('email') or not request.COOKIES.has_key('usrname'):
-        resp.set_cookie('email', value = email, max_age = 31536000, httponly = True)
-        resp.set_cookie('usrname', value = usrname, max_age = 31536000, httponly = True)
+    ## if not request.COOKIES.has_key('email') or not request.COOKIES.has_key('usrname'):
+    resp.set_cookie('email', value = email, max_age = 31536000, httponly = True)
+    resp.set_cookie('usrname', value = usrname.encode('utf-8'), max_age = 31536000, httponly = True)
     
     return resp
 
