@@ -57,8 +57,8 @@ function beautifyBanner(){
 	if( !Utils.isMobile() ) {
 		var screeW = screen.width
 				, $banner = $('.banner')
-		$banner.css('background-size', screeW);
 		$banner.css('background', 'url(http://rayzy1991-media.stor.sinaapp.com/banner/banner-' + new Date().getDay() + '.jpg) center center no-repeat');
+	  $banner.css('background-size', screeW);
 	}
 }
 
