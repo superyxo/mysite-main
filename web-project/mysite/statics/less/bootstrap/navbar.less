@@ -21,9 +21,8 @@
   min-height: @navbarHeight;
   padding-left:  20px;
   padding-right: 20px;
-  background: none;
-  background: transparent url(../../img/main/header-bg.png) 0 bottom repeat-x;
-  // Prevent floats from breaking the navbar
+  background: #1d1d1d;
+  position: relative;
   .clearfix();
 }
 
@@ -48,21 +47,18 @@
   display: block;
   // Vertically center the text given @navbarHeight
   padding: 0;
-  margin-top: 2px; // negative indent to left-align the text down the page
-  font-size: 20px;
-  font-weight: 200;
-  color: @navbarBrandColor;
-  text-shadow: 0 1px 0 @navbarBackgroundHighlight;
+  position: absolute;
+  top: -7px;
+  height: 90px;
+  width: 118px;
+  background:url(../../img/header/logo-flag.png) 0 0 no-repeat;
+  text-indent: -9999px;
+  .transition(top .2s ease-in-out);
   &:hover{
-    text-decoration: none;
-    .opacity(80);
-    .transition(all .2s ease);
+    .transition(top .2s ease-in-out);
+    top: 0;
   }
   &:focus{
-    .opacity(70);
-  }
-  img{
-    height: 45px;
   }
 }
 
@@ -246,11 +242,11 @@
 .navbar .nav > li > a {
   float: none;
   // Vertically center the text given @navbarHeight
-  margin-top: 8px;
-  padding: 5px 10px 5px;
-  color: @navbarLinkColor;
+  height: @navbarHeight;
+  color: #FFF;
+  padding: 0 1em;
+  line-height: @navbarHeight;
   text-decoration: none;
-  text-shadow: 0 1px 0 rgba(0,0,0,.4);
 }
 .navbar .nav .dropdown-toggle .caret {
   margin-top: 8px;
@@ -260,20 +256,16 @@
 .navbar .nav > li > a:focus,
 .navbar .nav > li > a:hover {
   background-color: transparent; // "transparent" is default to differentiate :hover/:focus from .active
-  color: @navbarLinkColorHover;
-  text-decoration: underline;
+  color: #999;
 }
 
 // Active nav items
 .navbar .nav > .active > a,
 .navbar .nav > .active > a:hover,
 .navbar .nav > .active > a:focus {
-  background-color: @navbarLinkBackgroundActive;
-  border: 1px solid @navbarLinkBorderActive;
-  .border-radius(@baseBorderRadius);
-  .box-shadow-2(inset 0 1px 1px rgba(0,0,0,.2), 0 1px 0 rgba(255,255,255,.1));
+  color: #FFF;
+  font-weight: bold;
   cursor: default;
-  color: @navbarLinkColorActive;
   text-decoration: none;
 }
 
@@ -285,7 +277,8 @@
   padding: 7px 10px;
   margin-left: 5px;
   margin-right: 5px;
-  .buttonBackground(darken(@navbarBackgroundHighlight, 5%), darken(@navbarBackground, 5%));
+  background: #313131;
+  border-color: #000;
   .box-shadow(~"inset 0 1px 0 rgba(255,255,255,.1), 0 1px 0 rgba(255,255,255,.075)");
 }
 .navbar .btn-navbar .icon-bar {

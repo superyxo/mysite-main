@@ -5,7 +5,7 @@
 
 // TABLETS AND BELOW
 // -----------------
-@media (max-width: @navbarCollapseWidth) {
+@media (max-width: 768px) {
 
   // UNFIX THE TOPBAR
   // ----------------
@@ -28,15 +28,11 @@
   .navbar-fixed-bottom .navbar-inner {
     padding: 5px;
   }
-  .navbar .container {
-    width: auto;
-    padding: 0;
-  }
   // Account for brand name
   .navbar .brand {
-    padding-left: 10px;
-    padding-right: 10px;
-    margin: 0 0 0 -5px;
+    padding: 0;
+    left: 50%;
+    margin-left: -59px;
   }
 
   // COLLAPSIBLE NAVBAR
@@ -48,13 +44,15 @@
   // Block-level the nav
   .nav-collapse .nav {
     float: none;
-    margin: 0 0 (@baseLineHeight / 2);
+    margin: 3em 1em;
   }
   .nav-collapse .nav > li {
-    float: none;
+    float: left;
   }
   .nav-collapse .nav > li > a {
     margin-bottom: 2px;
+    height: 20px;
+    line-height: 20px;
   }
   .nav-collapse .nav > .divider-vertical {
     display: none;
@@ -68,7 +66,6 @@
   .nav-collapse .dropdown-menu a {
     padding: 9px 15px;
     font-weight: bold;
-    color: @navbarLinkColor;
     .border-radius(3px);
   }
   // Buttons
@@ -80,11 +77,19 @@
   .nav-collapse .dropdown-menu li + li a {
     margin-bottom: 2px;
   }
+  .nav-collapse .nav > li.active > a:hover,
+  .nav-collapse .nav > li.active > a:focus,
+  .nav-collapse .dropdown-menu a:hover,
+  .nav-collapse .dropdown-menu a:focus {
+    background: transparent;
+    color: #fff;
+  }
   .nav-collapse .nav > li > a:hover,
   .nav-collapse .nav > li > a:focus,
   .nav-collapse .dropdown-menu a:hover,
   .nav-collapse .dropdown-menu a:focus {
-    background-color: @navbarBackground;
+    background-color: #222;
+    color: #fff;
   }
   .navbar-inverse .nav-collapse .nav > li > a,
   .navbar-inverse .nav-collapse .dropdown-menu a {
