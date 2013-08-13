@@ -70,7 +70,7 @@ function prettyCode(ctn){
 $(document).ready(function(){
 	beautifyBanner();
 	resetOptPanel(20);
-	checkfixTop();
+  //checkfixTop();
 	bindJQValiEngin();
 	$(window).resize(function(){
 		resetOptPanel(20);
