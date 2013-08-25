@@ -1,10 +1,4 @@
-/*
- * editor page js
- */
 $(document).ready(function() {
-	// $(document).delegate('#clearStyle', 'click', function(){
-		// $('#editor').html($('#editor').cleanHtml());
-	// });
 	$(document).delegate('#review', 'click', function(){
 		var str = $.trim( $('#editor').html().replace(/div/g, 'p') );
 		$('#article').children('.container').html(str);
@@ -38,7 +32,6 @@ $(document).ready(function() {
 		});
 		
 		article = $(editor).html().replace(/div/g, 'p');
-		// $(editor).html(article);
 		$('#content').val(article);
 	}
 })
