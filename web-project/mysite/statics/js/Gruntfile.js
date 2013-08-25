@@ -35,7 +35,7 @@ module.exports = function(grunt) {
       },
       dist: {
         src: '<%= concat.dist.dest %>',
-        dest: 'dist/packed_' + new Date().getMilliseconds() + '.min.js'
+        dest: 'dist/packed_' + new Date().getMonth() + new Date().getDate() + new Date().getHours() + new Date().getMinutes() + '.min.js'
       }
     }
   });

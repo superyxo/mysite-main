@@ -2,3 +2,4 @@
 *.pot
 *.pyc
 local_settings.py
+web-project/mysite/statics/js/node_modules
