@@ -1,0 +1,108 @@
+@import "keyframe.less";
+
+.banner{
+  background: #1779D5 url(../../img/main/banner.jpg) center -300px no-repeat;
+  .box-sizing(border-box);
+  color: @white;
+  text-shadow: 1px 1px 1px rgba(0,0,0,.8);
+  text-align: center;
+  .face{
+    background-color: black;
+    margin: 0 auto;
+    background: url(../../img/main/ray.png) center center no-repeat;
+    width: 156px;
+    height: 156px;
+    .border-radius(78px);
+    .box-shadow(1px 1px 0 rgba(0,0,0,.8));
+  }
+  .tag{
+    padding: 2px 3px;
+    margin: 0 5px;
+    background-color: @navbarBackgroundHighlight;
+    border: 1px solid #137dd6;
+    .box-shadow(1px 1px 0 rgba(0,0,0,.5));
+  }
+  h1,h2,h3,h4,p{
+    font-weight: normal;
+  }
+  #profile{
+    position: relative;
+    .face{
+      .animation(transparents 1s ease-in-out);
+    }
+    .desc{
+      .animation(transparents 1.5s ease-in-out);
+    }
+    hr{
+      border-top: none;
+      width: 50%;
+      max-width: 380px;
+      .box-shadow(1px 1px 0 rgba(0,0,0,.8));
+      margin: 0 auto;
+    }
+  }
+}
+
+.banner-home{
+  padding: 80px 0 100px;
+}
+
+.banner{
+  .breadcrumbs{
+    text-align: left;
+    letter-spacing: 4px;
+    a{
+      color: @white;
+    }
+    a.active,
+    a:hover{
+      text-decoration: none;
+      color: #18f5e3;
+    }
+  }
+  .nav-tabs{
+    border: none;
+    margin-bottom: 1px;
+    li > a{
+      padding: 8px 20px;
+      margin-right: 10px;
+      background-color: #e4e4e4;
+      border: 1px solid #d3d3d3;
+      border-bottom-color: transparent;
+      position: relative;
+      color: @grayDarker;
+      text-shadow: 0 0 2px rgba(0,0,0,.2);
+      &:hover{
+        background-color: #efefef;
+      }
+    }
+    .active > a{
+      background-color: @white;
+      border-color: #bababa;
+      border-bottom-color: transparent;
+      &:hover{
+        background-color: @white;
+        color: @grayDarker;
+      }
+    }
+    li > a > .bubble{
+      position: absolute;
+      top: -15px;
+      right: -10px;
+      padding: 0 4px;
+      .border-radius(2px);
+      background-color: #ff1b5b;
+      border: 1px solid #f40b4b;
+      color: @white;
+    }
+  }
+}
+
+.banner-article,
+.banner-about{
+  padding-top: 20px;
+  h1 {
+    font-size: 2.6em;
+    line-height: 1em;
+  }
+}
