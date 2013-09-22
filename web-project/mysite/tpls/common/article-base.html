@@ -19,7 +19,7 @@
 		<br />
 		<p>
 			{% for tag in article.tags.all %}
-			<a href="../query?tags__name={{tag.name}}" class="tag">{{ tag.name }}</a>
+			<a href="/article/query?tags__name={{tag.name}}" class="tag">{{ tag.name }}</a>
 			{% endfor %}
 		</p>
 		<nav>
