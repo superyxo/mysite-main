@@ -1,4 +1,48 @@
 /*
+ * @name: gtmap formbiz config
+ * @author: zhangyang
+ * @datetime: 2013-09-13
+ * @description: 表单组件验证及文案配置
+ */
+$(function( win ){
+  win.gtmap = {};
+  win.gtmap.formbiz_config = {
+    'atleast' : {
+      'exp' : '',
+      'tip' : '至少选中一个选项'
+    },
+    'select':{
+      'exp' : '',
+      'tip' : '您还没有选择'
+    },
+    'required' : {
+      'exp' : /^\S+$/,
+      'tip' : '不能为空'
+    },
+    'number' : {
+      'exp' : /^([+-]?)\d*\.?\d+$/,
+      'tip' : '无效数字'
+    },
+    'chs' : {
+      'exp' : /^[\u4e00-\u9fa5]+$/,
+      'tip' : '无效中文'
+    },
+    'eng' : {
+      'exp' : /^[a-zA-Z\ \']+$/,
+      'tip' : '无效英文'
+    },
+    'email' : {
+      'exp' : /\w+((-w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+/,
+      'tip' : '无效英文'
+    }
+  };
+  
+  win.gtmap.project_code_template = {
+    'jingjiang1' : '(靖)地呈字[##]第##号',
+    'nanjing' : '(宁)地供字[##]第##号，第##次'
+  }
+}(window));
+/*
  * @name: jquery 表单验证插件
  * @author: zhangyang
  */
@@ -110,21 +154,18 @@
       var opts = $.extend(true, $.fn.formvalidate.defaults, options);
       var form = new Form(this, opts);
       $(this).data('form', form);
+      $(this).submit(function(){
+        return form.validateAll();
+      });
     });
   };
   
   $.fn.formvalidate.defaults = {
     onSuccess : function( elem ){
-      var $td = $( $(elem).parents('td')[0] );
-      var $tip = $td.children('.tip-info');
-      $td.removeClass('error').addClass('success');
-      $tip.length && $tip.addClass('hide');
+      
     },
     onFailure : function( elem, tip ){
-      var $td = $( $(elem).parents('td')[0] );
-      var $tip = $td.children('.tip-info');
-      $td.addClass('error');
-      ( $tip.length && $tip.removeClass('hide').html(tip) ) || $td.prepend('<span class="tip-info">'+ tip +'</span>');
+      
     },
     ruleMap : gtmap.formbiz_config
   };

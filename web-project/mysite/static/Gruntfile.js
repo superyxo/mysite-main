@@ -9,15 +9,14 @@ module.exports = function(grunt) {
         banner: '<%= banner %>',
         stripBanners: true
       },
-      js: {
-        src: ['lib/jquery-1.9.1.min.js',
-        			'plugins/bootstrap.min.js', 
-        			'plugins/jquery.validationEngine-zh_CN.js',
-        			'plugins/jquery.validationEngine.js',
-        			'plugins/plugins.custom.js',
-        			'plugins/prettify.js',
-        			'main/main.js'],
-        dest: 'build/lpgray_build_<%= grunt.template.today("yyyymmdd") %>.js'
+      jslib: {
+        src: ['js/jquery-1.9.1.min.js',
+              'prettify.js',
+              'bootstrap.min.js', 
+              'func.pagin.js',
+              'gtmap.formvalidate.js',
+              'base.js', 'main.js'],
+        dest: 'build/js/lpgray_global_<%= grunt.template.today("yyyymmdd") %>.js'
       }
     },
     uglify: {
@@ -26,7 +25,7 @@ module.exports = function(grunt) {
       },
       js: {
         src: '<%= concat.js.dest %>',
-        dest: 'build/lpgray_build__<%= grunt.template.today("yyyymmdd") %>.min.js'
+        dest: 'build/lpgray_global_<%= grunt.template.today("yyyymmdd") %>.min.js'
       }
     }
   });

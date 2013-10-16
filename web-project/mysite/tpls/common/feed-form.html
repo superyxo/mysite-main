@@ -3,9 +3,9 @@
 	<hr />
 	<br />
 	<div class="row-fluid">
-		<input name="usrname" type="text" class="span4 validate[required]" placeholder="称呼" value="{{ request.COOKIES.usrname }}"/><input name="email" type="text" class="span4 validate[required,custom[email]]" placeholder="邮箱" value="{{ request.COOKIES.email }}"/><input name="memo" type="text" class="span4" placeholder="微博/QQ/个人网站（不会公开）"/>
+		<input data-validate="required" name="usrname" type="text" class="span4" placeholder="称呼" value="{{ request.COOKIES.usrname }}"/><input data-validate="email" name="email" type="text" class="span4" placeholder="邮箱" value="{{ request.COOKIES.email }}"/><input name="memo" type="text" class="span4" placeholder="微博/QQ/个人网站（不会公开）"/>
 		<br />
-		<textarea style="margin: 10px 0 0 0;" name="content" id="" cols="30" class="span12 validate[required]" rows="10" placeholder="在这里留言"></textarea>
+		<textarea data-validate="required" style="margin: 10px 0 0 0;" name="content" class="span12" rows="5" placeholder="在这里留言"></textarea>
 		<br /><br />
 		<div class="pull-right">
 			<label for="mailMe" class="checkbox inline">
