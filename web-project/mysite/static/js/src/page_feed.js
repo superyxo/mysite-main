@@ -12,7 +12,6 @@ $(document).ready(function(){
 			, sWill = '#-回复给'+ uName + '-# '
 			, rootId = $(this).attr('data-root-id');
 			
-		
 		$('input[name=cId]').val(cId);
 		$('input[name=rootId]').val(rootId);
 		$('textarea[name=content]').focus().val(sWill);

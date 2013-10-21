@@ -5,16 +5,11 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 	<head lang="zh-CN">
 		<meta charset="utf-8">
-		<title>Ray-张杨 {% block title %}{% endblock title %} 博客</title>
+		<title>lpgray {% block title %}{% endblock title %}</title>
 		<meta name="keywords" content="张杨 ,南京国图,前端工程师,java工程师,用户体验,UI设计">
-		<meta name="description" content="张杨,JavaEE、前端工程师,专注企业级WEB应用及用户体验,就职于南京国图信息股份有限公司">
+		<meta name="description" content="张杨,前端工程师,专注WEB前端技术及用户体验">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<script src="/static/js/main/pre.js"></script>
-		<script>
-			Utils.hasFeature('lt-ie9') && document.write('<script src="/static/js/hack/html5.js"><\/script>');
-		</script>
-		<link rel="stylesheet" href="/static/css/bootstrap/main20130813.css" \/>
-		<link rel="stylesheet" href="/static/css/bootstrap/resp20130813.css" \/>
+		<link rel="stylesheet" href="/static/css/bootstrap/bootstrap.css" \/>
 		<link rel="stylesheet" href="/static/css/plugins/prettify.css" />
 		{% block css %} {% endblock css %}
 	</head>
@@ -25,7 +20,7 @@
 		{% block ctn %}
 
 		{% endblock ctn %}
-		<script src="/static/js/dist/packed_7252224.min.js"></script>
+		<script src="/static/build/js/lpgray_lib_20131021.min.js"></script>
 		{% block js %} {% endblock js %}
 	</body>
 </html>
