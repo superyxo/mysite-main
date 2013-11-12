@@ -9,7 +9,7 @@ from django.contrib.admin.models import User
 from common.models import BaseModel
 from django.db import models
 import util
-from mysite.settings import STO_MEDIA
+from mysite.settings import MEDIA_URL
 from django.dispatch.dispatcher import receiver
 from django.db.models.signals import post_save
 from django.template.base import Template
@@ -89,7 +89,7 @@ class Article( BaseModel ):
     
     def changeContent(self, content, names):
         find = '##' + names[0] + '##'
-        path = STO_MEDIA + '' + names[1]
+        path = MEDIA_URL + '' + names[1]
         will = '<img src="' + path + '" />'
         return content.replace(find, will)
         
