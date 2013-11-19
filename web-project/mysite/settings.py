@@ -3,7 +3,7 @@ import os
 ROOT_PATH = os.path.abspath(os.path.dirname(__file__))
 CONFIG_PATH = ROOT_PATH + '/config/'
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
