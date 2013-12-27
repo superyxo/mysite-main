@@ -3,7 +3,7 @@ module.exports = function(grunt) {
     meta: {
       version: '0.1.0'
     },
-    banner: '/*! lpgray-site <%= grunt.template.today("yyyy-mm-dd") %> */\n',
+    banner: '/*! lpgray-site <%= grunt.template.today("yyyy-mm-dd") %> */\r\n',
     concat: {
       options: {
         banner: '<%= banner %>',
@@ -14,11 +14,9 @@ module.exports = function(grunt) {
               'js/lib/prettify.js',
               'js/src/plugins/bootstrap.min.js',
               'js/src/plugins/gtmap.formvalidate.js',
-              'js/src/base.js', 'js/src/global.js'],
-        dest: 'build/js/lpgray_lib_<%= grunt.template.today("yyyymmdd") %>.js'
-      },
-      css: {
-        
+              'js/src/base.js',
+              'js/src/global.js'],
+        dest: 'build/js/lpgray.js'
       }
     },
     uglify: {
@@ -27,7 +25,7 @@ module.exports = function(grunt) {
       },
       js: {
         src: '<%= concat.jslib.dest %>',
-        dest: 'build/js/lpgray_lib_<%= grunt.template.today("yyyymmdd") %>.min.js'
+        dest: 'build/js/lpgray_<%= grunt.template.today("yyyymmdd") %>.min.js'
       }
     }
   });

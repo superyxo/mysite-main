@@ -25,11 +25,10 @@
 		<nav>
 			<ul class="nav nav-tabs">
 				<li class="{% block tab_article %}{% endblock %}">
-					<a href="/article/{{ article.id }}">文 章</a>
+					<a href="/article/{{ article.id }}">文章</a>
 				</li>
 				<li class="{% block tab_feeds %}{% endblock %}">
-					<a href="/article/feeds?aId={{ article.id }}">留 言
-					<div class="bubble">
+					<a href="/article/feeds?aId={{ article.id }}">留言<div id="J_FeedBub" class="bubble">
 						{{ article.comment_set.all|length }}
 					</div></a>
 				</li>

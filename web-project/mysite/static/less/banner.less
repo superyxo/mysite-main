@@ -4,7 +4,7 @@
   background: #1779D5 url(../../img/main/banner.jpg) center -300px no-repeat;
   .box-sizing(border-box);
   color: @white;
-  text-shadow: 1px 1px 1px rgba(0,0,0,.8);
+  text-shadow: 1px 1px 1px rgba(0,0,0, 1);
   text-align: center;
   .face{
     background-color: black;
@@ -13,7 +13,7 @@
     width: 156px;
     height: 156px;
     .border-radius(78px);
-    .box-shadow(1px 1px 0 rgba(0,0,0,.8));
+    .box-shadow(0 1px 2px rgba(0,0,0, 1));
   }
   .tag{
     padding: 2px 3px;
@@ -87,13 +87,17 @@
     }
     li > a > .bubble{
       position: absolute;
-      top: -15px;
-      right: -10px;
-      padding: 0 4px;
-      .border-radius(2px);
+      top: -12px;
+      right: -9px;
+      padding: 0; margin: 0;
+      border-radius: 9px;
+      height: 18px; width: 18px;
       background-color: #ff1b5b;
       border: 1px solid #f40b4b;
       color: @white;
+      font-size: 12px;
+      line-height: 19px;
+      text-align: center;
     }
   }
 }
