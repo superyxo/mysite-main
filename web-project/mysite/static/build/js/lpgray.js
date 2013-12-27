@@ -456,7 +456,7 @@ function pagin(page, size, count, pre) {
 }
 
 $(document).ready(function(){
-  beautifyBanner();
+  //beautifyBanner();
   resetOptPanel(20);
   //checkfixTop();
   bindFormValidate();
