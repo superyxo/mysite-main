@@ -43,22 +43,19 @@
 // Brand: website or project name
 // -------------------------
 .navbar .brand {
-  float: left;
   display: block;
-  // Vertically center the text given @navbarHeight
   padding: 0;
+  margin: 0;
   position: absolute;
   top: -7px;
-  height: 90px;
-  width: 118px;
+  z-index: 1000;
+  height: 90px;width: 118px;
   background:url(../../img/header/logo-flag.png) 0 0 no-repeat;
   text-indent: -9999px;
   .transition(top .2s ease-in-out);
   &:hover{
     .transition(top .2s ease-in-out);
     top: 0;
-  }
-  &:focus{
   }
 }
 
