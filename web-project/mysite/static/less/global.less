@@ -1,99 +1,39 @@
-.main{
-  .nav-imgs{
-    li{
-      float: left;
-      display: block;
-      margin: 0 60px 60px 0;
-      position: relative;
-      &:hover{
-        p{
-          opacity: 1;
-          .transition(opacity .2s ease);
-        }
-      }
-      p{
-        position: absolute;
-        opacity: 0;
-        width: 224px;
-        height: 32px;
-        margin: 3px;
-        line-height: 32px;
-        .box-sizing(border-box);
-        background: url(../../img/main/black-opacity.png) 0 0 repeat;
-        bottom: 0;
-        left: 0;
-        text-align: center;
-        color: @white;
-        vertical-align: middle;
-        font-weight: normal;
-        text-shadow: 0 1px 0 rgba(0,0,0,.9);
-      }
-    }
-    img{
-      width: 224px;
-      height: 124px;
-    }
-  }
-  
-  .nav-trends{
-    color: @grayDark;
-    time{
-      display: inline-block;
-    }
-    li{
-      padding-bottom: .8em;
-      margin-bottom: .8em;
-      border-bottom: 1px solid @splitLineColor;
-      position: relative;
-      a:hover > div{
-        opacity: .9;
-        .transition(all .2s ease 0);
-      }
-      .img-wrap{
-        float: right;
-        display: block;
-        height: 90px;
-        width: 160px;
-        background: #efefef none center center no-repeat;
-        .background-size(160px);
-        margin-left: 20px;
-        clear: both;
-      }
-      .memo{
-        position: absolute;
-        left: 2px;
-        bottom: 6px;
-        color: @gray;
-        font-size: @baseFontSize - 1;
-      }
-    }
-  }
-  
-  h3{
-    padding-bottom: .3em;
-    border-bottom: 1px solid #E7E7E7;
-    color: @grayDark;
-    font: normal normal 1.5em @msyaheiFontFamily;
-  }
-  h3.noborder{
-    border-color:transparent;
-  }
-  .nav-tags{
-    a{
-      margin-top: 1em;
-      margin-left: 2px;
-      padding-left: 5px;
-      line-height: .9em;
-      border-left: 3px solid @grayLight;
-      color: @gray;
-    }
-    a:hover{
-      background: none transparent;
-      border-left: 3px solid @blue;
-      color: @blue;
-    }
-  }
-  
+@-webkit-keyframes suofang{
+  0%{-webkit-transform:scale(4);opacity:0;}
+  80%{-webkit-transform:scale(.95);opacity:1;}
+  100%{-webkit-transform:scale(1);opacity:1;}
+}
+@-moz-keyframes suofang{
+  0%{-moz-transform:scale(4);opacity:0;}
+  80%{-moz-transform:scale(.95);opacity:1;}
+  100%{-moz-transform:scale(1);opacity:1;}
+}
+@-ms-keyframes suofang{
+  0%{-ms-transform:scale(4);opacity:0;}
+  80%{-ms-transform:scale(.95);opacity:1;}
+  100%{-ms-transform:scale(1);opacity:1;}
+}
+@-o-keyframes suofang{
+  0%{-o-transform:scale(4);opacity:0;}
+  80%{-o-transform:scale(.95);opacity:1;}
+  100%{-o-transform:scale(1);opacity:1;}
+}
+@keyframes suofang{
+  0%{transform:scale(4);opacity:0;}
+  80%{transform:scale(.95);opacity:1;}
+  100%{transform:scale(1);opacity:1;}
+}
+@-webkit-keyframes transparents{
+  0%{opacity:0;}
+  100%{opacity:1;}
+}
+@-moz-keyframes transparents{
+  0%{opacity:0;}
+  100%{opacity:1;}
+}
+@keyframes transparents{
+  0%{opacity:0;}
+  100%{opacity:1;}
 }
 
 .tag{
@@ -120,29 +60,6 @@
   background: none transparent;
   border: none;
   cursor: default;
-}
-
-.opt-panel{
-  position: fixed;
-  bottom: 20px;
-  right: 0;
-  .transition(right .5s ease-in-out);
-  a{
-    display: block;
-    padding: 7px 3px 0 3px;
-    background-color: #878787;
-    border-bottom: 1px solid #999;
-    &:hover{
-      background-color: #707070;
-    }
-  }
-  & a:first-child{
-    .border-radius(2px 2px 0 0);
-  }
-  & a:last-child{
-    .border-radius(0 0 2px 2px);
-    border: none;
-  }
 }
 
 form{
@@ -224,4 +141,56 @@ form{
 }
 .tl{
   text-align: left;
+}
+
+.ico{
+  background-image: url(../../img/main/sprite.png);
+  background-repeat: no-repeat;
+  display: inline-block;
+  text-indent: -9999px;
+}
+.ico-django {
+  width: 145px;
+  height: 95px;
+  background-position: 0px 0px;
+}
+.ico-sae {
+  width: 147px;
+  height: 95px;
+  background-position: -145px 0px;
+}
+.ico-html5 {
+  width: 146px;
+  height: 95px;
+  background-position: -292px 0px;
+}
+.ico-gmail {
+  width: 147px;
+  height: 95px;
+  background-position: -440px 0px;
+}
+.ico-weibo {
+  width: 147px;
+  height: 95px;
+  background-position: -589px 0px;
+}
+.ico-msg {
+  width: 46px;
+  height: 37px;
+  background-position: 0px -99px;
+}
+.ico-top {
+  width: 46px;
+  height: 37px;
+  background-position: -54px -100px;
+}
+.ico-chart {
+  width: 14px;
+  height: 14px;
+  background-position: -112px -103px;
+}
+.ico-reply {
+  width: 14px;
+  height: 14px;
+  background-position: -133px -103px;
 }
