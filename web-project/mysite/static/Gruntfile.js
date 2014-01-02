@@ -10,12 +10,8 @@ module.exports = function(grunt) {
         stripBanners: true
       },
       jslib: {
-        src: ['js/lib/jquery-1.9.1.min.js',
-              'js/lib/prettify.js',
-              'js/src/plugins/bootstrap.min.js',
-              'js/src/plugins/gtmap.formvalidate.js',
-              'js/src/base.js',
-              'js/src/global.js'],
+        src: ['js/src/plugins/gtmap.formvalidate.js',
+              'js/src/base.js'],
         dest: 'build/js/lpgray.js'
       }
     },

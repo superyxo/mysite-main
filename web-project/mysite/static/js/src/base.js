@@ -172,7 +172,7 @@ document.getElementsByClassName || (document.getElementsByClassName = function(s
 	
 	function prettyCode(ctn){
 	  ctn && $(ctn).find('.codearea').addClass('prettyprint');
-	  window.prettyPrint && prettyPrint();
+	  root.prettyPrint && prettyPrint();
 	}
 	
 	function bindFormValidate() {
